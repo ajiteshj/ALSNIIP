@@ -1,0 +1,32 @@
+%%% Thesis Introduction --------------------------------------------------
+\chapter{Introduction}
+\ifpdf
+    \graphicspath{{Introduction/IntroductionFigs/PNG/}{Introduction/IntroductionFigs/PDF/}{Introduction/IntroductionFigs/}}
+\else
+    \graphicspath{{Introduction/IntroductionFigs/EPS/}{Introduction/IntroductionFigs/}}
+\fi
+
+The topic of this research is the study, from a Software Engineering perspective, of the processes and practices followed in the development and application of Free and Open Source Software (FOSS). The development practices in FOSS are giving rise to a new view of how complex software systems can be constructed, deployed and evolved. Software informalisms followed in FOSS and their corresponding software applications/tools are neither part of, nor integrated with, the traditional Engineers' tool-set. 
+
+From the Software Engineering perspective, FOSS development models have a set of characteristics that makes them an interesting matter of study: they have an open development model comprising of occasional contributors; they offer external contributors the possibility to get integrated into the development team; there are large amounts of contributions made by volunteers; they are developed in a distributed (global) software development environment; they foster frequent interactions with end-users; they make heavy use of computer mediated communication tools and they offer flexible and dynamic processes and management models. 
+
+The present study intends to study the development methodologies followed in FOSS particularly focussing on the nature of volunteer contribution. The aim of this study is to understand the nature of developer participation, amount of contribution done by developers, the study of developer migration among projects within FOSS ecology. Combined together, these independent studies can throw more light into the nature of developer contribution to FOSS projects.
+
+FOSS ecology is dotted by lakhs of projects. But very few projects capture the public imagination and become successful. The measurement of success in FOSS become difficult because of the absence of the familiar metrics like sales figures. Therefore another focus of the present study is to identify the metric for measuring the success of a FOSS project. The present work also tries to identify some of the unique practices in these successful FOSS project to understand the best practices followed in FOSS.
+
+The organisation of the thesis work is as follows. Chapter 2 focuses on the required background material for the present work. A detailed study of the various software development methodologies developed over years have been analysed. The concept of Free and Open Source Software and what makes them different from traditional discourse of software is also done. The research undertaken by scholars in the field of FOSS is also discussed. The choice of datasets for the present work is defined later. The survey of the scripting, database, data analysis and data visualisation tools used for the present work are also briefly discussed.
+
+Chapter 3 deals with the macro studies of FOSS ecology. The focus of this chapter is to find the general trends among the large numbers of projects found in the repository of FOSS projects, namely, Sourceforge.net. The features such as number of projects, number of developers working in FOSS projects are analysed. The data from Feb 2005 to Aug 2009 are considered for the study. This chapter also covers the issue of single developer projects in FOSS.
+
+The focus of Chapter 4 is the study of successful projects in FOSS ecology. Six projects among the two lakh projects are selected for a detailed study. The number of developers working on these projects, the nature of their contribution and the movement pattern of developers across multiple projects within FOSS ecology are covered. The amount of activity in these projects and the time required to complete the tasks are also studied. Chapter 5 summarises the discussion and Chapter 6 proposes the roadmap for future work in this domain.
+
+
+
+\nomeclature {
+%%% ----------------------------------------------------------------------
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../thesis"
+%%% End: 

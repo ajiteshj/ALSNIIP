@@ -1,0 +1,133 @@
+﻿Link Prediction : Survey
+
+Introduction:
+
+Social networks are structures whose nodes represent people or other entities embedded in a social context, and whose edges represent interaction, collaboration, or influence between entities. These networks grow quickly over time with the additions of new entities and interactions between them. The main goal here is to understand how they evolve over time. Link Prediction studies and defines models that help in understanding the underlying evolution.
+
+Link Prediction addresses the problem of predicting links that are either missing or may appear in the future [1]. There are many factors that can be considered while predicting links between entities of a network that do not exist currently. These factors may be external or internal to the network. For example, two authors in a collaboration network who do not know each other and do not have any short chain of acquaintances may start collaborating in the near future, if one of the authors move to a different university geographically located where the other author works. In this case, the chances of them collaborating increases. These factors are external to the network. Predicting links using external factors such as these is a difficult task. However, there are factors that are internal to the network using which predicting links become much easier. These methods use network topology to predict links. 
+
+Link prediction has applications in various fields like in large organizations where predicting promising links between its employees helps in the development of the organization. In monitoring terrorist networks where links between individuals can be predicted even though no interactions are observed between them. It also finds applications in monitoring and controlling computer viruses that use email as a vector. It can be used to provide recommender systems, to predict unobserved links between protein-protein interaction networks in biological system.
+
+Problem Description:
+
+Consider a graph G (V, E) where V is the set of nodes and E is the set of links in the graph G. Multiple links and self connections are not allowed in G. Let U represent the universal set consisting of all possible links. Then, the set of non-existent links is U-E. The task of link prediction is to predict the missing links or links that may occur in future in the set U-E. 
+
+Metrics:
+
+In order to check the accuracy of links predicted, the observed links E is divided two parts: The training set, ET and the probe set, EP. The training set is used as known information while the probe set is used for testing. No information of the probe set is used for prediction purposes. It is now very clear that,
+
+i) ET ⋃ EP = U
+ii) ET ∩ EP = Φ
+
+There are two standard metrics used to test the accuracy of the prediction algorithms: Area Under the receiver operating characteristic Curve (AUC) and Precision. Every prediction algorithm assigns score to links in U-ET depicting the likelihood of its existence. These scores are arranged in decreasing order such that given a particular link; its occurrence is more likely than the link below it in the ordered list. The AUC evaluates the algorithms performance based on the overall list while Precision focuses on only L links with top scores.
+	
+i) AUC:
+
+The AUC value gives the probability that a random chosen missing link (a link in Ep) is given higher score than a randomly chosen non-existent link (a link in U-E). During algorithmic implementation, we randomly select a non existing link from U-E and a missing link from EP to compare their scores. If among n independent comparisons, there are n' times missing link having higher score and n” times they have same score, then the AUC value is,
+
+	
+
+If all scores are generated from identical distribution then the value of AUC will be 0.5. Thus, the degree to which the value exceeds 0.5 indicates how better the algorithm performs compared to pure chance. 
+
+ii) Precision:
+
+The Precision value is defined as the ratio of relevant items selected to the number of items selected. That is, if we take top L links as the links predicted, among which Lr links are right (Lr links are present in EP) then the value of precision is,
+
+	Precision = 
+
+Clearly, higher the precision value higher the prediction accuracy.
+Methods:
+
+Similarity Based Algorithms:
+
+The simplest of all prediction algorithms is the similarity based algorithms where every pair of nodes x and y, are assigned a score Sxy which directly defines their similarity. All non-observed links are ordered according to their similarity score and links connecting similar nodes are expected to have higher existence likelihoods. 
+
+Similarity between the nodes can be defined using the attributes of the nodes i.e., two nodes are more similar if they have many common features. However attributes of nodes are generally hidden and thus to define the similarity of nodes we concentrate on the structural similarity between the nodes which depends on the network structure.
+
+Similarity based methods can be classified in a number of ways be it, local vs global, parameter-free vs parameter-dependent or node based or path based. They can also be classified as structural equivalence where the assumption is that the link indicates similarity between its end points, and regular equivalence where the assumption is that two nodes are similar if their neighbours are similar.
+
+Local similarity indices:
+
+These indices consider only information related to the immediate neighbourhood of the nodes. Some of the well known local indices are
+
+i) Common Neighbours (CN):
+
+The common neighbor algorithm is one of the simplest and most commonly used algorithms for predicting links in a network. The concept of common neighbor was applied by Newman in reference to collaboration graph to verify correlation between common neighbors of two nodes say u and v of a network G and to compute the probability that they will collaborate in the near future [2]. 
+
+It is of the notion that two nodes are likely to have a link if they have more number of common neighbours. Given nodes x and y, let Г(x) and Г(y) represent neighbours of x and y respectively. Then,
+
+
+
+
+
+Where | Q | is the cardinality of the set Q.
+
+ii) Jaccard’s Index:
+
+The Jaccard’s coefficient algorithm is one of the most commonly used algorithms in computing similarity coefficient during information retrieval. It is also referred to as Jaccard’s index of similarity.  It was primarily used as a similarity computing algorithm in the works of Salton and McGill on information retrieval. Jaccard’s index [3] was proposed by Jaccard and is defined as,
+
+
+
+
+
+It is similar to definition of probability.
+
+iii) Adamic Adar (AA) :
+
+The Adamic Adar (AA) algorithm is based on the well established results in sociology that friends tend to be similar [4, 5]. Given any two people or users in our case, more things they have in common, more likely they are to become friends; more likely links are created between them in the near future. Similarity is measured by analysing the links of each user. While trying to evaluate whether a particular user can be linked to another user, we sum the number of items both the users have in common. Items that are unique to few people are weighted more while items that are common among many people are weighted less. The Adamic Adar Index [6] was proposed by L.A. Adamic and E.Adar. It assigns more weight to less connected members. It is defined as,
+
+ 
+
+
+
+
+
+Experimental results on different social networks show that these methods are time consuming and are not feasible for large social networks. It uses different network information such as structural properties of the network, node attributes to determine the link existence between a pair of nodes i.e., it concentrates only on the existence of the links and not the properties of individuals that the nodes represent. However, it does not use other information such as behaviour of nodes. In order to overcome such drawbacks, hybrid methods are developed which considers local information as well as community information.
+
+Hybrid methods using community information consider that there is high concentration of existence of links within communities and low concentration between the communities. Given a network, we compute the probabilities of link existence and non existence of all the links in the network. To determine the probability of a non existent link, we establish a hybrid method which uses Bayesian theory.
+
+For an undirected network, according to Bayesian theory [7], the posterior probabilities of the link existence and nonexistence between a pair of nodes (x,y), given its set of all common neighbors are defined as follows 
+
+
+
+
+We define the set of all common neighbours as sum of common neighbours within common groups and common neighbours outside common groups. In order to determine the probability of common neighbours given the existence of links between x and y, we have to consider the number of common neighbours within common groups by number of all common neighbours. Similarly, in order to determine the probability of common neighbours given the non-existence of links between x and y, we have to consider the number of common neighbours outside of common groups by number of all common neighbours. Thus, 
+
+   
+
+
+
+In order to determine the link likelihood between x and y, we define the similarity
+score as the ratio of probability of link existence between x and y to probability of link non existence. Thus,
+
+
+ 
+
+On simplification we get the similarity score for Within and Outside of Common Groups (WOCG) [8] as follows 
+
+
+
+
+where Ω is a constant.
+
+References:
+
+1. Liben‐Nowell, David, and Jon Kleinberg. "The link‐prediction problem for social networks." Journal of the American society for information science and technology 58.7 (2007): 1019-1031.
+
+2. Newman, Mark EJ. "Clustering and preferential attachment in growing networks." Physical Review E 64.2 (2001): 025102.
+
+3. P. Jaccard, Etude comparative de la distribution florale dans une portion des 
+Alpes et des Jura, Bulletin de la Societe Vaudoise des Science Naturelles 37 
+(1901) 547.
+
+4.Carley, Kathleen. "A theory of group stability." American Sociological Review (1991): 331-354.
+
+5. Feld, Scott L. "The focused organization of social ties." American journal of sociology (1981): 1015-1035.
+
+6. Adamic, Lada A., and Eytan Adar. "Friends and neighbors on the web." Social networks 25.3 (2003): 211-230.
+
+7. Hastie, T., Tibshirani, R., Friedman, J.: The elements of statistical learning: data 
+mining, inference and prediction, 2nd edn. Springer (2009)
+
+8. Valverde-Rebaza, Jorge Carlos, and Alneu de Andrade Lopes. "Link prediction in online social networks using group information." Computational Science and Its Applications–ICCSA 2014. Springer International Publishing, 2014. 31-45.
+

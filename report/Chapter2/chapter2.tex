@@ -1,0 +1,52 @@
+\chapter{System Analysis and Design}
+\ifpdf
+    \graphicspath{{Chapter2/Chapter2Figs/PNG/}{Chapter2/Chapter2Figs/PDF/}{Chapter2/Chapter2Figs/}}
+\else
+    \graphicspath{{Chapter2/Chapter2Figs/EPS/}{Chapter2/Chapter2Figs/}}
+\fi
+
+
+All of the computations and graphics in this project are implemented using the Open Source statistical software R.\cite{R-cite}
+
+\section{Introduction to R}
+
+R is a free software programming language and software environment for statistical computing and graphics.
+It is an implementation of the S programming language combined with lexical scoping semantics inspired by Scheme.
+S was created by John Chambers while at Bell Labs. R was created by Ross Ihaka and Robert Gentleman
+at the University Of Auckland, New Zealand, and is currently developed by the R Development Core Team.
+R is a GNU project. The source code for the R software environment is written primarily in C, FORTRAN, and R.
+
+R is especially suited to implement the statistical methods needed for network analysis. It provides a wide
+variety of statistical and graphical techniques, including linear and nonlinear modelling, classical statistical tests,
+time-series analysis, classification, clustering. Further, it is easily extensible through functions and extensions,
+and the R community is noted for its active contributions in terms of packages.
+Many of R’s standard functions are written in R itself, which makes it easy for users to follow the algorithmic choices made.
+For computationally intensive tasks, C, C++, and FORTRAN code can be linked and called at run time.
+
+\noindent {\bf The R Environment}
+
+R is an integrated suite of software facilities for data manipulation, calculation and graphical display. Among other things it has
+\begin{itemize}
+\item An effective data handling and storage facility,
+\item A suite of operators for calculations on arrays, in particular matrices,
+\item A large, coherent, integrated collection of intermediate tools for data analysis, graphical facilities for data analysis and display either directly at the computer or on hard- copy, and
+\item A well developed, simple and effective programming language which includes conditionals, loops, user defined recursive functions and input and output facilities.
+\end{itemize}
+
+R can be used as an environment within which many classical and modern statistical techniques have been implemented.
+A few of these are built into the base R environment, but many are supplied as packages. There are about 25 packages
+supplied with R (called standard and recommended packages) and many more are available through the CRAN family of
+Internet sites (via http://CRAN.R-project.org).
+
+All R functions and datasets are stored in packages. Only when a package is loaded are its contents available.
+This is done both for efficiency (the full list would take more memory and would take longer to search than a subset),
+and to aid package developers, who are protected from name clashes with other code.
+Some of the R packages used in this project are Igraph, statnet, sna, ProNet and ergm.
+
+
+% ------------------------------------------------------------------------
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../thesis"
+%%% End: 

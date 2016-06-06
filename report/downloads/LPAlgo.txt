@@ -1,0 +1,31 @@
+﻿Link Prediction
+
+Problem Statement:
+
+To apply efficient link prediction algorithms to uncover developer relations and to predict future outcomes.
+
+DataSet
+1. Co-authorship data: This dataset contains Authors where the they are represented by the unique author's ID's. A relation exist between two author ID's only if both have coauthored a book. Each author can be involved in writing more than one book. In the graph format authors are represented by nodes or vertices and the relations between them are represented by the presence of edge between them. This is an undirected graph having 757 vertices and 1000 edges. 
+2. Email Communication Data: This dataset contains the IDs of individuals who are actively involved in a communication network via email. A relation between two IDs exist if any one of the two individuals communicate through email. In the graph format, individuals are represented by nodes or vertices and the relations between them are represented by the presence of edge between them. This is a directed graph having 1133 vertices and 10903 edges.
+
+Pseudocode/Algorithm
+Data : Weighted RawDataFrame
+Result :  Edges with corresponding similarity scores
+
+Step 1 : Convert the data frame into graphs . Directed or undirected based on the data.
+Step 2 : Remove all self loops and repeated edges.
+Step 3: Compute probabilities of existence and non-existence of any link in the graph
+Step 4: Compute clusters using fast greedy approach
+Step 5: Given a non existent link,
+		a) Compute total number of common neighbours
+		b) Compute number of common neighbours within common groups
+		c) Determine from a) and b) the number of common neighbours outside of 			common groups
+Step 6: Compute the similarity score
+Step 7: Sort all the edges in the decreasing order of their similarity scores
+
+Procedure:
+Given a weighted social network dataset, link prediction can be performed by using the structural properties of the network and community information of the nodes present in the network.  This process is performed using R software which is a data mining tool for Big data. R packages such as igraph, sna, proxy are used. A feature rich, weighted social network dataset is taken as the input. It is converted into graph with no self loops and repeated edges. To obtain community information of the nodes in the graph, a fast greedy algorithm is applied. The probabilities of existence and non-existence of any link in the graph is computed. Now, given any non-existent link, the number of common neighbours within and outside of common groups and the total number of common neighbours is computed. Using the parameters computed above a similarity score is assigned to every non-existent link. All the links are sorted in the decreasing order of their similarity score.
+
+Results:
+
+PLEASE INCLUDE THIS PART.

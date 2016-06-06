@@ -1,0 +1,395 @@
+\chapter{Micro Studies of FOSS Ecology}
+\ifpdf
+    \graphicspath{{Chapter3/Chapter3Figs/PNG/}{Chapter3/Chapter3Figs/PDF/}{Chapter3/Chapter3Figs/}}
+\else
+    \graphicspath{{Chapter3/Chapter3Figs/EPS/}{Chapter3/Chapter3Figs/}}
+\fi
+
+\section{Introduction}
+The Macro studies did help to understand the essential characteristics of the FOSS ecology. The study gave an idea of the size and nature of the projects and developers involved in FOSS development in a large project eco-system like Sourceforge.net. But the studies were limited in their scope. The important metrics like number of developers working on each projects, their movement in the ecology, number of tasks which come up in projects and how effectively they are completed etc. cannot be done for all 150,000 projects. Therefore it becomes necessary to study the important features of FOSS development by selecting few projects and subjecting them to rigorous analysis.
+
+\section{Selection of Projects for Micro Analysis}
+To select few projects from a large pool of projects currently active in Sourceforge.net, the following options were available
+
+\begin{itemize}
+ \item {Randomly choose few sample projects}
+  \item{Select one project from each year}
+  \item{Select projects which meets certain criteria}
+\end{itemize}
+
+Random selection was rejected because the intention of the current study is to rigorously analyse the projects to detect common pattern among them. Choosing a project from year year would be beneficial if the focus of studies is time-series analysis of the evolution of FOSS. Therefore, the appropriate method is to select those projects which meets certain identified criteria.
+
+The requirement for such a study would be to select those projects who have been proved successful. In traditional software world, quantifying success is easy because there are metrics such as number of sales. But in FOSS ecology such a metric loses its significance. Therefore, it was decided to use a metric identified by the Sourceforge.net as the measure of success.
+
+Sourceforge.net has the practice of ranking all the projects hosted in its site based on a fixed formula {write more}
+
+This data is captured in the table STATS\_GROUP\_RANK\_BYMONTH. The structure of this table is given in Table\ref{Tabrank}
+
+The projects which have remained in top position (Rank 1) for more than two consecutive months were selected as candidates for further analysis. The list of selected projects is given in Table \ref{Topprojs}
+
+\begin{table}
+\begin{center}
+\caption{Structure of Table STATS\_GROUP\_RANK\_BYMONTH}
+\begin{tabular}{|l|l|l|}\hline 
+Column & Type & Modifiers\\\hline
+group\_id &integer &not null default 0\\\hline
+rankdate &integer &not null default 0\\\hline
+ranking &integer &not null default 0\\\hline
+percentile &double precision &default 0.0\\\hline
+score &bigint &not null default (0)::bigint\\\hline
+\end{tabular}
+\label{Tabrank}
+\end{center}
+\end{table}
+
+\begin{table}
+\begin{center}
+\caption{Top Ranked Projects in Sourceforge.net}
+\begin{tabular}{|l|l|}\hline 
+Project-Id & Name \\\hline
+1&SourceForge.net\\\hline
+235&Pidgin\\\hline
+84122&Azureus\\\hline
+162271&Openbravo ERP\\\hline
+176962&ADempiere ERP Business Suite\\\hline
+196195&PostBooks ERP\\\hline
+\end{tabular}
+\label{Topprojs}
+\end{center}
+\end{table}
+
+\section{Growth Pattern of Developers }
+\label{s:dvlprs}
+The surest sign of the success of a FOSS project is the increase in the number of developers working on that project. The attractiveness of FOSS projects is that anyone who is interested can become a stakeholder in the development of the software. The member is open to all and there are no restrictions imposed on a developer once he joins a particular project. Given the perception about the success of the FOSS projects it is natural to assume that the number of developers for top projects keep increasing over time.
+
+The procedure followed for finding the number of developers for a given project over the time period is given below
+
+\begin{verbatim}
+Let P be the Project under study
+Let (x,y) be an entry in Project_Develop[i]
+            if y subscribes to project x for the month i
+Let D[i] be the number of Developers subscribed to P in the month i
+
+FOR i in (1 to 52)
+DO
+  x:=P	
+  D[i]:=COUNT(PROJECT_DEVELOP[x][y]) 
+DONE
+\end{verbatim} 
+
+The result obtained by appying the above procedure to find the number of developers for the top projects from Feb 2005 to Aug 2008 is given in Figure \ref{figdev}.
+
+It can be observed that there is a steady increase in the number of developers subscribing to the top projects indicating the growing interest in those projects.
+
+\begin{figure}
+ \begin{center}
+ \subfloat[1]{\label{d1}\includegraphics[scale=0.7]{d1.eps}} \\
+  \subfloat[235]{\label{d235}\includegraphics[scale=0.7]{d235.eps}}\clearpage
+  \subfloat[84122]{\label{d84122}\includegraphics[scale=0.7]{d84122.eps}}\\
+   \subfloat[162271]{\label{d162271}\includegraphics[scale=0.7]{d162271.eps}}\clearpage
+    \subfloat[176962]{\label{d176962}\includegraphics[scale=0.7]{d176962.eps}}
+      \subfloat[196195]{\label{d196195}\includegraphics[scale=0.7]{d196195.eps}}
+\caption{Developer Growth}
+  \label{figdev}
+\end{center}
+\end{figure}
+
+\section{Developer Dedication}
+
+The previous discussion (Section \ref{s:dvlprs}) proved that there is a growing interest among developers to join top projects demonstrated through the increasing number of subscribers. But the question of how serious the developers are remains unanswered. Therefore, it is necessary to find the dedication of the developers towards the project they have subscribed.
+
+Dedication for the purpose of this discussion is defined as the amount of attention a developer reserves for a project. It is assumed that if a developer subscribes to many projects he may distribute his attention equally among all the subscribed projects. Therefore, lesser project subscription will imply more dedication. Further, if a developer subscribes to a single project, it is assumed that he is completely dedicated to that project.
+
+Therefore to understand the dedication of the developers to the projects they subscribe to, there is a need to analyse the following issues
+\begin{itemize}
+\item {How many projects does each developer subscribe to?}
+ \item{Among the developers working on a project how many work only on that project?}
+\end{itemize}
+
+The procedure given below finds both the number of projects subscribed by the developers and percentage of dedicated developers for a given project P. 
+
+\begin{verbatim}
+FOR i IN (1 to 54)
+DO
+	Dev_List[i]:= list of unique developers working in P for the month i
+	Tot_Dev[i]:=Count of unique developers working in P for the month i
+DONE
+
+FOR i IN (1 to 54)
+DO
+  FOR j in Dev_List[i]
+  DO
+   Proj_Count[j]:=count of projects subscribed by each developer
+  DONE
+  x:= COUNT(Proj_Count)
+  
+  FOR k IN ( 1 to x)
+  DO
+    IF (Proj_Count[k] = 1)
+      Ded_Dvlp_Count[i]++
+  DONE
+
+  Dedicated_Developers:= (Ded_Dvlp_Count[i] / Tot_Dev[i]) * 100
+	
+DONE
+\end{verbatim}
+
+The number of projects subscribed by each unique developer in every top project is given in Figure \ref{figproj}. It is clearly seen that majority of them subscribe to fewer projects. The reason may be that there is strict protocol exists within each project to admit new developer into the group. Though anyone can theoretically subscribe to any project, the rights to committ and make important changes is limited to few. 
+
+The results of finding dedicated developers in top projects is listed in Table \ref{Deddevls}. It is observed that on an average 70\% of the developers in these projects are dedicated developers. This means the success of these projects may be attributed to the dedication of large number of developers. 
+
+\begin{figure}
+ \begin{center}
+ \subfloat[1]{\label{p1}\includegraphics[scale=0.6]{p1.eps}} 
+  \subfloat[235]{\label{p235}\includegraphics[scale=0.6]{p235.eps}}\\
+  \subfloat[84122]{\label{p84122}\includegraphics[scale=0.6]{p84122.eps}}
+   \subfloat[162271]{\label{p162271}\includegraphics[scale=0.6]{p162271.eps}}\\
+    \subfloat[176962]{\label{p176962}\includegraphics[scale=0.6]{p176962.eps}}
+      \subfloat[196195]{\label{p196195}\includegraphics[scale=0.6]{p196195.eps}}
+\caption{Projects subscribed by Developers}
+  \label{figproj}
+\end{center}
+\end{figure}
+
+\begin{table}
+\begin{center}
+\caption{Dedicated Developers in Top Projects}
+\begin{tabular}{|l|l|}\hline 
+Project-Id & Dedicated Developers (percent) \\\hline
+1&29\\\hline
+235&51\\\hline
+84122&83\\\hline
+162271&92\\\hline
+176962&76\\\hline
+196195&89\\\hline
+Average&70\\\hline
+\end{tabular}
+\label{Deddevls}
+\end{center}
+\end{table}
+
+\section{Developer Join and Drop Patterns}
+\label{s:join}
+The previous discussion (Section \ref{s:dvlprs}) answered the question of how developers subscribe to top projects. But the discussion does not consider the actual movement of developers from and to the project under discussion. The use of summary data misses the actual data that needs to be studied. The scenario is clearly defined in the following example
+
+\begin{verbatim}
+
+let D[i] be the list of unique developers in project P for month i
+let D[j] be the list of unique developers in project P for month i+1
+
+assume,
+
+D[i]:= {a, b, c, d, e} 
+D[j]:= {a, d, e, f, g, h}
+
+\end{verbatim}
+
+The procedure defined in Section \ref{s:dvlprs} would have identified the difference in number of developers as 1. Though this is true, there is a drastic change in the composition of the developers in consecutive datasets. Since the changing patterns of developer subscription holds important clues for the behaviour in FOSS ecology, the study of such movements is undertaken here.
+
+Continuing the example mentioned above,
+\begin{verbatim}
+if,
+
+A = D[i] - D[j] 
+B = D[j] - D[i]
+
+then, 
+
+A = {b, c}
+B = {f, g, h}
+
+\end{verbatim}
+
+In the above example, A represents the developers who have dropped from the project and B represents the developers who have joined the project. As observed from the above example, this data is more meaningful than calculating the summary count of number of developers subscribing to a project.
+
+The procedure for finding the number of developers who join and drop from a project P is given below
+
+\begin{verbatim}
+
+FOR i IN (1 to 54)
+DO
+	Dev_List[i]:= list of unique developers working in P for the month i
+DONE
+
+FOR i IN (1 to 53)
+DO
+  A:= Dev_List[i]
+  B:= Dev_List[i+1]
+	
+  JOIN[i] = B - A
+  DROP[i] = A - B
+DONE		
+	
+\end{verbatim}
+
+The result obtained by applying the above procedure to the top projects in listed in Figure \ref{figjoin} . It is clearly observed that the number of developers who drop from a project are compensated mostly by new comers thereby maintaining the balance of the group. Along with the growing subscription count, this process of replacing the developers who exit may also be the reason for the success of these projects.
+
+\begin{figure}
+ \begin{center}
+ \subfloat[1]{\label{j1}\includegraphics[scale=0.5]{j1.eps}} 
+  \subfloat[235]{\label{j235}\includegraphics[scale=0.5]{j235.eps}}\\
+  \subfloat[84122]{\label{j84122}\includegraphics[scale=0.5]{j84122.eps}}
+   \subfloat[162271]{\label{j162271}\includegraphics[scale=0.5]{j162271.eps}}\\
+    \subfloat[176962]{\label{j176962}\includegraphics[scale=0.5]{j176962.eps}}
+      \subfloat[196195]{\label{j196195}\includegraphics[scale=0.5]{j196195.eps}}
+\caption{Developer Join and Drop Patterns}
+  \label{figjoin}
+\end{center}
+\end{figure}
+
+
+\section{Migrants and Debutants}
+
+In Section \ref{s:join}, the issue of how many developers join and drop from a given project was discussed. It was argued that since the developers who exit are replaced by newcomers, the projects remain at top position. In this section, the nature of this join and drop process is analysed further to discover the patterns of developer movement.
+
+One of the promises of FOSS development model is the open access for all interested people to join as developers. The success of the FOSS projects is often attributed to such massive participation of people. Eric Raymond has called this phenomenon as `Linus Law' which says ``Given enough eyeballs, all bugs are shallow". Formally it is written as ``Given a large enough beta-tester and co-developer base, almost every problem will be characterised quickly and the fix will be obvious to someone." \cite{9}
+
+Therefore, it is clear that the celebrated factor of FOSS culture is open invitation to people to participate in projects. The previous section did try to answer this question. But the nature of developers who join the project remains unexplored. In this section, we undertake this activity by calculating the number of developers who migrate to a project from other projects and who start their journey in FOSS through one project.
+
+For the rest of this section, the following definitions apply while referring to a project P in the month i
+
+MIGRANT - a developer who has already subscribed to at-least one project other than P in months 1 to i-1
+
+DEBUTANT - a developer who has subscribed to only P in i and has not subscribed to any project in months 1 to i-1
+
+The extent of migrants and debutants present in a project will clearly demonstrate the extent of applicability of important statements like Linus Law in FOSS ecology.
+
+The procedure for finding the migrants and debutants in project P is given below
+
+
+\begin{verbatim}
+
+JOIN[i] is the list of developers who joined P in month i
+
+Dev_List[i] is the list of unique developers of P in month i
+
+FOR i IN (1 to 53)
+DO
+  FOR j IN JOIN[i]
+  DO
+    FOR k in ( 1 to i-1)
+       DO
+          IF (j IN Dev_List[k])
+           DO
+             Migrant[i]++
+             NEXT j
+           DONE
+       DONE
+       Debutant[i]++
+  DONE
+DONE
+ 
+\end{verbatim}
+
+
+The result of applying this procedure to top projects is listed in Table \ref{Debmigrnts}. It is clearly seen that there is a equal measure of debutants and migrants in these projects. It clearly demonstrates that FOSS projects live up to their slogan of openness regarding membership to their projects. The average of 42\% debutants proves this beyond doubt.
+
+\begin{table}
+\begin{center}
+\caption{Migrants and Debutants in Top Projects}
+\begin{tabular}{|l|l|l|l|}\hline 
+Project-Id & Total Developers & Migrants & Debutants \\\hline
+1&68&37&31\\\hline
+235&35&17&18\\\hline
+84122&37&18&19\\\hline
+162271&114&32&82\\\hline
+176962&143&68&75\\\hline
+196195&61&29&32\\\hline
+Average&76&34&42\\\hline
+\end{tabular}
+\label{Debmigrnts}
+\end{center}
+\end{table}
+
+
+\section{Project Tasks and Time taken for Task Completion}
+
+
+The activity in the FOSS project can be measured in different ways. The most definite metric is the number of commits made to the source code. But that does not capture the various other tasks undertaken by participants in the project. There are very broad set of activities that occur in a FOSS project like requesting new features, reporting bugs, support requests, documentation, localisation and internationalisation etc. To cover all the possible tasks that occur in a project, the Table PROJECT\_TASK is used. The structure of this table is given in Table \ref{Projtasks}.
+
+\begin{table}
+\begin{center}
+\caption{Structure of Table PPROJECT\_TASK}
+\begin{tabular}{|l|l|l|}\hline 
+Column & Type & Modifiers\\\hline
+project\_task\_id &integer &not null \\\hline
+group\_project\_id &integer &not null default 0\\\hline
+summary &text &not null default ''::text\\\hline
+details &text &not null default ''::text\\\hline
+percent\_complete &integer &not null default 0\\\hline
+priority &integer &not null default 0\\\hline
+hours &double precision &not null default (0)::double precision\\\hline
+start\_date &integer &not null default 0\\\hline
+end\_date &integer &not null default 0\\\hline
+created\_by &integer &not null default 0\\\hline
+status\_id &integer &not null default 0 \\\hline
+\end{tabular}
+\label{Projtasks}
+\end{center}
+\end{table}
+
+The time taken to complete the tasks is also captured in this table. The number of days taken to complete a task is a sure sign of the activity occuring in a project. It is expected that in Top Ranked projects, the response time for completing projects be less.
+
+The procedure for finding the number of tasks in the project P is as follows
+
+\begin{verbatim}
+FOR i in (1 to 54)
+DO
+  FOR ALL in Project_Task
+  DO
+    IF (Project_Task[i].Project_Group_ID = P)
+      P_Task[i]++
+  DONE
+DONE
+\end{verbatim}
+
+
+The procedure for finding the time taken for task completion for a project P is as follows
+
+\begin{verbatim}
+FOR i in (1 to 54)
+DO
+  FOR ALL in Project_Task
+  DO
+     IF (Project_Task[i].Project_Group_ID = P)
+     DO
+        P_Days[i] = (End_Date - Start_Date)/ 86400 
+     DONE
+DONE
+\end{verbatim}
+
+
+This procedure was applied only for three projects with the ids 1, 84122 and 176962. The results are given in Figure \ref{figtasktime}. The results for other three Top Ranked projects were not significant. Hence they were not considered for discussion. It is observed that the number of tasks in all the three projects have reduced considerably with time. This can be taken as the sure sign of maturity of the project. In the initial stages of the projects, the users request many features and the testers discover many bugs. Therefore in any project, the activity will be high at the start. As the time progresses, the product becomes stable and the number of tasks reduces. This can be clearly seen in the results. The number of days taken to complete the tasks also follows the same trend. The significant reduction in the time required to complete the tasks can also be considered as the sign of maturity of the project. 
+
+Therefore, it is clear that one of the sure sign of a successful FOSS project is the reduced number of tasks over a period of time and reduction in the number of days required to complete the tasks in the project.
+
+\begin{figure}
+ \begin{center}
+ \subfloat[task-1]{\label{ta1}\includegraphics[scale=0.6]{task-1.eps}} 
+  \subfloat[time-1]{\label{tm1}\includegraphics[scale=0.6]{time-1.eps}}\\
+  \subfloat[task-84122]{\label{ta84122}\includegraphics[scale=0.6]{task-84122.eps}}
+     \subfloat[time-84122]{\label{ti84122}\includegraphics[scale=0.6]{time-84122.eps}}\\
+    \subfloat[task-176962]{\label{ta176962}\includegraphics[scale=0.6]{task-176962.eps}}
+      \subfloat[time-176962]{\label{ti176962}\includegraphics[scale=0.6]{time-176962.eps}}
+\caption{Number of Tasks and Time taken to complete the Tasks}
+  \label{figtasktime}
+\end{center}
+\end{figure}
+
+\section{Summary}
+The analysis of Six Top Ranked Projects from Feb 2005 to Aug 2009 yields following results  
+
+\begin{itemize}
+  \item{The average number of Developers is 76}
+  \item{70\% of the Developers are dedicated Developers}
+  \item{34\% of the Developers who join Top Projects migrate from other Projects (Migrants)}
+  \item{42\% of the Developers who join Top Projects are Newbie's (Debutants)}
+  
+\end{itemize}
+
+% ------------------------------------------------------------------------
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../thesis"
+%%% End: 

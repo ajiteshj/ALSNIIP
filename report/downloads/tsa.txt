@@ -1,0 +1,54 @@
+﻿Time Series Analysis
+
+Problem statement
+
+Time Series Analysis provides us with a pragmatic view of the overall network with respect to time in a dynamic fashion in order to understand the growth, evolution and the final outcome of the social network by the effective use of time varying graphs and temporal indicator metrics.
+
+DataSet
+
+1. Twitter data :  This dataset contains where twitter-user's the they are represented by the unique twitter ID's. A relation exist between two twitter ID's only if both have had an interaction. The twitter users having one or many interactions at any given time. In the graph theory paradigm twitter users are represented by nodes or vertices and time used as a sole pararmeter to evaluate them.
+
+2. Source-Forge data  : The following dataset contain unique developer ID's and their interactions over time. In the graph theory paradigm developer's are represented by nodes or vertices and time used as a sole pararmeter to evaluate them.
+
+Pseudocode/Algorithm
+
+Data :  Twitter RawDataFrame
+Result : Complete analysis and growth of the network over time.
+
+Step 1 : Load suitable libraries and edges with time stamps.
+Step 2 : Generate an intial sub-graph with a suitable colour pallete.
+Step 3 : Generate subsequent layout using graphopt with normalized coordinates.
+Step 4 : Determine a suitable time slot and generate other subgraphs illustrating growth.
+Step 5 : Time loop starts and remove edges which are not present.
+Step 6 : A final graph is obtained indicating all the interactions.
+Step 7 : The most influential person in the network is determined.
+
+Procedure :
+
+A suitable twitter dataset has to be analysed dynamically in order to understand the growth of the social network. Temporal graph and time varying graph algrothims are rigrously implemented. We have to understand the evolution of the network and forecast the most influential entity. We generate  snapshots of the networks periodically. The final network shows interaction's of all the individuals in the network. The following snaphots are clubbed into flash content in order to get aesthetically simulating result.
+
+Result :
+
+Snaphots are clubbed into flash content in order to get aesthetically simulating result and determination of the  most influential entity.
+
+Input :
+
+"id1" "id2" "time" 
+1 2 1 
+1 3 1 
+2 3 1 
+5 3 2 
+6 2 3 
+7 2 4 
+8 7 5 
+9 5 6 
+10 7 7 
+11 5 8 
+12 1 9 
+13 6 10 
+14 2 11 
+15 5 12
+
+Output :
+
+Put snapshots.

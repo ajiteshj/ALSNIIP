@@ -1,0 +1,27 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Objectives}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}Elements of Network Analysis}{2}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Social Network Analysis (SNA)}{2}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Concepts used by SNA}{4}{subsection.1.3.2}
+\contentsline {chapter}{\numberline {2}Literature Review}{12}{chapter.2}
+\contentsline {section}{\numberline {2.1}Analysis of Complex Weighted Social Networks}{12}{section.2.1}
+\contentsline {section}{\numberline {2.2}Influence Analysis}{15}{section.2.2}
+\contentsline {section}{\numberline {2.3}Link Prediction}{18}{section.2.3}
+\contentsline {section}{\numberline {2.4}Time Series Analysis}{22}{section.2.4}
+\contentsline {section}{\numberline {2.5}Power Law}{23}{section.2.5}
+\contentsline {chapter}{\numberline {3}System Analysis and Design}{26}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introduction to R}{26}{section.3.1}
+\contentsline {chapter}{\numberline {4}Methodology, Implementation and Results}{28}{chapter.4}
+\contentsline {section}{\numberline {4.1}Datasets Available on Networks, and Datasets Used}{28}{section.4.1}
+\contentsline {section}{\numberline {4.2}Methods and Techniques}{30}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Weight Assignment}{30}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Sampling Based Influence Analysis for Large Networks}{34}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Link Prediction}{42}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Time Series Analysis}{44}{subsection.4.2.4}
+\contentsline {chapter}{\numberline {5}Testing, Conclusions and Future Work}{48}{chapter.5}
+\contentsline {section}{\numberline {5.1}Testing}{48}{section.5.1}
+\contentsline {section}{\numberline {5.2}Conclusions}{48}{section.5.2}
+\contentsline {section}{\numberline {5.3}Future Work}{50}{section.5.3}
+\contentsline {chapter}{References}{53}{chapter*.22}

@@ -1,0 +1,264 @@
+\chapter{Studies of Project Tasks }
+\ifpdf
+    \graphicspath{{Chapter4/Chapter4Figs/PNG/}{Chapter4/Chapter4Figs/PDF/}{Chapter4/Chapter4Figs/}}
+\else
+    \graphicspath{{Chapter4/Chapter4Figs/EPS/}{Chapter4/Chapter4Figs/}}
+\fi
+
+\section{Introduction}
+Software products are members of complex systems. The complexity of software is due to the large number of requirements such a product should satisfy. Additionally, the development of software demands diverse skill sets, technically and other, which one person cannot possibly posses. Any software which is expected to run in real world is therefore built by a group of developers. This feature of software development has forced the practitioners to adopt some design principles to accommodate multiple developers working on a project.
+
+The earliest attempts to solve this problem was to divide the software development process into various related activities. All the process models and methodologies used in software engineering embodies this idea. The basic activities of analysis, design, code, test and maintain are common to all development methods. This separation of concern gives an opportunity to divide the software development into tasks which can be alloted to each individual developer or groups of developers. 
+
+Another way to solve the problem of synchronising multiple developers is following the design principle of modularity. Modularity helps to isolate functional elements of the system. One module may be debugged, improved, or extended with minimal interaction to system discontinuity. As important as modularity is specification. The key to production success of any modular construct is a rigid specification of the interfaces. They also help in the maintenance task by supplying the documentation necessary to train, understand, and provide maintenance.
+
+The principles of separation of concern and modularity are applied extensively in development of FOSS. Modularising the software component allows parallelism  and thus speeds up the process of development. Modularising also allows the developers to select a particular task to complete. In this chapter, the study of such project tasks are undertaken. The number of tasks in each project, time taken for completing the tasks, the allocation of tasks to developers and the amount of tasks they complete are studied. 
+
+\section{Number of Project Tasks} 
+
+The activity in the FOSS project can be measured in different ways. The most definite metric is the number of commits made to the source code. But that does not capture the various other tasks undertaken by participants in the project. There are very broad set of activities that occur in a FOSS project like requesting new features, reporting bugs, support requests, documentation, localisation and internationalisation etc. To cover all the possible tasks that occur in a project, the Table PROJECT\_TASK is used. The structure of this table is given in Table \ref{Projtasks}.
+
+\begin{table}
+\begin{center}
+\caption{Structure of Table PROJECT\_TASK}
+\begin{tabular}{|l|l|l|}\hline 
+Column & Type & Modifiers\\\hline
+project\_task\_id &integer &not null \\\hline
+group\_project\_id &integer &not null default 0\\\hline
+summary &text &not null default ''::text\\\hline
+details &text &not null default ''::text\\\hline
+percent\_complete &integer &not null default 0\\\hline
+priority &integer &not null default 0\\\hline
+hours &double precision &not null default (0)::double precision\\\hline
+start\_date &integer &not null default 0\\\hline
+end\_date &integer &not null default 0\\\hline
+created\_by &integer &not null default 0\\\hline
+status\_id &integer &not null default 0 \\\hline
+\end{tabular}
+\label{Projtasks}
+\end{center}
+\end{table}
+
+The procedure for finding the number of tasks in the project P is as follows
+
+\begin{verbatim}
+FOR i in (1 to 54)
+DO
+  FOR ALL in Project_Task
+  DO
+    IF (Project_Task[i].Project_Group_ID = P)
+      P_Task[i]++
+  DONE
+DONE
+\end{verbatim}
+
+This procedure was applied only for three projects with the ids 1, 84122 and 176962. The results are given in Figure \ref{figtask}. The results for other three Top Ranked projects were not significant. Hence they were not considered for discussion. It is observed that the number of tasks in all the three projects have reduced considerably with time. This can be taken as the sure sign of maturity of the project. In the initial stages of the projects, the users request many features and the testers discover many bugs. Therefore in any project, the activity will be high at the start. As the time progresses, the product becomes stable and the number of tasks reduces. This can be clearly seen in the results. 
+
+\begin{figure}
+ \begin{center}
+ \subfloat[1]{\label{ta1}\includegraphics[scale=0.7]{task-1.eps}} \\
+   \subfloat[84122]{\label{ta84122}\includegraphics[scale=0.7]{task-84122.eps}} \\
+     \subfloat[176962]{\label{ta176962}\includegraphics[scale=0.7]{task-176962.eps}}
+ \caption{Number of Tasks }
+  \label{figtask}
+\end{center}
+\end{figure}
+
+
+\section{Time taken for Task Completion}
+
+The time taken to complete the tasks is also captured in the Table \ref{Projtasks}. The number of days taken to complete a task is a sure sign of the activity occuring in a project. It is expected that in Top Ranked projects, the time for completing tasks be less.
+
+The procedure for finding the time taken for task completion for a project P is as follows
+
+\begin{verbatim}
+FOR i in (1 to 54)
+DO
+  FOR ALL in Project_Task
+  DO
+     IF (Project_Task[i].Project_Group_ID = P)
+     DO
+        P_Days[i] = (End_Date - Start_Date)/ 86400 
+     DONE
+DONE
+\end{verbatim}
+
+
+This procedure was applied only for three projects with the ids 1, 84122 and 176962. The results are given in Figure \ref{figtime}. 
+
+Therefore, it is clear that one of the sure sign of a successful FOSS project is the reduced number of tasks over a period of time and reduction in the number of days required to complete the tasks in the project.
+
+\begin{figure}
+ \begin{center}
+   \subfloat[1]{\label{tm1}\includegraphics[scale=0.7]{time-1.eps}}\\
+      \subfloat[84122]{\label{ti84122}\includegraphics[scale=0.7]{time-84122.eps}}\\
+       \subfloat[176962]{\label{ti176962}\includegraphics[scale=0.7]{time-176962.eps}}
+\caption{Time taken to complete the Tasks}
+  \label{figtime}
+\end{center}
+\end{figure}
+
+\section{Task Allocation to Developers}
+
+The previous sections covered the issues of number of tasks and time taken to complete the tasks in Top Ranked projects. The number of tasks and the time taken to complete them were found to decrease with time thereby demonstrating the maturity of the project. In this section, the issue of task allocation in the Top Ranked projects are analysed.
+
+One of the attraction of development process in FOSS projects is the ability of developers to select the task they are interested to contribute. Unlike in the traditional development methodologies where task allocation is done in top down manner, FOSS projects envision developers picking the tasks voluntarily. It is often said that the reason for success of FOSS is often this factor.
+
+The analysis of projects shows that there is a method followed in allocation of tasks to developers. The core development team distributes the task of development among the members of the group. This strict allocation principle become necessary for a variety of reasons. Firstly, a developer may be the maintainer of the module for which changes are required. Secondly, the identified person may be the only person who has access permission to make the required changes to the source code of the module. 
+
+The data regarding the task assignment is captured in Table and Table 
+
+The process of finding the pattern of task allocation for a project P in a given month i is given below
+
+\begin{verbatim}
+
+FOR ALL in Project_Task
+DO
+   IF (Project_Task[i].Project_Group_ID = P)
+    DO
+        x[i] = Project_Task[i].created_by
+
+          FOR ALL in Project_Assigned_To
+           y[i] = Project_Assigned_To[i].assigned_to_id
+    DONE
+
+DONE
+
+\end{verbatim}
+
+The co-ordinates (x,y) thus obtained are used to plot a graph with each vertex representing the developer and an edge denoting a task alloted by a developer to the other. The undirected graphs thus represents the relationship between developers. The results obtained for the month of August 2009 are shown in Figure , Figure and Figure
+
+The results clearly show a skewed pattern of developer involvement in these projects. Table 4.4 (Chapter 4) lists the total number of developers in the Top Ranked projects. According to the data available in that list, project\_id\_1 has 68 developers. But Figure captures the interaction between only 17 developers. Therefore, only 25\% of the total developers in this project are allocated some task.
+
+Similarly project\_id\_84122 has 37 and project\_id\_ 176962 has 143 developers according to previous results. But the present analysis shows task allocation to only 7 and 36 developers respectively. Therefore, the amount of developers who are allocated some task in these projects are 19\% and 25\% respectively. 
+
+\begin{table}
+\begin{center}
+\caption{Structure of Table PROJECT\_ASSIGNED\_TO}
+\begin{tabular}{|l|l|l|}\hline 
+Column & Type & Modifiers\\\hline
+project_assigned_id &integer &not null default nextval\\\hline
+project_task_id &integer &not null default 0\\\hline
+assigned_to_id &integer &not null default 0 \\\hline
+\end{tabular}
+\label{Projassignedto}
+\end{center}
+\end{table}
+
+\begin{figure}
+\centering
+\caption{Task Allocation in Project-1}
+\includegraphics[scale=0.7]{1.eps}
+\label{fig1}
+\end{figure}
+
+\begin{figure}
+\centering
+\caption{Task Allocation in Project-84122}
+\includegraphics[scale=0.7]{84122.eps}
+\label{fig2}
+\end{figure}
+
+\begin{figure}
+\centering
+\caption{Task Allocation in Project-176962}
+\includegraphics[scale=0.7]{176962.eps}
+\label{fig3}
+\end{figure}
+
+\begin{table}
+\begin{center}
+\caption{Task Allocation in Projects (Aug 09)}
+\begin{tabular}{|l|l|l|}\hline 
+Project\_Id & Total Developers & Developers who are Alloted Tasks\\\hline
+1&68&17\\\hline
+84122&37&7\\\hline
+176962&143&36 \\\hline
+\end{tabular}
+\label{Taskalloc}
+\end{center}
+\end{table}
+
+\section{Task Completion by Developers}
+
+\begin{table}
+\begin{center}
+\caption{Task Completed in Project-1}
+\begin{tabular}{|l|l|}\hline 
+Developer & Task Completed(Percent)\\\hline
+114&0\\\hline
+19871&0\\\hline
+30106&0\\\hline
+2549&2\\\hline
+29491&3\\\hline
+171&4\\\hline
+2456&4\\\hline
+3&6\\\hline
+2&8\\\hline
+100&9\\\hline
+38750&10\\\hline
+11970&18\\\hline
+858&29\\\hline
+\end{tabular}
+\label{task1}
+\end{center}
+\end{table}
+
+\begin{table}
+\begin{center}
+\caption{Task Completed in Project-84122}
+\begin{tabular}{|l|l|}\hline 
+Developer & Task Completed(Percent)\\\hline
+8021&1\\\hline
+149899&3\\\hline
+100&17\\\hline
+544907&77\\\hline
+\end{tabular}
+\label{task84122}
+\end{center}
+\end{table}
+
+\begin{table}
+\begin{center}
+\caption{Task Completed in Project-176962}
+\begin{tabular}{|l|l|}\hline 
+Developer & Task Completed(Percent)\\\hline
+1604408&0\\\hline
+1179440&1\\\hline
+1595260&1\\\hline
+1643006&1\\\hline
+867558&1\\\hline
+948611&1\\\hline
+993007&1\\\hline
+1715770&2\\\hline
+1139836&3\\\hline
+1311487&3\\\hline
+1319537&3\\\hline
+1597230&3\\\hline
+100&7\\\hline
+579980&9\\\hline
+1180760&11\\\hline
+195397&15\\\hline
+332830&29\\\hline
+\end{tabular}
+\label{task176962}
+\end{center}
+\end{table}
+
+\section{Summary}
+The analysis of Six Top Ranked Projects from Feb 2005 to Aug 2009 yields following results  
+
+\begin{itemize}
+  \item{The average number of Developers is 76}
+  \item{70\% of the Developers are dedicated Developers}
+  \item{34\% of the Developers who join Top Projects migrate from other Projects (Migrants)}
+  \item{42\% of the Developers who join Top Projects are Newbie's (Debutants)}
+  
+\end{itemize}
+
+% ------------------------------------------------------------------------
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../thesis"
+%%% End: 

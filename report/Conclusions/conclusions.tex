@@ -1,0 +1,46 @@
+\def\baselinestretch{1}
+\chapter{Testing, Conclusions and Future Work}
+\ifpdf
+    \graphicspath{{Conclusions/ConclusionsFigs/PNG/}{Conclusions/ConclusionsFigs/PDF/}{Conclusions/ConclusionsFigs/}}
+\else
+    \graphicspath{{Conclusions/ConclusionsFigs/EPS/}{Conclusions/ConclusionsFigs/}}
+\fi
+
+\def\baselinestretch{1.66}
+
+\section{Testing}
+Unit testing practices have been deployed in order to test the functionality of the source code and its behaviour. We found methods to improve efficiency of the source code. The above algorithms were run for a variety of data-sets and thus the underlying results matched the training data-set and the testing data-sets, thus establishing proof of concept. Integration testing was performed as many individual modules were integrated into a single script and was rigorously tested in order to obtain a fully functional system. Big-data paradigm was introduced and initialized to see if the concepts could function regardless of the size of the input data-set. Scalability testing was performed in order to enrich the user’s experience and to make sure that the concept could run under heavy load regardless of the input size.
+
+\section{Conclusions}
+
+Weights play an important role in the analysis of social networks. They represent the strength of interaction between the nodes. In this project, weights have been assigned to each edge of the graph proportional to the capacity of various elements of the network. By using this social network model, it has been observed that the link weights make the model more realistic in describing human interactions and also generate a clear community structure. It is seen that the mapping from unweighted networks to weighted multigraphs have yielded better results on the application of various social network analysis algorithms. It is concluded that weighted networks serve as a suitable input for rigorous analysis techniques such as influence analysis, link prediction and time series analysis.
+
+The Within and Outside of Common Group (WOCG) employed for link prediction uses information of communities to which the nodes/users belong. To obtain the community information, clustering algorithms with high efficiency and low computational cost are used. The proposed similarity measures are applied on the community information in order to predict links.
+The results suggest that communities to which the users belong conveys relevant clues about user's interest and behaviour. Hence, the proposed similarity measures improve the performance of link prediction task by considering information of common groups to which the users belong.
+
+Influence analysis is an approach to identify the most influential individual of all the individuals in given social group or organisation. An influential individual is one who is able to alter the behaviour of most of other individuals linked to the former. In this project a statistically significant sample is extracted and clustered based on pagerank of the individuals in the different clusters. Four different approaches of influence analysis are applied to identify the influential individuals in the various clusters. By identifying these influential individuals, the rate and direction of growth of the network can be predicted. It can be inferred that as new individuals attempt to join the network, these influential individuals play an important role in determining who among these individuals may or may not be part of the network. Influence analysis plays a vital role in target marketing where corporations can identify huge fan followings in popular social networking sites and approach these influential individuals to promote their products or become their brand ambassadors.
+
+Time Series analysis is a distinctive method of analysing networks from a static approach to a dynamic approach where given any dataset a network can be analysed by establishing time as a parameter. Temporal method provides us with an illustrative way of analysing the given network topology as it considers only a part of network at a time and hence determining the rate of the growth of the network. Results of the initial snapshots suggest that the number of users in the underlying social network are minimal and thus the giving us a fair insight about the influence it can have in a real world environment. Incremental approach over a period of time indicates to us that there a large number of users joining the network and thus forming communities in such a fashion that they have similarities. When the whole network has been rigorously analysed outliers in the given network can be detected, entities which are the most influential in the given network can be established and the effect that the influential entities can have on the network can be inferred. Time series analysis has provided us with aesthetically better comprehension of the rate of growth of the social network and the properties that a network should possess so as to be considered a strong social entity.
+
+
+\section{Future Work}
+
+\begin{itemize}
+\item The model and methodology developed in this project can be extended to accommodate multi-attribute nature of interactions between individuals in any large network. In particular, weight assignment, influence analysis, link prediction and time series analysis can all be done with multi-attribute relationships between individuals.
+
+\item The scope of the results derived in this project need to be studied in order to apply these results to large networks arising out of real-world interactions so that society may benefit. 
+
+\item Improve the performance of web search, recommendations in collaborative filtering systems, spreading a technology in the market using viral marketing techniques, etc. 
+\end{itemize}
+
+
+
+
+%%% ----------------------------------------------------------------------
+
+% ------------------------------------------------------------------------
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../thesis"
+%%% End: 

@@ -1,0 +1,5 @@
+Sample Percent      Number of Vertices Selected      Number of Clusters Found
+10                  189                                 11
+20                  379                                 11
+30                  569                                 10
+40                  759                                 8

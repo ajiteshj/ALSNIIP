@@ -1,0 +1,337 @@
+\documentclass[a4paper]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{mathabx}
+\usepackage{caption}
+
+\algnewcommand\algorithmicinput{\textbf{Input:}}
+\algnewcommand\INPUT{\item[\algorithmicinput]}
+\algnewcommand\algorithmicoutput{\textbf{Output:}}
+\algnewcommand\OUTPUT{\item[\algorithmicoutput]}
+
+\title{Algorithms}
+
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+
+%Weight Assignment
+
+\begin{algorithm}
+\caption{Weight Assignment algorithm}\label{algo:wa}
+
+\begin{algorithmic}[1]
+\INPUT
+    \Statex 1. Data frame $DF(from, to)$, each row signifying an edge between $from$ vertex and $to$ vertex.
+\OUTPUT
+    \Statex 1. Vector $wts$ containing the weight assigned to each edge in $DF$. 
+\Statex 
+\Procedure{Weight}{$DF(from, to)$}
+    \State $G(V, E) \gets DF(from, to)$
+    \Comment{$E = (u, v)\ \forall\ u, v\ \epsilon\ V$}
+    \State $simplify(G)$
+    \Comment{$simplify$ removes all self loops and multiple edges}
+    \State $deg \gets degree(G)$
+    \State Let $wts$ be a vector of length $|E|$ initialised to $0$
+    \For{ \textbf{each}\ $E_m = (u, v)\ \epsilon\ E,\ m = 1, ..., |E|$}
+        \State $start\_c \gets deg[u]$
+        \State $end\_c \gets deg[v]$
+        \State $wts[m] \gets (start\_c + end\_c - 1) / |V| - 1$
+    \EndFor \label{wa_mendfor}
+    \State \textbf{return} $wts$
+\EndProcedure
+
+\end{algorithmic}
+\end{algorithm}
+
+%Link Prediction
+
+\begin{algorithm}
+\caption{Link Prediction algorithm}\label{algo:lp}
+
+\begin{algorithmic}[1]
+\INPUT
+    \Statex 1. Data frame $DF(from, to)$, each row signifying an edge between $from$ vertex and $to$ vertex.
+    \Statex 2. Floating-point value  $threshold$ for the similarity score.
+\OUTPUT
+    \Statex 1. Data frame $sim(from, to, s)$, each row signifying an edge between $from$ vertex and $to$ vertex 
+     with the corresponding similarity score $s$.
+\Ensure
+    \Statex $G(V, E)$ is an incomplete graph.
+\Statex
+\Procedure{Link}{$DF(from, to), threshold$}
+    \State $G(V, E)\gets DF(from, to)$ 
+    \Comment{$E = (u, v)\ \forall\ u, v\ \epsilon\ V$} 
+    \State $simplify(G)$ 
+    \Comment{$simplify$ removes all self loops and multiple edges}
+    \State $fc \gets fastgreedy\_cluster(G)$ 
+    \Comment{$fastgreedy\_cluster(G)$ performs fastgreedy clustering algorithm on graph $G$ and returns each cluster as a subgraph 
+    $C_i = (V_i, E_i), i = 1, ..., c$ where $c$ is the number of identified clusters.}
+    \State $u \gets K(V)$ 
+    \Comment{$K(V)$ returns the number of edges required for a complete graph of $V$ vertices}
+    \State $le \gets |E| / u$
+    \State $lne \gets u - |E| / u$
+    \State $\Omega \gets le / lne$
+    \For{ \textbf{each}\ $u, v\ \epsilon\ V$}
+        \If{$u \neq v \wedge (u, v)\ \not\in\ E$}
+            \State $total\_cn \gets get\_common\_neighbours(u, v)$
+            \State $u\_cluster \gets fc\$membership[u]$  
+            \Comment{$fc\$membership[u]$ returns the cluster to which vertex $u$ belongs to}
+            \State $v\_cluster \gets fc\$membership[v]$ 
+            \If{$u\_cluster = v\_cluster$}
+                \For{ \textbf{each}\ $w\ \epsilon\ V$}
+                    \State $u\_cn <- get\_common\_neighbours(u, w)$
+                    \State $v\_cn <- get\_common\_neighbours(v, w)$
+                    \If{$u\_cn$ $\ne$ $0$ $\wedge$ $v\_cn$ $\ne$ $0$}
+                        \If{$fc\$membership[w] = u\_cluster$}
+                            \State $within\_cn++$
+                        \EndIf \label{lp_memlmemiendif}
+                    \EndIf \label{lp_commonendif}
+                \EndFor \label{lp_wendfor}
+            \Else
+                \State $within\_cn \gets 0$
+            \EndIf \label{lp_memendif}
+            \State $outside\_cn \gets within\_cn - total\_cn$
+            \If{$within\_cn\ne0 \wedge outside\_cn\ne0$}
+                \State $s \gets within\_cn / outside\_cn * \Omega$
+            \EndIf \label{lp_withinendif}
+            \State Let $sim$ be a data frame having three columns, namely, $from$, $to$ and $score$ initialised to $0$
+            \If{$s$ \textgreater\ $threshold$}
+                \State $append\_to\_data\_frame(sim, i, j, s)$  
+            \EndIf \label{lp_sendif}
+        \EndIf \label{lp_uvendif}
+    \EndFor \label{lp_uvendfor}
+    \State $sort\_descending\_by\_column(sim, 3)$
+    \State \textbf{return} $sim$
+\EndProcedure
+\algstore{lp}
+\end{algorithmic}
+\end{algorithm}
+
+\clearpage
+
+\begin{algorithm}
+\ContinuedFloat
+\caption{Link Prediction algorithm (continued)}
+\begin{algorithmic}[1]
+\algrestore{lp}
+\Procedure{K}{$G(V, E)$}
+    \State Let $num$ be an integer variable initialised to 0
+    \If{$G$ is directed}
+        \State $num \gets |V| * |V - 1|$
+    \Else
+        \State $num \gets |V| * |V - 1| / 2$ 
+    \EndIf \label{lp_Gendif}
+    \State \textbf{return} $num$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+%Influence Analysis
+
+\begin{algorithm}
+\caption{Influence Analysis algorithm}\label{algo:ia}
+
+\begin{algorithmic}[1]
+\INPUT
+    \Statex 1. Data frame $DF(from, to)$, each row signifying an edge between $from$ vertex and $to$ vertex.
+    \Statex 2. Integer $abscut\_off$ which is the cutoff indegree for absolute cut score method.
+    \Statex 3. Integer $fixcut\_off$ which is the cutoff percentage for fixed percentage of population method.
+    \Statex 4. Integer $sdcut\_off$ which is the number of standard deviations for standard deviation method.
+    \Statex 5. Integer $num\_sim$ which is the number of simulations to be performed in random permutation method.
+    \Statex 6. Floating-point $randcut\_off$ which is the p value for random permutation method. 
+\OUTPUT
+    \Statex 1. Vector $abscut$ containing influentials identified by absolute cut score method.
+    \Statex 2. Vector $fixcut$ containing influentials identified by fixed percentage of population method.
+    \Statex 3. Vector $sdcut$ containing influentials identified by standard deviation method.
+    \Statex 4. Vector $randcut$ containing influentials identified by random permutation method.
+\Statex
+\Procedure{Influence}{$DF(from, to), abscut\_off, fixcut\_off, sdcut\_off, num\_sim, randcut\_off$} 
+    \State $G(V, E) \gets DF(from, to)$
+    \Comment{$E = (u, v)\ \forall\ u, v\ \epsilon\ V$}
+    \State $simplify(G)$
+    \Comment{$simplify$ removes all self loops and multiple edges}
+    \State $C \gets FIND\_STABLE\_CLUSTERED\_SAMPLE(G)$
+    \Comment{$FIND\_STABLE\_CLUSTERED\_SAMPLE(G)$ returns a set of clusters identified from a statistically significant sample} 
+    \State $not\_yet \gets G - C$
+    \State $final \gets CLUSTER\_BY\_PAGERANK(C, not\_yet)$
+    \Comment{$CLUSTER\_BY\_PAGERANK(C, not\_yet)$ returns a set of clusters which have all vertices of $not\_yet$ clustered to one of the
+             clusters in $C$ based on pagerank algorithm}
+    \State Let $abscut, fixcut, sdcut, randcut$ be vectors initialised to $0$.
+    \For{\textbf{each} $cluster(V_{cluster}, E_{cluster})\ \epsilon\ final$}
+        \State $in\_ties \gets in\_degree(cluster)$
+        \State $desc\_in\_ties \gets sort\_decreasing(in\_ties)$
+        \State $scree\_plot \gets plot(desc\_in\_ties)$
+        \State $draw\_horizontal\_abline(scree\_plot, abscut\_off)$
+        \State $append\_points\_above\_abline\_to\_vector(abscut)$
+        \State $cut\_off\_fix \gets fixcut\_off * |V_{cluster}|$
+        \State $draw\_vertical\_abline(scree\_plot, cut\_off\_fix)$
+        \State $append\_points\_left\_of\_abline\_to\_vector(fixcut)$
+        \State $cut\_off\_sd \gets mean(in\_ties) + sdcut\_off * sd(in\_ties)$
+        \State $draw\_horizontal\_abline(scree\_plot, cut\_off\_sd)$
+        \State $append\_points\_above\_abline\_to\_vector(sdcut)$
+        \State $sim \gets simulation\_conditional\_on\_outdegree(cluster, num\_sim)$
+        \Comment{$simulation\_conditional\_on\_outdegree(cluster, num\_sim)$ performs random simulation of $cluster$ graph $num\_sim$ number of 
+                 times constraining on the outdegree.}
+        \State Let $sim\_in\_ties$ be a vector of length $|V_{cluster}| * num\_sim$ 
+        \For{$j \gets 1\ to\ \#\{sim\}$}
+            \Comment{$\#\{sim\}$ returns the number of clusters in $sim$}
+            \State $append\_to\_vector(sim\_in\_ties, indegree(sim[j])$
+        \EndFor \label{ia_jendfor}
+        \algstore{iamain}
+%        \State $q \gets quantile(sim\_in\_ties, randcut\_off)$
+%        \Comment{$quantile(sim\_in\_ties, randcut\_off)$ returns sample quantiles of $sim\_in\_ties$ corresponding to the given probability
+%                 $randcut\_off$.}
+%        \State $draw\_histogram(sim\_in\_ties)$
+%        \State $draw\_vertical\_abline(sim\_in\_ties, q)$
+%        \State $append\_points\_right\_of\_abline\_to\_vector(randcut)$
+%    \EndFor \label{ia_clusterendfor}  
+%    \State \textbf{return} $abscut, fixcut, sdcut, randcut$
+%\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\clearpage
+
+\begin{algorithm}
+\ContinuedFloat
+\caption{Influence Analysis algorithm (continued)}
+\begin{algorithmic}[1]
+\algrestore{iamain}
+        \State $q \gets quantile(sim\_in\_ties, randcut\_off)$
+        \Comment{$quantile(sim\_in\_ties, randcut\_off)$ returns sample quantiles of $sim\_in\_ties$ corresponding to the given probability
+                 $randcut\_off$}
+        \State $draw\_histogram(sim\_in\_ties)$
+        \State $draw\_vertical\_abline(sim\_in\_ties, q)$
+        \State $append\_points\_right\_of\_abline\_to\_vector(randcut)$
+    \EndFor \label{ia_clusterendfor}
+    \State \textbf{return} $abscut, fixcut, sdcut, randcut$
+\EndProcedure
+\Statex
+\Procedure{Find\_Stable\_Clustered\_Sample}{$G(V, E)$}
+    \State $perc \gets 0.1$
+    \State Let $major\_fc\_length$, $temp$ and $diff$ be vectors of length $10$ initialised to $0$.
+    \State $i \gets 1$
+    \While{$perc \le 1$}
+        \State $len \gets |V| * perc$
+        \State $sample \gets random\_sample\_without\_repetition(G, len)$
+        \Comment{$random\_sample\_without\_repetition(G, len)$ randomly selects $len$ number of vertices and edges corresponding to these
+                 vertices from graph $G$}
+        \State $fc \gets fastgreedy\_cluster(sample)$
+        \Comment{$fastgreedy\_cluster(sample)$ performs fastgreedy clustering algorithm on graph $sample$ and returns each cluster as a subgraph
+        $C_i = (V_i, E_i), i = 1, ..., c$ where $c$ is the number of identified clusters.}
+        \State $major\_fc \gets fc[sizes(fc)$ \textgreater $(0.01 * len)]$
+        \Comment{$sizes(fc)$ returns the number of vertices in each cluster present in $fc$}
+        \State $major\_fc\_length[i] \gets \#\{major\_fc\}$
+        \State $temp[i] \gets major\_fc\_length[i]$
+        \State $res \gets 0$
+        \If{$i$ \textgreater\ $1$}
+            \State $diff[i - 1] \gets |temp[i] - temp[i - 1]|$
+            \If{$i$ \textgreater\ $2$}
+                \If{$|diff[i - 1] - diff[i - 2]| \le res$}
+                    \State $res \gets |diff[i - 1] - diff[i - 2]|$
+                    \State \textbf{break}
+                \Else
+                    \State $res \gets |diff[i - 1] - diff[i - 2]|$ 
+                \EndIf \label{ia_resendif}
+            \EndIf \label{ia_ig2endif}
+        \EndIf \label{ia_ig1endif}
+        \State $i++$
+        \State $perc \gets perc + 0.1$
+    \EndWhile \label{ia_percendwhile} 
+    \State \textbf{return} $major\_fc$ 
+\EndProcedure 
+\algstore{iasample}
+\end{algorithmic}
+\end{algorithm}
+
+\clearpage
+
+\begin{algorithm}
+\ContinuedFloat
+\caption{Influence Analysis algorithm (continued)}
+\begin{algorithmic}[1]
+\algrestore{iasample}
+\Procedure{Cluster\_By\_Pagerank}{$C(V_c, E_c), not\_yet(V_c', E_c')$}
+    \State Let $pageranks$ be vector of length $\#\{C\}$ initialised to $0$.
+    \While{$\#|V_{c'}| \ne 0$}
+        \State $random(key, E_{key}) \gets randomly\_select\_subgraph\_without\_repetition(not\_yet, 1)$
+        \Comment{$randomly\_select\_subgraph\_without\_repetition(not\_yet, 1)$ randomly selects $1$ vertex, $key$ from $not\_yet$ and 
+                 corresponding edges $E_{key} = (key, V_o)$, $V_o$ being vertices in not\_yet having edge to $key$.}
+        \State $delete\_from\_graph(not\_yet, random)$
+        \For{\textbf{each} $C_i = (V_i, E_i)\ \epsilon\ C,\ i = 1, ..., \#\{C\}$}
+            \State Let $check(V_{check}, E_{check})$ be an empty graph object.
+            \State $check \gets C_i$
+            \State $append\_to\_list(V_{check}, key)$
+            \For{\textbf{each} $E_{jkey} = (key, V_{jo})\ \epsilon\ E_{key},\ j = 1, ..., |E_{key}|$}
+                \If{$V_{jo}\ \epsilon\ V_{check}$}
+                    \State $append\_to\_list(E_{check}, E_{jkey})$
+                \EndIf \label{ia_V_joendif}
+            \EndFor \label{ia_E_jkeyendfor}
+            \State $pr \gets pagerank(check)[key]$
+            \State $pageranks[i] \gets pr$
+        \EndFor \label{ia_C_iendfor}
+        \If{$sum(pageranks)$\ \textgreater\ $0$}
+            \State $ind \gets index(max(pageranks))$
+            \State $append\_to\_list(V_{ind}, key)$
+            \For{\textbf{each} $E_{jkey} = (key, V_{jo})\ \epsilon\ E_{key},\ j = 1, ..., |E_{key}|$}
+                \If{$V_{jo}\ \epsilon\ V_{ind}$}
+                    \State $append\_to\_list(E_{ind}, E_{jkey})$
+                \EndIf \label{ia_V_joendif}
+            \EndFor \label{ia_E_jkeyendfor}
+        \EndIf \label{ia_sumendif} 
+    \EndWhile \label{ia_V_c'endwhile}
+    \State \textbf{return} $C$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+%Time Series Analysis
+
+\begin{algorithm}
+\caption{Time Series Analysis algorithm}\label{algo:tsa}
+
+\begin{algorithmic}[1]
+\INPUT
+    \Statex 1. Data frame $DF(from, to, time)$, each row signifying an edge between $from$ vertex and $to$ vertex with the corresponding time, 
+               $time$
+    \Statex 2. Floating-point value $start$ indicating the value of $time$ when analysis must commence.
+    \Statex 3. Floating-point value $end$ indicating the value of $time$ when analysis must terminate.
+    \Statex 4. Floating-point value $increment$ indicating the increments of $start$ in every iteration.
+\OUTPUT
+    \Statex 1. Set of plots, $images(plots)$ containing the plots of the graph at every iteration.
+\Statex
+\Procedure{Time}{$DF(from, to, time), start, end, increment$}
+    \State $G(V, E, T) \gets DF(from, to, time)$
+    \Comment{$E = (u, v, t)\ \forall\ u, v\ \epsilon\ V,\ \forall\ t\ \epsilon\ T$}
+    \State $vcolor \gets generate\_color\_palette(V)$
+    \Comment{$generate\_color\_palette(V)$ returns a distinct color for each vertex in $V$}
+    \State $i \gets start$
+    \While{$i \le end$}
+        \For{\textbf{each} $e\ \epsilon\ E,\ v\ \epsilon\ V$}
+            \If{$e\$time$ \textless\ $i$}
+                \State $e\$weight \gets 1$
+                \State $e\$color \gets "gray"$
+            \Else
+                \State $e\$weight \gets 0$
+                \State $e\$color \gets "black"$
+            \EndIf \label{tsa_eendif}
+            \If{$strength(v) = 0$}
+            \Comment{$strength$ returns the sum of edge weights of adjacent edges of vertex $v$}
+                \State $v\$color \gets "black"$
+            \Else
+                \State $v\$color \gets vcolor[v]$ 
+            \EndIf \label{tsa_strengthendif}
+            \State $v\$size \gets 1 + 2 * log(strength(v))$
+        \EndFor \label{tsa_eendfor}
+        \State $append\_to\_plots(images, plots)$
+        \State $i \gets i + increment$
+    \EndWhile \label{tsa_iendwhile} 
+\EndProcedure
+
+\end{algorithmic}
+\end{algorithm}
+
+\end{document}

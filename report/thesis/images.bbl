@@ -1,0 +1,273 @@
+\begin{thebibliography}{10}
+
+\bibitem{11}
+Mark Aberdour.
+\newblock Achieving quality in open source software.
+\newblock {\em IEEE Software}, Jan / Feb 2007.
+
+\bibitem{41}
+Barry~W. Boehm.
+\newblock A spiral model of software development and enhancement.
+\newblock {\em Computer IEEE}, May 1988.
+
+\bibitem{29}
+Andrea Bonaccorsi and Cristina Rossi.
+\newblock Altruistic individuals, selfish firms? the structure of motivation in
+  open source software, http://www.firstmonday.org/issues/issue9\_1/bonaccorsi.
+
+\bibitem{47}
+Frederick~P. Brooks.
+\newblock {\em The Mythical Man-Month: Essays on Software Engineering}.
+\newblock Addison-Wesley Professional, 1995.
+
+\bibitem{20}
+Joseph Buchta, Maksym Petrenko, Denys Poshyvanyk, and V{\'a}clav Rajlich.
+\newblock Teaching evolution of open-source projects in software engineering
+  courses.
+\newblock In {\em Proceedings of 22nd IEEE International Conference on Software
+  Maintenance}, 2006.
+
+\bibitem{27}
+Bongsug~(Kevin) Chae and Roger McHaney.
+\newblock Asian trio's adoption of linux-based open source development.
+\newblock {\em Communications of the ACM}, Sep 2006.
+
+\bibitem{3}
+Sujoy Chakravarty, Ernan Haruvy, and Fang Wu.
+\newblock Incentives for developers' contributions and product performance
+  metrics in open source development: An empirical exploration.
+\newblock Univ. of Texas working paper.
+
+\bibitem{45}
+Robert~N. Charette.
+\newblock Why software fails.
+\newblock {\em IEEE Spectrum}, September 2005.
+
+\bibitem{44}
+IT~Cortex.
+\newblock Failure rate - statistics over it projects failure rate,
+  http://www.it-cortex.com/stat\_failure\_rate.htm.
+
+\bibitem{12}
+Y.~Yamauchi {et al}.
+\newblock Collaboration with lean media: How open-source software succeeds.
+\newblock In {\em Proc. 2000 ACM Conf. Computer Supported Cooperative Work},
+  pages 329--338. ACM Press, 2000.
+
+\bibitem{40}
+Centers for Medicare and Medicaid Services.
+\newblock Selecting a development approach.
+\newblock {\em Office of Information Services}, Mar 2008.
+
+\bibitem{16}
+John~C. Georgas, Michael~M. Gorlick, and Richard~N. Taylor.
+\newblock Raging incrementalism: Harnessing change with open-source software.
+\newblock In {\em Proceedings of Open Source Application Spaces: Fifth Workshop
+  on Open Source Software Engineering}, 2005.
+
+\bibitem{21}
+Daniel~M. German.
+\newblock Experiences teaching a graduate course in open source software
+  engineering.
+\newblock In {\em Proceedings of the First International Conference on Open
+  Source Systems}, 2005.
+
+\bibitem{24}
+Rishab~Aiyer Ghosh.
+\newblock Study on the: Economic impact of open source software on innovation
+  and the competitiveness of the information and communication technologies
+  (ict) sector in the eu, 2006.
+
+\bibitem{30}
+Eugene Glynn, Brian Fitzgerald, and Chris Exton.
+\newblock Commercial adoption of open source software: An empirical study.
+\newblock In {\em International Symposium on Empirical Software Engineering},
+  2005.
+
+\bibitem{4}
+Abdullah G{\"o}k.
+\newblock Open source versus proprietary software: An economic perspective,
+  http://open.bilgi.edu.tr/workshop\_2004/papers/abdullah\_gok.pdf.
+
+\bibitem{33}
+Greg Goth.
+\newblock Open source business models: Ready for prime time.
+\newblock {\em IEEE Software}, Nov/Dec 2005.
+
+\bibitem{36}
+Greg Goth.
+\newblock Open source meets venture capital.
+\newblock {\em IEEE Distributed Systems Online}, Jun 2005.
+
+\bibitem{22}
+Heinz~Lothar Grob, Frank Bensberg, and Blasius~Lofi Dewanto.
+\newblock Developing, deploying, using and evaluating an open source learning
+  management system.
+\newblock In {\em Proceedings of 26th Int. Conf. lnformation Technology
+  lnterfaces}, 2004.
+
+\bibitem{6}
+Alexander Hars and Shaosong Ou.
+\newblock Working for free? - motivations of participating in open source
+  projects.
+\newblock In {\em Proceedings of the 34th Hawaii International Conference on
+  System Sciences}, 2001.
+
+\bibitem{43}
+Watts Humphrey.
+\newblock {\em Managing the Software Process}.
+\newblock Addison-Wesley Professional, 1989.
+
+\bibitem{15}
+Sandeep Krishnamurthy.
+\newblock An analysis of open source business models,
+  http://faculty.washington.edu/sandeep/d/bazaar.pdf.
+
+\bibitem{7}
+Karim~R. Lakhani and Robert~G Wolf.
+\newblock {\em Why Hackers Do What They Do: Understanding Motivation and Effort
+  in Free/Open Source Software Projects}.
+\newblock MIT Press, 2005.
+
+\bibitem{13}
+Josh Lerner and Jean Tirole.
+\newblock {\em Economic Perspectives on Open Source}.
+\newblock MIT Press, 2005.
+
+\bibitem{8}
+Yan Li, Chuan-Hoo Tan, Hock-Hai, and A.~Talib Mattar.
+\newblock Motivating open source software developers: Influence of
+  transformational and transactional leaderships.
+\newblock In {\em Proceedings of SIGMIS-CPR}, 2006.
+
+\bibitem{34}
+T.R. Madanmohan and Rahul De.
+\newblock Open source reuse in commercial firms.
+\newblock {\em IEEE Software}, Nov/Dec 2004.
+
+\bibitem{42}
+James Martin.
+\newblock {\em Rapid Application Development}.
+\newblock MacMillan Publishing Co., New York, 1990.
+
+\bibitem{14}
+Audris Mockus, Roy~T Fielding, and James~D Herbsleb.
+\newblock Studies of open source software development: Apache and mozilla.
+\newblock {\em ACM Transactions on Software Engineering and Methodology},
+  11(3):309--346, July 2002.
+
+\bibitem{38}
+Colin~J. Neill.
+\newblock Will commercialization of open source drive the volunteers away?
+\newblock {\em IEEE IT Professional}, Jan / Feb 2007.
+
+\bibitem{25}
+Uolevi Nikula and Sami Jantunen.
+\newblock Quantifying the interest in open source systems: Case south-east
+  finland.
+\newblock In {\em Proceedings of the First International Conference on Open
+  Source Systems}, 2005.
+
+\bibitem{26}
+oshua L~Mindel, Lik Mui, and Sameer Verma.
+\newblock Open source software adoption in asean member countries.
+\newblock In {\em Proceedings of the 40th Annual Hawaii International
+  Conference on System Sciences}, 2007.
+
+\bibitem{46}
+D~L Parnas and P~C Clements.
+\newblock A rational design process: How and why to fake it.
+\newblock {\em IEEE Transactions on Software Engineering}, February 1986.
+
+\bibitem{23}
+Serena Pastore.
+\newblock Web content management systems: using plone open source software to
+  build a website for research institute needs.
+\newblock In {\em Proc. of International Conference on Digital
+  Telecommunications}, 2006.
+
+\bibitem{28}
+Bruce Perens.
+\newblock The emerging economic paradigm of open source,
+  http://www.firstmonday.org/issues/special10\_10/perens/index.htm.
+
+\bibitem{18}
+Rajendra~K. Raj and Fereydoun Kazemian.
+\newblock Using open source software in computer science courses.
+\newblock In {\em Proceedings of 36th ASEE/IEEE Frontiers in Education
+  Conference}, 2006.
+
+\bibitem{9}
+E.~S. Raymond.
+\newblock {\em The Cathedral and the Bazaar}.
+\newblock O'Reilly, 1999.
+
+\bibitem{35}
+Dirk Riehle.
+\newblock The economic motivation of open source software: Stakeholder
+  perspectives.
+\newblock {\em IEEE Computer}, Apr 2007.
+
+\bibitem{31}
+Cristina Rossi and Andrea Bonaccorsi.
+\newblock Why profit-oriented companies enter the os field? intrinsic vs.
+  extrinsic incentives.
+\newblock In {\em Proceedings of Open Source Application Spaces: Fifth Workshop
+  on Open Source Software Engineering}, 2005.
+
+\bibitem{39}
+Dr. Winston~W. Royce.
+\newblock Managing the development of large software systems.
+\newblock In {\em Proceedings, IEEE WESCON}, 1970.
+
+\bibitem{32}
+Michel Ruffin and Christof Ebert.
+\newblock Using open source software in product development: A primer.
+\newblock {\em IEEE Software}, Jan / Feb 2004.
+
+\bibitem{10}
+Anthony Senyard and Martin Michlmayr.
+\newblock How to have a successful free software project.
+\newblock In {\em Proceedings of the 11th Asia-Pacific Software Engineering
+  Conference}, 4, 2004.
+
+\bibitem{17}
+Nicol{\'a}s Serrano and Jos{\'e}~Mar{\'i}a Sarriegi.
+\newblock Open source software erps: A new alternative for an old need.
+\newblock {\em IEEE Software}, May/June 2006.
+
+\bibitem{19}
+Kal Toth.
+\newblock Experiences with open source software engineering tools.
+\newblock {\em IEEE Software}, Nov/Dec 2006.
+
+\bibitem{5}
+Steven Weber.
+\newblock Open source software in developing economies,
+  www.fossfa.net/fossfa/foss-ict-national-policy-south-africa/general-policy-s%
+tatements/weber-open-source.pdf.
+
+\bibitem{48}
+Gerald~M. Weinberg.
+\newblock {\em The Psychology of Computer Programming}.
+\newblock Dorset House, 1998.
+
+\bibitem{37}
+Joel West.
+\newblock How open is open enough? melding proprietary and open source platform
+  strategies.
+\newblock {\em Elsevier Research Policy}, 32(7), July 2003.
+
+\bibitem{2}
+Joel West.
+\newblock Value capture and value networks in open source vendor strategies.
+\newblock In {\em Proceedings of the 40th Hawaii International Conference on
+  System Sciences}, 2007.
+
+\bibitem{1}
+W.Scacchi.
+\newblock Understanding the requirements for developing open source software
+  systems.
+\newblock {\em IEE Proceedings Software}, 149(1), 2002.
+
+\end{thebibliography}

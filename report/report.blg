@@ -1,0 +1,65 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: report.aux
+A level-1 auxiliary file: Certificate/certificate.aux
+A level-1 auxiliary file: Declaration/declaration.aux
+A level-1 auxiliary file: Acknowledgement/acknowledgement.aux
+A level-1 auxiliary file: Abstract/abstract.aux
+A level-1 auxiliary file: Introduction/introduction.aux
+A level-1 auxiliary file: Chapter1/chapter1.aux
+A level-1 auxiliary file: Chapter2/chapter2.aux
+A level-1 auxiliary file: Methods/methods.aux
+A level-1 auxiliary file: Conclusions/conclusions.aux
+The style file: plain.bst
+Database file #1: References/references.bib
+Repeated entry---line 209 of file References/references.bib
+ : @incollection{valverde2014link
+ :                               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 239 of file References/references.bib
+ : @article{clauset2009power
+ :                          ,
+I'm skipping whatever remains of this entry
+Warning--empty journal in brin1998anatomy
+You've used 25 entries,
+            2118 wiz_defined-function locations,
+            670 strings with 8680 characters,
+and the built_in function-call counts, 9277 in all, are:
+= -- 949
+> -- 398
+< -- 7
++ -- 164
+- -- 132
+* -- 648
+:= -- 1490
+add.period$ -- 81
+call.type$ -- 25
+change.case$ -- 138
+chr.to.int$ -- 0
+cite$ -- 26
+duplicate$ -- 358
+empty$ -- 723
+format.name$ -- 132
+if$ -- 1970
+int.to.chr$ -- 0
+int.to.str$ -- 25
+missing$ -- 26
+newline$ -- 129
+num.names$ -- 50
+pop$ -- 139
+preamble$ -- 1
+purify$ -- 116
+quote$ -- 0
+skip$ -- 264
+stack$ -- 0
+substring$ -- 684
+swap$ -- 98
+text.length$ -- 7
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 96
+warning$ -- 1
+while$ -- 94
+width$ -- 27
+write$ -- 279
+(There were 2 error messages)

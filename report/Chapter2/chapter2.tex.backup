@@ -1,0 +1,206 @@
+\chapter{Macro Studies of FOSS Ecology}
+\ifpdf
+    \graphicspath{{Chapter2/Chapter2Figs/PNG/}{Chapter2/Chapter2Figs/PDF/}{Chapter2/Chapter2Figs/}}
+\else
+    \graphicspath{{Chapter2/Chapter2Figs/EPS/}{Chapter2/Chapter2Figs/}}
+\fi
+
+\section{Introduction}
+Traditional Software development has been characterised by the strict organisation of developer teams. Almost all formal methodologies insist on layered structure of developers with responsibilities clearly delineated. The decision making powers are vested with the few who control huge army of developers. There are established rules on when people can be added or dropped from a project. Informal observations like the one done by Fredrick Brooks "adding manpower to a late software project makes it late" have been accepted as law. In other words, the priestly order followed in software development makes the whole system impenetrable by outsiders. 
+
+On the contrary, the FOSS development methods seldom follow a closed door policy towards developers. The system here thrives on the contribution of volunteers. Unsolicited cooperation between developers scattered across the globe, communicating with each other using digital media is the characteristic feature of FOSS development. 
+
+There are questions on the extent to which people are using this opportunity to be a part of software development. Contributing to software development requires certain technical competence. To expect technically trained developers to contribute to projects which are not part of their work and which does not benefit them monetarily is difficult. 
+
+Recent research has shown that (refer related research page) people do contribute to FOSS for a variety of reasons. But the exact number of people involved in the development of FOSS is not clear. The difficulty arises from the fact that though there are number of websites like sourceforge.net which hosts thousands of FOSS projects there are equal number of projects hosted in their own dedicated sites. To collect the data from all these diverse sources is extremely difficult. 
+
+\section{Procedure}
+As mentioned earlier (refer to datasets page) the sourceforge.net maintains the data in a relational database. To extract the developer count from this dataset the relation USER\_GROUP is selected. The structure of the relation is given in Table \ref{Devformat}.
+
+\begin{table}
+\begin{center}
+\caption{Structure of Table USER\_GROUP}
+\begin{tabular}{|l|l|l|}\hline 
+Column & Type & Modifiers\\\hline
+user\_group\_id &integer &not null \\\hline
+user\_id &integer &not null default 0\\\hline
+group\_id &integer &not null default 0\\\hline
+admin\_flags &character(16) &not null default ''::bpchar\\\hline
+forum\_flags &integer &not null default 0\\\hline
+project\_flags &integer &not null default 2\\\hline
+doc\_flags &integer &not null default 0\\\hline
+member\_role &integer &not null default 100\\\hline
+release\_flags &integer &not null default 0\\\hline
+artifact\_flags &integer& not null default 0\\\hline
+added\_by &integer &not null default 100\\\hline
+grantcvs &integer &not null default 1\\\hline
+grantshell &integer &not null default 1\\\hline
+row\_modtime &integer&not null\\\hline
+news\_flags &integer &not null default 0\\\hline
+screenshot\_flags &integer &not null default 0\\\hline
+grantsvn &integer &not null default 1 \\\hline
+\end{tabular}
+\label{Devformat}
+\end{center}
+\end{table}
+
+The attribute USER\_ID is used to count the number of developers for each month and GROUP\_ID is used for counting the projects. The process for counting developers and projects for all months is given below \\
+
+$
+\mathbb{S}\leftarrow \{S_{1}, S_{2}...S_{52} \} \qquad \textrm{original datasets}\\ 
+A_{i} \leftarrow \phi(X), \:\forall X \in \mathbb{S} \qquad  \textrm{select unique developers}\\ 
+A \leftarrow \{A_{1}, A_{2}...A_{52} \} \\
+B_{i} \leftarrow \psi(X), \:\forall X \in \mathbb{S} \qquad  \textrm{select unique projects}\\ 
+B \leftarrow \{B_{1}, B_{2}...B_{52} \} \\
+x_{i} \leftarrow \left|{C}\right|, \:\forall C \in A  \qquad  \textrm{count the developers}\\
+y_{i} \leftarrow \left|{C}\right|, \:\forall C \in B  \qquad  \textrm{count the projects}\\
+\mathbb{D} \leftarrow \{x_{1}, x_{2}, ..., x_{52} \} \qquad  \textrm{list of developer count}\\
+\mathbb{P} \leftarrow \{y_{1}, y_{2}, ..., y_{52} \} \qquad  \textrm{list of project count}\\
+$
+
+Using the relation USER\_GROUP we can also extract the number of developers subsribing to each project. The procedure for doing this activity is mentioned below
+
+$
+\mathbb{S}\leftarrow \{S_{1}, S_{2}...S_{52} \} \qquad \textrm{original datasets}\\ 
+A \leftarrow \phi(X), \: X \in \mathbb{S} \qquad  \textrm{select unique developers}\\ 
+B \leftarrow \psi(X), \: X \in \mathbb{S} \qquad  \textrm{select unique projects}\\ 
+C \leftarrow \{x, \left| x \in A, y \in B, x \rightarrow y\}
+$
+
+\section{Results and Discussion}
+The growth pattern of developers and projects in Sourceforge.net is summarized in Figure \ref{Mainfig}.
+The number of developers and projects are significant metrics since it can used to gauage the interest among the general public to participate in FOSS development. The number of developers (Developer count) for all 54 datasets is given in  Figure \ref{Devfig}. The number of projects (Project count) in these timeperiod is in Figure \ref{Projfig}
+
+The statistical summary of the Developer count is given in Table \ref{Devsummary}. The statistical summary of the Project count is given in Table \ref{Projsummary}
+
+Sourceforge.net in its website (as on Sep 2009) claims that it has 2 million registered users. But the result from this work shows that the maximum number of developers for any month is 246119. Therefore it clear that only 10\% of the registered users in sourceforge.net actually subscribe themselves to projects.
+
+The number of developers in a given project is a important indicator of the popularity of a project. This measure can also be used to study the pattern of team organization in FOSS projects. By applying the method defined in the previous section, the number of developers subscribing to project for the dataset of Aug09 is calculated.
+The result obtained is given in Table \ref{Freqdistfull}. This shows an important trend that more than 99\% of the projects have less than 14 developers. 
+
+This data is further analyzed to find the extent of distribution of developers in projects. The result is summarized in Table \ref{Freqdisttopten} which clearly shows that nearly 70\% of the projects have only one developer.
+
+This process is carried out for all 54 datasets. The result obtained is given in Figure \ref{Singledevfig}. This clearly shows that on an average in every month 71\% of the projects have only one developer.
+
+The number of projects subscribed by a developer is also an interesting metric. It shows the involvement of a development in FOSS development. If the developer has subscribed to a single project, it can be assumed that he is completly committed to that project.
+
+The process of finding out the number of developers who subscribe to single project is carried out for all 54 datasets. The result obtained is given in Figure \ref{Singleprjfig}. This clearly shows that nearly 76\% of developers subscribe to single project.
+
+\begin{figure}
+\centering
+\caption{Developers and Projects in Sourceforge.net}
+\includegraphics{main.eps}
+\label{Mainfig}
+\end{figure}
+
+\begin{figure}
+\centering
+\caption{Developer Count in Sourceforge.net}
+\includegraphics{developers.eps}
+\label{Devfig}
+\end{figure}
+
+\begin{figure}
+\centering
+\caption{Project Count in Sourceforge.net}
+\includegraphics{projects.eps}
+\label{Projfig}
+\end{figure}
+
+\begin{figure}
+\centering
+\caption{Developers with single Project}
+\includegraphics{singleprjdev.eps}
+\label{Singleprjfig}
+\end{figure}
+
+\begin{figure}
+\centering
+\caption{Projects with single Developer}
+\includegraphics{singledevprj.eps}
+\label{Singledevfig}
+\end{figure}
+
+\begin{table}
+\begin{center}
+\caption{Summary Statistics of Developer Count}
+\begin{tabular}{rrrr}\hline
+ \multicolumn{1}{c}{Mean}%
+ & \multicolumn{1}{c}{Median}%
+  & \multicolumn{1}{c}{Minimum}%
+   & \multicolumn{1}{c}{Maximum} \\\hline
+$194492.$ & $200406.$ & $83120.0$ & $246119.$\\[10pt]
+
+ \multicolumn{1}{c}{Std.\ Dev.}%
+ & \multicolumn{1}{c}{C.V.}%
+  & \multicolumn{1}{c}{Skewness}%
+   & \multicolumn{1}{c}{Ex.\ kurtosis} \\\hline
+$33139.3$ & $0.170389$ & $-0.922382$ & $1.01698$\\
+\end{tabular}
+\label{Devsummary}
+\end{center}
+\end{table}
+
+\begin{table}
+\begin{center}
+\caption{Summary Statistics of Project Count}
+\begin{tabular}{rrrr}\hline
+ \multicolumn{1}{c}{Mean}%
+ & \multicolumn{1}{c}{Median}%
+  & \multicolumn{1}{c}{Minimum}%
+   & \multicolumn{1}{c}{Maximum} \\\hline
+$149647.$ & $152972.$ & $65082.0$ & $187512.$\\[10pt]
+
+ \multicolumn{1}{c}{Std.\ Dev.}%
+ & \multicolumn{1}{c}{C.V.}%
+  & \multicolumn{1}{c}{Skewness}%
+   & \multicolumn{1}{c}{Ex.\ kurtosis} \\\hline
+$26278.5$ & $0.175603$ & $-1.0541$ & $1.14948$\\
+\end{tabular}
+\label{Projsummary}
+\end{center}
+\end{table}
+
+\begin{table}
+\begin{center}
+\caption{Frequency Distribution of Developers in Aug09 (complete)}
+\begin{tabular}{|l|l|l|}\hline 
+Interval & Frequency & Relative \% \\\hline
+\eqslantless 14 &159043 &99.10\% \\\hline
+14 - 28 & 1107 & 0.69\% \\\hline
+28 - 42 & 188 &  0.12\% \\\hline
+42 - 56 &  68 & 0.04\% \\\hline
+56 - 70 &  33 & 0.02\% \\\hline
+70 - 84 &  18 & 0.01\% \\\hline 
+\end{tabular}
+\label{Freqdistfull}
+\end{center}
+\end{table}
+
+\begin{table}
+\begin{center}
+\caption{Frequency Distribution of Developers in Aug09 (upto 10 Developers/project)}
+\begin{tabular}{|l|l|l|}\hline 
+Number of Developers & Frequency & Relative \% \\\hline
+1  &  111625   &  69.56\% \\\hline
+2&23332&     14.54\% \\\hline
+3 & 9650  &    6.01\% \\\hline
+4 & 5214   &   3.25\% \\\hline
+5 & 3131   &   1.95\% \\\hline
+6 & 1954   &   1.22\% \\\hline
+7 & 1242   &   0.77\% \\\hline
+8 & 902    &  0.56\% \\\hline
+9 & 639    &  0.40\% \\\hline
+10 & 470   &   0.29\% \\\hline
+\end{tabular}
+\label{Freqdisttopten}
+\end{center}
+\end{table}
+
+
+% ------------------------------------------------------------------------
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../thesis"
+%%% End: 

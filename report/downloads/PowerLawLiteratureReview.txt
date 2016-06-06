@@ -1,0 +1,41 @@
+﻿Power Law Literature Review
+Introduction:
+A Power Law is a mathematical relationship between two quantities, where one quantity varies as a fixed power of another. A network whose degree distribution follows a power law is called a scale-free network. A graph for power law follows a long/heavy tailed distribution. The power law graph can be used to demonstrate the ranking of popularity of nodes and predict the region of interest of a particular node in a network. The procedure for verifying power law for a network is a dynamic approach, where data are analysed over a period of time.
+
+Power law distributions are very much widespread in computer science. They are also often referred to as heavy-tail distributions, Pareto's distribution, Zipfian distributions etc.
+The important discoveries made by Mitzenmacher are:-
+The most important one is that much of what we in the computer science community have begun to understand and utilize about power law and lognormal distributions has already been known in other sciences such as economics and biology. Very similar models to the dynamically growing webgraph model which results in a power law distribution have been used way back in 1920's.
+A second discovery is the argument over whether a lognormal or power law or any other distribution is a better fit for some experimentally observed distribution has been repeated across many fields like chemistry, ecology, information theory over many years since 1950's.
+Another discovery is that the distributions like power law, lognormal are necessarily connected. A basic model upon variations may follow any distributions. [1]
+Many experimental quantities have tendency towards a typical value. Ex: Speeds of cars on highways, weights of a fruits in a store. All these things vary but the distributions make the typical value representative of most important observations. There are many such distributions but the power law is known for its mathematical properties which leads to surprising consequences and for its appearance in different natural and man-made phenomena. The population of cities, intensities of earthquakes follow power law distribution. [2]
+The recent observations suggest that the power law is also used to study the topology of internet. From this study, new and efficient protocols can be designed that take advantage of its topological properties. A more accurate artificial models can be created for simulation purposes and also neighbours within a network can be predicted. This is helpful to analyze the geographical distribution of nodes. Power laws have been used to describe different characteristics of communication networks. Recent studies have obseved that the preferential attachment and incremental growth are possible causes for power laws in some topologies. The World Wide Web also follows power law distribution. [3]
+The latest trending application of power law distribution is in social networks. Most of the social networks follow power law distribution. Power law helps in predicting the relations among nodes and the region of interest for nodes in a network. For example, the power law is useful in predicting mutual friends or friends-of-friends in facebook. It can also be used to demonstrate the ranking popularity of nodes in a social network. For example the increase in number of followers for a famous person in a social network can be predicted.
+Example:
+A common example to demonstrate the concept of power law is the city-population graph
+
+
+
+
+
+
+
+
+
+
+
+
+Important Observations:
+1) The above graph follows power law distribution in its long-tail.
+2) There are only few cities with very high population. There are more number of cities with less population
+3) More people have moved from cities with low population to the cities with already high population
+4) The rich-become-richer mechanism can be observed.
+
+
+
+
+
+References
+
+[1]Mitzenmacher, Michael. "A brief history of generative models for power law and lognormal distributions." Internet mathematics 1.2 (2004): 226-251.
+[2]Clauset, Aaron, Cosma Rohilla Shalizi, and Mark EJ Newman. "Power-law distributions in empirical data." SIAM review 51.4 (2009): 661-703.
+[3]Medina, Alberto, Ibrahim Matta, and John Byers. "On the origin of power laws in Internet topologies." ACM SIGCOMM computer communication review 30.2 (2000): 18-28.

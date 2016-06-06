@@ -1,0 +1,30 @@
+% Thesis Acknowledgements ------------------------------------------------
+
+
+%\begin{acknowledgementslong} %uncommenting this line, gives a different acknowledgements heading
+\begin{acknowledgements}      %this creates the heading for the acknowlegments
+
+
+\begin{center}
+KGS \& TVS for everything
+
+Dr. Ramanatha for advice
+
+Dr. Rajani Kanth for support
+
+Dr. Aswatha Kumar for encouragement
+
+Dr. Gregory R. Madey \& team for research data
+
+Harish Bhanderi for latex template\end{center}
+
+
+\end{acknowledgements}
+%\end{acknowledgmentslong}
+
+% ------------------------------------------------------------------------
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../thesis"
+%%% End: 

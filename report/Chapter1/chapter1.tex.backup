@@ -1,0 +1,310 @@
+\chapter{Background Study}
+\ifpdf
+    \graphicspath{{Chapter1/Chapter1Figs/PNG/}{Chapter1/Chapter1Figs/PDF/}{Chapter1/Chapter1Figs/}}
+\else
+    \graphicspath{{Chapter1/Chapter1Figs/EPS/}{Chapter1/Chapter1Figs/}}
+\fi
+
+\section{Software Development Methodologies}
+Software Development Methodologies have a troubled history. In the 1960's while people were successful in developing small scale programs, they failed miserably trying to scale up the development efforts. As a result, the phenomenon, which was later named as `Software Crisis' emerged. The characteristic features of this crisis were -projects running over-budget, projects running over-time, software was very inefficient, software was of low quality, software often did not meet requirements, projects were unmanageable and code difficult to maintain and software was never delivered.
+
+The 1968 NATO Software Engineering Conference was a milestone because it was here that the term `Software Engineering' was first used and subsequently efforts were made to transcend the efforts in the field from programming to organised development methodologies. The thinkers through the 70's set the precedence by illustrating various approaches to software development which have been adapted into specific methodologies. 
+
+The Waterfall model attributed to Dr. Royce \cite{39} has the following basic principles \cite{40}
+
+\begin{itemize}
+ \item {Project is divided into sequential phases, with some overlap and splash back acceptable between phases.}
+  \item{Emphasis is on planning, time schedules, target dates, budgets and implementation of an entire system at one time.}
+  \item{Tight control is maintained over the life of the project through the use of extensive written documentation, as well as through formal reviews and approval/sign-off by the user and information technology management occurring at the end of most phases before
+beginning the next phase.}
+\end{itemize}
+
+The Spiral Model by Boehm \cite{41} works on the following principles \cite{40}
+
+\begin{itemize}
+\item {Focus is on risk assessment and on minimizing project risk by breaking a project into smaller segments and providing more ease-of-change during the development process, as well as providing the opportunity to evaluate risks and weigh consideration of project continuation throughout the life cycle.}
+\item{Each cycle involves a progression through the same sequence of steps, for each portion of the product and for each of its levels of elaboration, from an overall concept-of-operation document down to the coding of each individual program.}
+\item{Each trip around the spiral traverses four basic quadrants: (1) determine objectives, alternatives, and constraints of the iteration; (2) evaluate alternatives; identify and resolve risks; (3) develop and verify deliverables from the iteration; and (4) plan the next iteration.}
+\item{Begin each cycle with an identification of stakeholders and their win conditions, and end each cycle with review and commitment.}
+\end{itemize}
+
+The Prototyping Development Methodology is based on the basic concept of engaging the end users in all the phases of development and delivering the product in parts so that the user can comment on the validity of the process. The basic principles of this method are \cite{40}
+
+\begin{itemize}
+\item{Not a standalone, complete development methodology, but rather an approach to handling selected portions of a larger, more traditional development methodology (i.e. Incremental, Spiral, or Rapid Application Development (RAD)).}
+\item{Attempts to reduce inherent project risk by breaking a project into smaller segments and providing more ease-of-change during the development process.}
+\item{User is involved throughout the process, which increases the likelihood of user acceptance of the final implementation.}
+\item{Small-scale mock-ups of the system are developed following an iterative modification process until the prototype evolves to meet the users’ requirements.}
+\item{While most prototypes are developed with the expectation that they will be discarded, it is possible in some cases to evolve from prototype to working system.}
+\item{A basic understanding of the fundamental business problem is necessary to avoid solving the wrong problem.}
+\end{itemize}
+
+The Incremental Development Methodology is based on the premise that the risk involved in the development is reduced by delivering small pieces of the software to the user and thereby improving the software based on their feedback. Unlike in Prototyping model, each increment here delivers a complete, working system. The basic activities of this model are \cite{40}
+
+\begin{itemize}
+\item {A series of mini-Waterfalls are performed, where all phases of the Waterfall development model are completed for a small part of the systems, before proceeding to the next incremental, or}
+\item{Overall requirements are defined before proceeding to evolutionary, mini-Waterfall development of individual increments of the system, or}
+\item{The initial software concept, requirements analysis, and design of architecture and system core are defined using the Waterfall approach, followed by iterative Prototyping, which culminates in installation of the final prototype (i.e., working system).}
+\end{itemize}
+
+Rapid Application Development \cite{42} prescribes the heavy use of models and prototypes to understand and formalise user requirements. Used over a set of iterations, models and prototypes generate a valid set of verifiable functional requirements of the system and the basic design of the proposed system. The method initially proposed by Martin is now used in a more generic development methodology which favours the use of Fourth Generation Languages and Development Tools to quickly build the system.
+
+These general approaches towards development of software have been further developed into specific methodologies which have gained prominence in recent years. Here is a partial list of such development methodologies in a chronological order.
+
+\begin{itemize}
+\item {Structured programming}
+\item {Structured Systems Analysis and Design Methodology}
+\item {Object Oriented Analysis and Design}
+\item {Scrum Development Methodology}
+\item {Personal Software Process and Team Software Process}
+\item {Extreme Programming}
+\item {Rational Unified Process}
+\item {Agile Methodology}
+\item {Adaptive Software Development}
+\item {Crystal Clear Methodologies}
+\item {Extreme Programming}
+\item {Feature Driven Development}
+\item {ICONIX Process}
+\end{itemize}
+
+Among the various software development methodologies that have emerged in these years, the notable ones are the Capability Maturity Model (CMM). The process was initially defined by Watts Humphrey \cite{43}. Though it was supposed to cover the software development methods, it has today become a general model for improving the business process of an organisation covering diverse areas of project management to IT resource acquisition. The success of this process can be attributed to the practice of certifying the maturity of an organisation. A young field like IT required such a certification mechanism in the absence of any other quality assessment methods. Today CMM has further improved into a model known as Capability Maturity Model Integration (CMMI). CMMI is a trademarked process improvement methodology focussing on product and service development, service establishment, management, and delivery  and product and service acquisition. 
+
+The international standard for describing the method of selecting, implementing and monitoring the life cycle for software is ISO 12207. The standard has the main objective of supplying a common structure so that the all the stakeholders involved with the software development. The standard is based on two basic principles, modularity and responsibility. Modularity ensures diving the complex software engineering tasks into small, manageable tasks and responsibility ensures assigning these tasks to individual members in the team so that they become legally accountable for the work delivered by them.
+
+Almost all the models discussed in this section focus exclusively on the process. This complete attention on the process neglects the other critical component in the project cycle - people. There is a common complaint among a section of practitioners of software development that what was essentially an art is now converted into a full blown business. In the process, the lonely superstars who could build a complete set of system tools in days have moved out of the system. In trying to define a industrial like process for software development, the human component has become unfortunate casualty. 
+
+The exception to this general trend of neglect towards people is the People Capability Maturity Model (P-CMM). P-CMMM keeps people at the central focus of the software development activities and describes an evolutionary improvement path from ad hoc, inconsistently performed practices, to a mature, disciplined, and continuously improving development of the knowledge, skills, and motivation of the workforce that enhances strategic business performance of an organisation. The PCMM helps organisations characterise the maturity of their workforce practices, establish a program of continuous workforce development, set priorities for improvement actions, integrate workforce development with process improvement, and establish a culture of excellence.
+
+There has been criticism on the way formal methods are employed in Software Engineering. At the early stages of the industry, a great researcher like David L. Parnas along with Paul C. Clements made some strong remarks ``Programmers start without a clear statement of desired behavior and implementation constraints. They make a long sequence of design decisions with no clear statement of why they do things the way they do. Their rationale is rarely explained. Many of us are not satisfied with such a design process.'' \cite{46}
+
+It was not surprising that Brooks argued that ``there is no single development, in either technology or management technique, which by itself promises even one order of magnitude [tenfold] improvement within a decade in productivity, in reliability, in simplicity.'' He also stated that ``we cannot expect ever to see two-fold gains every two years'' in software development, like there is in hardware development. \cite{47} This statement has been evoked every time the promised methodology or technology does not live up to its promise. And every time there is a new process round the corner, people ask whether it is the `silver bullet?'. Alas, we are still to find one in software engineering.
+
+Despite developing an array of methodologies, the success rate in software development is not encouraging. Reports from a survey in 2001 said that 51\% of the clients viewed their ERP implementation as unsuccessful. Another survey reported in the same year that 40\% of the projects failed to achieve their business case within one year of going live. A few years before it was reported that over 61\% of the projects that were analysed were deemed to have failed \cite{44}. 
+
+Given the alarming rate of failures it is not surprising that a commentator says ``Like electricity, water, transportation, and other critical parts of our infrastructure, IT is fast becoming intrinsic to our daily existence. In a few decades, a large-scale IT failure will become more than just an expensive inconvenience: it will put our way of life at risk. In the absence of the kind of industry wide changes that will mitigate software failures, how much of our future are we willing to gamble on these enormously costly and complex systems?'' \cite{45} 
+
+Summarising, there are various approaches towards software development like waterfall and spiral which have been adapted into specific methodologies like SSAD and OOAD to facilitate the development of software in an industrial environment. All the models discussed here emphasis the role of layered project management, organised development teams with specific roles, well-defined set of activities and structured leadership. But given the fact that there are many drawbacks in extracting success by applying these methods to software development, there is an urgent need to search for alternate models for software development. 
+
+\section{Free and Open Source Software}
+Though Free and Open Source Software (FOSS) is used together throughout the discussion of this work, it is necessary to understand that there are certain differences between what is called as `Free Software' and what can be called as `Open Source Software'. The differences, though minor in appearance have deep philosophical implications on the way software is discussed. Therefore, it is necessary to understand the essentials of both camps independently.
+
+Free Software owes its origin to the genius of Richard Stallman. Often called as `last great hacker' he is the product of hacker culture which fuelled the growth of computing in its initial period. The hardware was always considered the main component of a Computer with software doing the support job. So, most companies were giving away software free (no fees) along with hardware. When things began to change in the late 70's Stallman began the GNU project in 1982. GNU (recursive acronym for GNU is not Unix) intended to develop a complete operating system based on the idea of `freedom' as defined by Stallman. He wrote some of the important tools for the project namely emacs (editor), GCC (GNU C Compiler now GNU Complier Collection) and GDB (GNU Debugger).
+
+The importance of Stallman in the Free Software community is not reserved for his technical expertise. He also defined the concept of `Copyleft' as opposed to `Copyright'. Copyleft is a general method for making a program or other work free, and requiring all modified and extended versions of the program to be free as well. Through the organization which he started the `Free Software Foundation' he maintains the original definition of the term `Free Software'. 
+
+To make a software free, it is important to release it under appropriate licence. GNU GPL (GNU General Public Licence) is the most preferred licence for making a software `free software'. The following section taken liberally from Free Software Foundation's website explains the philosophy of free software.
+
+``Free software'' is a matter of liberty, not price. To understand the concept, you should think of `free' as in `free speech,' not as in `free beer.'
+
+Free software is a matter of the users freedom to run, copy, distribute, study, change and improve the software. More precisely, it means that the program's users have the four essential freedoms:
+
+\begin{itemize}
+\item{The freedom to run the program, for any purpose (freedom 0).}
+\item{The freedom to study how the program works, and change it to make it do what you wish (freedom 1). Access to the source code is a precondition for this.}
+\item{The freedom to redistribute copies so you can help your neighbor (freedom 2).}
+\item{The freedom to improve the program, and release your improvements (and modified versions in general) to the public, so that the whole community benefits (freedom 3).Access to the source code is a precondition for this. }
+\end{itemize}
+
+A program is free software if users have all of these freedoms. Thus, you should be free to redistribute copies, either with or without modifications, either gratis or charging a fee for distribution, to anyone anywhere. Being free to do these things means (among other things) that you do not have to ask or pay for permission. You should also have the freedom to make modifications and use them privately in your own work or play, without even mentioning that they exist. If you do publish your changes, you should not be required to notify anyone in particular, or in any particular way.
+
+The freedom to run the program means the freedom for any kind of person or organization to use it on any kind of computer system, for any kind of overall job and purpose, without being required to communicate about it with the developer or any other specific entity. In this freedom, it is the user's purpose that matters, not the developer's purpose; you as a user are free to run a program for your purposes, and if you distribute it to someone else, she is then free to run it for her purposes, but you are not entitled to impose your purposes on her.
+
+The freedom to redistribute copies must include binary or executable forms of the program, as well as source code, for both modified and unmodified versions. (Distributing programs in runnable form is necessary for conveniently installable free operating systems.) It is ok if there is no way to produce a binary or executable form for a certain program (since some languages don't support that feature), but you must have the freedom to redistribute such forms should you find or develop a way to make them.
+
+In order for the freedoms to make changes, and to publish improved versions, to be meaningful, you must have access to the source code of the program. Therefore, accessibility of source code is a necessary condition for free software.
+
+Freedom 1 includes the freedom to use your changed version in place of the original. If the program is delivered in a product designed to run someone else's modified versions but refuse to run yours — a practice known as `tivoization' or (through blacklisting) as `secure boot' — freedom 1 becomes a theoretical fiction rather than a practical freedom. This is not sufficient.
+
+One important way to modify a program is by merging in available free subroutines and modules. If the program's license says that you cannot merge in a suitably-licensed existing module, such as if it requires you to be the copyright holder of any code you add, then the license is too restrictive to qualify as free.
+
+In order for these freedoms to be real, they must be permanent and irrevocable as long as you do nothing wrong; if the developer of the software has the power to revoke the license, or retroactively change its terms, without your doing anything wrong to give cause, the software is not free.
+
+However, certain kinds of rules about the manner of distributing free software are acceptable, when they don't conflict with the central freedoms. For example, copyleft (very simply stated) is the rule that when redistributing the program, you cannot add restrictions to deny other people the central freedoms. This rule does not conflict with the central freedoms; rather it protects them.
+
+`Free software' does not mean `non-commercial.' A free program must be available for commercial use, commercial development, and commercial distribution. Commercial development of free software is no longer unusual; such free commercial software is very important. You may have paid money to get copies of free software, or you may have obtained copies at no charge. But regardless of how you got your copies, you always have the freedom to copy and change the software, even to sell copies.
+
+Whether a change constitutes an improvement is a subjective matter. If your modifications are limited, in substance, to changes that someone else considers an improvement, that is not freedom.
+
+In the GNU project, `copyleft' is used to protect these freedoms legally for everyone. But non-copylefted free software also exists. We believe there are important reasons why it is better to use copyleft, but if your program is non-copylefted free software, it is still basically ethical.
+
+Sometimes government export control regulations and trade sanctions can constrain your freedom to distribute copies of programs internationally. Software developers do not have the power to eliminate or override these restrictions, but what they can and must do is refuse to impose them as conditions of use of the program. In this way, the restrictions will not affect activities and people outside the jurisdictions of these governments. Thus, free software licenses must not require obedience to any export regulations as a condition of any of the essential freedoms.
+
+Most free software licenses are based on copyright, and there are limits on what kinds of requirements can be imposed through copyright. If a copyright-based license respects freedom in the ways described above, it is unlikely to have some other sort of problem that we never anticipated (though this does happen occasionally). However, some free software licenses are based on contracts, and contracts can impose a much larger range of possible restrictions. That means there are many possible ways such a license could be unacceptably restrictive and non-free.
+
+When talking about free software, it is best to avoid using terms like `give away' or `for free,' because those terms imply that the issue is about price, not freedom. Some common terms such as `piracy' embody opinions we hope you won't endorse. 
+
+Finally, note that criteria such as those stated in this free software definition require careful thought for their interpretation. To decide whether a specific software license qualifies as a free software license, it is judged based on these criteria to determine whether it fits their spirit as well as the precise words. If a license includes unconscionable restrictions, it is rejected, even if issues in these criteria were not anticipated. Sometimes a license requirement raises an issue that calls for extensive thought, including discussions with a lawyer, before it is decided if the requirement is acceptable. When the conclusion is reached about a new issue, these criteria are updated to make it easier to see why certain licenses do or don't qualify. 
+
+The GNU project got a major fillip from the Linux kernel, started by Linus Torvalds, when it was released as freely modifiable source code in 1991. The kernel was the last piece required to make the GNU project complete. Together, the GNU/Linux has today become one the most important and widely used free software. The success of various other free software tools like Apache, BIND, mysql, Mozilla etc. have provided further fuel to the growth of free software market.
+
+In 1998, a group of individuals advocated that the term free software should be replaced by open source software (OSS) as an expression which is less ambiguous and more comfortable for the corporate world. The open source label came out of a strategy session held in Palo Alto in reaction to Netscape's January 1998 announcement of a source code release for Navigator (as Mozilla). The Open Source Initiative (OSI) was formed in February 1998 by Eric S. Raymond and Bruce Perens.
+
+The definition of `Open Source Software' as maintained by OSI is as follows.
+
+Open source doesn't just mean access to the source code. The distribution terms of open-source software must comply with the following criteria:
+
+\begin{enumerate}
+\item{Free Redistribution: The license shall not restrict any party from selling or giving away the software as a component of an aggregate software distribution containing programs from several different sources. The license shall not require a royalty or other fee for such sale.}
+\item{Source Code : The program must include source code, and must allow distribution in source code as well as compiled form. Where some form of a product is not distributed with source code, there must be a well-publicized means of obtaining the source code for no more than a reasonable reproduction cost preferably, downloading via the Internet without charge. The source code must be the preferred form in which a programmer would modify the program. Deliberately obfuscated source code is not allowed. Intermediate forms such as the output of a preprocessor or translator are not allowed.}
+\item{Derived Works : The license must allow modifications and derived works, and must allow them to be distributed under the same terms as the license of the original software.}
+\item{Integrity of The Author's Source Code : The license may restrict source-code from being distributed in modified form only if the license allows the distribution of "patch files" with the source code for the purpose of modifying the program at build time. The license must explicitly permit distribution of software built from modified source code. The license may require derived works to carry a different name or version number from the original software.}
+\item{No Discrimination Against Persons or Groups : The license must not discriminate against any person or group of persons.}
+\item{No Discrimination Against Fields of Endeavor : The license must not restrict anyone from making use of the program in a specific field of endeavor. For example, it may not restrict the program from being used in a business, or from being used for genetic research.}
+\item{Distribution of License : The rights attached to the program must apply to all to whom the program is redistributed without the need for execution of an additional license by those parties.}
+\item{License Must Not Be Specific to a Product : The rights attached to the program must not depend on the program's being part of a particular software distribution. If the program is extracted from that distribution and used or distributed within the terms of the program's license, all parties to whom the program is redistributed should have the same rights as those that are granted in conjunction with the original software distribution.}
+\item{License Must Not Restrict Other Software : The license must not place restrictions on other software that is distributed along with the licensed software. For example, the license must not insist that all other programs distributed on the same medium must be open-source software.}
+\item{License Must Be Technology-Neutral : No provision of the license may be predicated on any individual technology or style of interface. }
+\end{enumerate}
+
+The essential difference between free software and open source software is in the way they treat the software licences. While most free software licences are viral i.e the derived works also must be released using the same licence as the source work, the open source licences do not impose these restrictions. Apart from this, there is a general complaint against open source camp that they do not emphasise on the essential quality of freedom, which is the central theme of free software. But the open source proponents claim that the use of free makes the whole issue look unattractive for commercial players and hence they use the term open software.
+
+The important feature of free and open source software has been the invitation to interested programmers to join the development work. In his `The GNU Manifesto' Richard Stallman mentioned his intentions clearly when he said ``I am asking individuals for donations of programs and work.'' From the begining volunteers have contributed immensely to the success of this movement. Continuing this trend, Linus Trovalds appealed to the computer users to give him suggestions regarding his implementation in 1991. He said ``I would like to know what features most people would want. Any suggestions are welcome, but I won't promise I will implement them''.
+
+The success of FOSS is often attributed to this phenomenon of involving volunteers in the development process. The virtual absence of any restriction to join any project is in direct contrast to the established practices of development in the proprietary software. The global nature of development model is helped by the expanding Internet and the improvements in the communication and project management technologies. By their open nature of development FOSS have left many open questions some of which this work intends to answer.
+
+\section{Related Research}
+The body of research regarding developmental methodologies in FOSSE have traditionally confined to two areas. Firstly to investigate why talented programmers contribute to Free and Open Source Software (FOSS) and secondly to build models which can explain the development process in FOSSE. Recent research have said that Free and Open software development does not adhere to the traditional engineering rationality found in the legacy of software engineering life-cycle models or prescriptive standards \cite{1}. Others have demonstrated that FOSS development models offers three interrelated advantages when compared to conventional models: a credible commitment to prevent underinvestment in complementary assets within the value chain, priming the positive-returns network effects cycle, and various efficiency and scale economies\cite{2}. 
+
+The factors motivating the atop-notch programmers to contribute to FOSS is subjected to intense research. Everyone from Economists to Sociologists is interested in understanding this strange phenomenon. The undeniable economic success of free software has prompted some leading-edge economists to try to understand why many thousands of loosely networked free software developers can compete with Microsoft at its own game and produce a massive operating system—GNU/Linux \cite{49}. It has been argued that collaborative ideals and principles applied in Free and Open Source Software (FOSS) projects could be applied to any collaboration built around intellectual property (not just software) and could potentially increase the speed at which innovations and new discoveries are made \cite{50}. Some studies have stated that the motives stem from a mosaic of economic, social and political realms\cite{3}. The ideological tilt of the developers towards FOSS and the urge to satisfy their creative instincts are also recognized as prime motivators \cite{4}\cite{5}. Few studies have indicated that altruism is also an important factor that motivates the developers to participate in FOSS projects \cite{6}. For many developers project code is intellectually stimulating to write. For them, their participation in the FOSS project was their most creative experience or was equally as creative as their most creative experience \cite{7}. Some indicate that leaders' transformational leadership is positively related to developers' intrinsic motivation and leaders' active management by exception, a form of transactional leadership, is positively related to developers' extrinsic motivation \cite{8}.  
+
+The first theory regarding development of FOSS was proposed by Eric S Raymond \cite{9}. In his now famous "Cathedral and the Bazaar" metaphor, he provided the simplistic theory explaining the working of FOSS projects. There have been few attempts to develop new models based on this metaphor \cite{10}. Lessig Lawrence observed that open code projects—whether free software or open source software projects— share the feature that the knowledge necessary to replicate the project is intended always to be available to others. There is no effort, through law or technology, for the developer of an open code project to make that development exclusive. And, more importantly, the capacity to replicate and redirect the evolution of a project provided in its most efficient form is also always preserved \cite{51}. The model of a sustainable community called "Onion Model" is also proposed \cite{11}. Models, which resemble the classic waterfall approach, have also been developed \cite{12}. The current research in FOSS developmental models have been limited to studying specific FOSS products. Most of these studies have been limited to successful FOSS projects such as Apache, Perl, Sendmail, Mozilla \cite{13} \cite{14}. 
+ 
+Not many recognise that the basic principles adopted by the FOSS community were initially proposed by Gerald M. Weinberg \cite{48}. In his theory of Egoless programming, a technical peer group uses frequent and often peer reviews to find defects in software under development. The objective is for everyone to find defects, including the author, not to prove the work product has no defects. People exchange work products to review, with the expectation that as authors, they will produce errors, and as reviewers, they will find errors. This principle has been put to telling effect by FOSS developers.
+
+There are various studies done on the use of FOSS in critical scientific and business applications. It is said that FOSS is not for hobbyists any more. Instead, it is a business strategy with broad applicability \cite{15}. In the domain of launch range operations for space vehicle launch, Open-source software offered exciting possibilities for radically shorter development times at substantially lower cost when compared to traditional methods of custom system development \cite{16}. The domain of ERP Systems, which maintain the data for a company's main business process have been greatly changed after the introduction of FOSS, based development techniques \cite{17}. 
+
+Academics have been showing keen interest in using FOSS in teaching various Computer Science related courses \cite{18} \cite{19} \cite{20}. There has even been an attempt to teach FOSSE as a part of graduate course \cite{21}. Few colleges have reported how they have used FOSS in developing software to meet their academic requirements \cite{22} \cite{23}. 
+ 
+Several studies have been undertaken to understand the extent of usage and impact of FOSS in several countries or continents. In the study, which spanned entire Europe, it was found that Europe is the leading region in terms of globally collaborating FOSS developers, and leads in terms of global project leaders \cite{24}. The interest in the FOSS activities in South-East Finland is also quantified \cite{25}. In an interesting study done on the nature of Open Source adoption in ASEAN member countries \cite{26}, it was found that Indonesia has highest rate of FOSS adoption, though the Government there is neutral about this issue. This contrasts the case of Vietnam where FOSS adoption is still low despite the Government there making the use of FOSS mandatory. In September 2003, the Asian trio of China, Japan, and South Korea (CJK) announced an initiative to promote open source software and platforms that favor non-Microsoft products such as Linux \cite{27}. 
+ 
+Similar to the research regarding the factors motivating the individuals to contribute to FOSSE, there has been research into the factors motivating the forms to contribute to FOSSE. The companies that join Open Source collaborations are seeking to use the software in a non-differentiating, cost-center role \cite{28}. It is found that firms emphasize economic and technological reasons for entering and contributing to Open Source and do not subscribe to many socially-based motivations that are, by contrast, typical of individual programmers. Some companies get into FOSS activities because the user community, which comprises of a very large group of beta testers, allows them to perform a bug fixing better \cite{29}. Some factors like organizational size, top management support, and availability of resources like limited financial resources, or a pool of FOSS-literate IT personnel also enhances the chances of an organization to get into FOSS \cite{30}. A large-scale survey on 146 Italian Open Source firms concluded that intrinsic community based motivations couple with extrinsic, profit-based incentives \cite{31}. 
+ 
+Some organizations have tried to use FOSS as basic building blocks for creating mature technologies like operating systems, middleware, databases, protocol stacks and development environments \cite{32}. Some companies have tried to test, certify and integrate FOSS components so that they work together \cite{33}. Few have tried to combine FOSS components in their own offerings \cite{34}. It is argued that large system integrators, or solution providers, stand to gain the most from open source software because they increase profits through direct cost savings and the ability to reach more customers through improved pricing flexibility. \cite{35} 
+
+Several industry leaders are active in FOSS ecology. IBM and Novell have announced or strengthened their open source offerings from the data server to the desktop, sometimes offering and supporting certified versions of open source applications, sometimes using open source code in new server-based configurations that let customers choose specific functionalities per user \cite{36}. IBM, Sun and Apple have experimented with hybrid strategies, which attempted to combine the advantages of open source software while retaining control and differentiation \cite{37}. 
+
+There is also some criticism on the commercialization of FOSS projects. There is an argument that this process of commercialization will present some genuine risks to the movement itself. Critics question how these projects which rely on altruism, ego and pride as the central rewarding mechanisms can continue when these noble efforts are turned into cold, hard cash by enterprising entrepreneur \cite{38}. 
+
+\section{Datasets}
+SourceForge.net is the world's largest Open Source software development web site, with the largest repository of Open Source code and applications available on the Internet. Owned and operated by OSTG, Inc. (OSTG), SourceForge.net provides free services to Open Source developers. The SourceForge.net web site is database driven and the supporting database includes historic and status statistics on over 200,000 projects and over 2 million registered users' activities at the project management web site. OSTG has shared certain SourceForge.net data with the University of Notre Dame for the sole purpose of supporting academic and scholarly research on the Free/Open Source Software phenomenon. OSTG has given Notre Dame permission to in turn share this data with other academic researchers studying the Free/Open Source Software phenomenon.
+
+To advance the understanding of, and research on, the Free/Open Source Software phenomenon, portions of the data that may support such research, is made available to academic or scholarly researchers. All requests for data must be submitted in writing to the Notre Dame PI, Greg Madey. Only academic and scholarly researchers are eligible to receive the data. To receive the data, a short questionnaire and agreement must be completed, signed and returned. A wiki for users of the research data is available.
+
+SourceForge.net uses relational databases to store project managment activity and statistics. There are over 100 relations (tables) in the data dumps provided to Notre Dame. Some of the data have been removed for security and privacy reasons. SourceForge.net cleanses the data of personal information and strips out all OSTG specific and site functionality specific information. On a monthly basis, a complete dump of the databases (minus the data dropped for privacy and security reasons) is shared with Notre Dame. The Notre Dame researchers  have built a data warehouse comprised of these monthly dumps, with each stored in a separate schema. Thus, each monthly dump is a shapshot of the status of all the SourceForge.net projects at that point in time.As of Aug 2009, the data warehouse was almost 1500 GBytes in size, and is growing at about 25 GBytes per month. Much of the data is duplicated among the monthly dumps, but trends or changes in project activity and structure can be discovered by comparing data from the monthly dumps. Queries across the monthly schema may be used to discover when changes took place, to estimate trends in project activity and participation, or even that no activity, events or changes have taken place.
+
+The data dump of each month is identified as sfmmyy. Therefore the dump of Oct 1009 is referred as sf1009. The tables in each dump are referred by the dump identifier and table name. So the table `artifact' for the month Oct 2009 should be referred as `sf0909.artifact'. To facilitate the access of data, University of Notre Dame has provided a web access for the researchers to run sql queries on the data and download the result files in many formats.
+
+For the purpose of present study the data from Feb 2005 to Aug 2009 (sf0205 - sf00809) is considered. Therefore total of 54 datasets each containing around 100 tables is analysed for the macro studies. In some cases, the datasets for July 2007 (sf0707) and August 2007 (sf0807)were not considered because the data for these months were not in line with the historical trend. Repeated attempts to extract data from the data warehouse of University of Notre Dame gave the same erroneous results. Therefore, it was concluded that these data are corrupted and should not be considered for present research.
+
+\section{Scripting Tools}
+\begin{flushleft}
+\textbf{Shell Scripting}
+\end{flushleft}
+
+The shell is a command programming language that provides an interface to the UNIX like operating system. Its features include control-flow primitives, parameter passing, variables and string substitution. Constructs such as while, if then else, case and for are available. Two-way communication is possible between the shell and commands. String-valued parameters, typically file names or flags, may be passed to a command. A return code is set by commands that may be used to determine control-flow, and the standard output from a command may be used as shell input.
+
+The shell can modify the environment in which commands run. Input and output can be redirected to files, and processes that communicate through `pipes' can be invoked. Commands are found by searching directories in the file system in a sequence that can be defined by the user. Commands can be read either from the terminal or from a file, which allows command procedures to be stored for later use. 
+
+\begin{flushleft}
+\textbf{Awk}
+\end{flushleft}
+
+The Awk text-processing language is useful for such tasks as - Tallying information from text files and creating reports from the results, adding additional functions to text editors like `vi', translating files from one format to another, creating small databases and performing mathematical operations on files of numeric data. 
+
+Awk can be used in two ways. It cab be used as an utility for performing simple text-processing tasks, and it is a programming language for performing complex text-processing tasks.Awk statements comprise a programming language. In fact, Awk is useful for simple computational programming. There are, however, things that Awk is not. It is not really well suited for extremely large, complicated tasks. It is also an interpreted language, that is, an Awk program cannot run on its own, it must be executed by the Awk utility itself. That means that it is relatively slow, though it is efficient as interpretive languages go, and that the program can only be used on systems that have Awk. There are translators available that can convert Awk programs into C code for compilation as stand-alone programs, but such translators have to be purchased separately.
+
+Awk actually stands for the names of its authors: "Aho, Weinberger, and Kernighan". Kernighan later noted, ``Naming a language after its authors shows a certain poverty of imagination.'' The name is reminiscent of that of an oceanic bird known as an `auk', and so the picture of an auk often shows up on the cover of books on Awk. 
+
+\begin{flushleft}
+\textbf{sed}
+\end{flushleft}
+`sed' stands for Stream EDitor. Sed is a non-interactive editor, written by the late Lee E. McMahon in 1973 or 1974. 
+
+Instead of altering a file interactively by moving the cursor on the screen (as with a word processor), the user sends a script of editing instructions to sed, plus the name of the file to edit (or the text to be edited may come as output from a pipe). In this sense, sed works like a filter; deleting, inserting and changing characters, words, and lines of text. Its range of activity goes from small, simple changes to very complex ones.
+
+Sed reads its input from stdin (Unix shorthand for `standard input,' i.e., the console) or from files (or both), and sends the results to stdout (`standard output,' normally the console or screen). Sed is used for its substitution features. It is also used as a find-and-replace tool. It can also be used to delete words from a file. 
+
+\section{Database}
+MySQL's history goes back to 1979 when TcX, the company that developed MySQL, started working with database programs. This first version was a screen builder/reporting tool written in BASIC. At that time, state-of-the-art computers had 4MHz Z80 processors and 16KB of RAM. This tool was moved to UNIX and further developed during the following years. In the mid-1990s, the problem began with customers who liked the results the tool produced but wanted something they had heard about before . So efforts began to make an SQL front end to existing low-level libraries. It was called mSQL, but it did not work for the required purposes. So work started on to write an SQL engine from scratch. However, since the mSQL API was useful, it was used it as the basis for the developer's own API. This made it easy to port some applications was needed that were available for the mSQL API.
+
+Since this tool would be usable by others, it was decided to release it according to the business model pioneered by Peter Deutsch at Aladdin Enterprises with Ghostscript. This copyright is much more free than the mSQL copyright and allows commercial use as long as you don't distribute the MySQL server commercially. 
+
+It is not perfectly clear where the name MySQL came from. The prefix `my' was used for libraries and path names since the mid-1980s. The main MySQL developer's daughter is named My, a fairly common name among Swedish-speaking Finns. So naming the database MySQL was very natural.
+
+The MySQL Server is installed on a Server and can be accessed directly via various client interfaces, which send SQL statements to the server and then display the results to a user. Some of these are:
+
+\begin{itemize}
+\item{Local Client}
+\item{Scripting Language}
+\item{Remote Client} 
+\item{Remote Login}
+\item{Web Browser}
+\end{itemize}
+
+MySQL uses Structured Query Langauge (SQL) to maipulate data stored in it. SQL is cross between a math-like language and an English-like language that allows us to ask a database questions or tell it do do things. There is a structure to this language: it uses English phrases to define an action, but uses math-like symbols to make comparisons. 
+
+\section{Data Analysis and Visualization Tools}
+\textbf{gnuR}
+
+R is a language and environment for statistical computing and graphics. It is a GNU project which is similar to the S language and environment which was developed at Bell Laboratories (formerly AT\&T, now Lucent Technologies) by John Chambers and colleagues. R can be considered as a different implementation of S. There are some important differences, but much code written for S runs unaltered under R.
+
+R provides a wide variety of statistical (linear and nonlinear modelling, classical statistical tests, time-series analysis, classification, clustering) and graphical techniques, and is highly extensible. The S language is often the vehicle of choice for research in statistical methodology, and R provides an Open Source route to participation in that activity.
+
+One of R's strengths is the ease with which well-designed publication-quality plots can be produced, including mathematical symbols and formulae where needed. Great care has been taken over the defaults for the minor design choices in graphics, but the user retains full control.
+
+R is available as Free Software under the terms of the Free Software Foundation's GNU General Public License in source code form. It compiles and runs on a wide variety of UNIX platforms and similar systems (including FreeBSD and Linux), Windows and MacOS.
+
+R is an integrated suite of software facilities for data manipulation, calculation and graphical display. It includes
+\begin{itemize}
+ \item{an effective data handling and storage facility,}
+\item{a suite of operators for calculations on arrays, in particular matrices,}
+\item{a large, coherent, integrated collection of intermediate tools for data analysis,}
+\item{graphical facilities for data analysis and display either on-screen or on hardcopy, and}
+\item{a well-developed, simple and effective programming language which includes conditionals, loops, user-defined recursive functions and input and output facilities. }
+\end{itemize}
+
+
+The term `environment' is intended to characterize it as a fully planned and coherent system, rather than an incremental accretion of very specific and inflexible tools, as is frequently the case with other data analysis software.
+
+R, like S, is designed around a true computer language, and it allows users to add additional functionality by defining new functions. Much of the system is itself written in the R dialect of S, which makes it easy for users to follow the algorithmic choices made. For computationally-intensive tasks, C, C++ and Fortran code can be linked and called at run time. Advanced users can write C code to manipulate R objects directly.
+
+\pagebreak
+
+\begin{flushleft}
+\textbf{gretl}
+\end{flushleft}
+
+Gnu Regression, Econometrics and Time-series Library (gretl) is a cross-platform software package for econometric analysis, written in the C programming language. It is is free, open-source software. The features of this package are
+
+\begin{itemize}
+\item{Easy intuitive interface (now in French, Italian, Spanish, Polish, German, Basque, Portuguese, Russian, Turkish and Czech as well as English)}
+\item{A wide variety of estimators: least squares, maximum likelihood, GMM; single-equation and system methods}
+\item{Time series methods: ARMA, GARCH, VARs and VECMs, unit-root and cointegration tests, etc.}
+\item{Output models as LaTeX files, in tabular or equation format}
+\item{Integrated scripting language: enter commands either via the gui or via script}
+\item{Command loop structure for Monte Carlo simulations and iterative estimation procedures}
+\item{GUI controller for fine-tuning Gnuplot graphs}
+\item{Link to GNU R for further data analysis}
+\end{itemize}
+
+Supported data formats include: own XML data files; Comma Separated Values; Excel, Gnumeric and Open Document worksheets; Stata .dta files; SPSS .sav files; Eviews workfiles; JMulTi data files; own format binary databases (allowing mixed data frequencies and series lengths), RATS 4 databases and PC-Give databases. Includes a sample US macro database
+
+\begin{flushleft}
+\textbf{Cytoscape}
+\end{flushleft}
+
+Cytoscape is an open source bioinformatics software platform for  visualizing molecular interaction networks and biological pathways and integrating these networks with annotations, gene expression profiles and other state data. Although Cytoscape was originally designed for biological research, now it is a general platform for complex network analysis and visualization. Cytoscape core distribution provides a basic set of features for data integration and visualization. Additional features are available as plugins. Plugins are available for network and molecular profiling analyses, new layouts, additional file format support, scripting, and connection with databases. Plugins may be developed by anyone using the Cytoscape open API based on Java technology and plugin community development is encouraged. Most of the plugins are freely available. 
+
+Cytoscape supports a lot of standard network and annotation file formats including: SIF (Simple Interaction Format), GML, XGMML, BioPAX, PSI-MI, SBML, OBO, and Gene Association. Delimited text files and MS Excel Workbook are also supported and you can import data files, such as expression profiles or GO annotations, generated by other applications or spreadsheet programs. Using this feature, you can load and save arbitrary attributes on nodes, edges, and networks. For example, input a set of custom annotation terms for your proteins, create a set of confidence values for your protein-protein interactions. 
+
+Cytoscape layouts networks in two dimensions.  A variety of layout algorithms are available, including cyclic, tree, force-directed, edge-weight, and yFiles Organic layouts. You can also use Manual Layout tools similar to other graphics application user interface. Zoom in/out and pan can be used for browsing the network. Use the network manager to easily organize multiple networks. And this structure can be saved in a session file. Use the bird's eye view to easily navigate large networks. Easily navigate large networks (100,000+ nodes and edges) by efficient rendering engine.
+
+Filter the network to select subsets of nodes and/or interactions based on the current data.  For instance, users may select nodes involved in a threshold number of interactions, nodes that share a particular GO annotation, or nodes whose gene expression levels change significantly in one or more conditions according to p-values loaded with the gene expression data. New networks can be created from the filtering result. Search target nodes and edges by Quick Find or Enhanced Search.  Lucene Syntax is supported by Enhanced Search Plugin (ESP) for arbitrary complex queries. Find active subnetworks/pathway modules. The network is screened against gene expression data to identify connected sets of interactions, i.e. interaction subnetworks, whose genes show particularly high levels of differential expression.  The interactions contained in each subnetwork provide hypotheses for the regulatory and signaling interactions in control of the observed expression changes. Find clusters (highly interconnected regions) in any network loaded into Cytoscape. 
+
+% ------------------------------------------------------------------------
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../thesis"
+%%% End: 

@@ -1,0 +1,32 @@
+\begin{center}
+\thispagestyle{empty}
+\bfseries
+\large{Department of Computer Science and Engineering \\
+M S Ramaiah Institute of Technology \\
+Bangalore - 54} \\
+{ \vspace*{2mm}{{\includegraphics [scale =0.5]{logo}} \par}}
+\LARGE{CERTIFICATE} \\
+\end{center}
+\vspace{0.1in}
+\large{
+This is to certify that Mr. Krishna Raj P. M. (USN- 1MS07MEN02) who was working for his M. Sc. (Engg) by Research under my guidance, has completed the work as per my satisfaction with the topic \textbf{Analysis of new paradigms for the development and applications in Free and Open Source Software Engineering}. To the best of my understanding the work to be submitted in dissertation does not contain any work, which has been previously carried out by others and submitted by the candidate for himself for the award of any degree anywhere.
+} \\
+\vspace{0.5in}
+\small{
+\begin{flushleft}
+\begin{tabular}{lll}
+(Guide) & (Co-Guide) & (Head of the Institute)\\
+Dr. K G Srinivasa & Dr. T V Suresh Kumar & Dr. K Rajani Kanth\\
+Asst. Professor, Dept of CSE & Prof.\& Head, Dept of MCA & Principal
+\end{tabular}
+\end{flushleft}
+\vspace{0.1in}
+\begin{flushleft}
+\begin{tabular}{llllll}
+ & (Examiner 1) & & & &(Examiner 2)  \\
+Name &  & & & &\\ \\
+Signature & & & & &
+\end{tabular}
+\end{flushleft}}
+% ------------------------------------------------------------------------
+

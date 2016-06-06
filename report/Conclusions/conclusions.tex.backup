@@ -1,0 +1,50 @@
+\def\baselinestretch{1}
+\chapter{Concusion}
+\ifpdf
+    \graphicspath{{Conclusions/ConclusionsFigs/PNG/}{Conclusions/ConclusionsFigs/PDF/}{Conclusions/ConclusionsFigs/}}
+\else
+    \graphicspath{{Conclusions/ConclusionsFigs/EPS/}{Conclusions/ConclusionsFigs/}}
+\fi
+
+\def\baselinestretch{1.66}
+
+The analysis of the datasets from Feb 2005 to Aug 2009 yields following results
+\begin{itemize}
+ \item {Only 10\% of the Registered users in Sourceforge.net subscribe themselves to a Project}
+  \item{The average number of Developers is 200000}
+  \item{The average number of Projects is 150000}
+  \item{99\% of Projects have less than 14 Developers}
+  \item{71\% of the Projects have single Developers}
+  \item{76\% of the Developers subscribe to only one Project}
+\end{itemize}
+
+\begin{flushleft}
+The analysis of Six Top Ranked Projects from Feb 2005 to Aug 2009 yields following results  
+\end{flushleft}
+
+\begin{itemize}
+  \item{The average number of Developers is 76}
+  \item{70\% of the Developers are dedicated Developers}
+  \item{34\% of the Developers who join Top Projects migrate from other Projects (Migrants)}
+  \item{42\% of the Developers who join Top Projects are Newbie's (Debutants)}
+  
+\end{itemize}
+The present work throws some interesting observations regarding the basic premises of FOSS world. The promise of open invitation to the developers which is touted as the single most unique feature of FOSS world, it appears, has not resulted in great results. The fact that only 10\% of the registered users in Sourceforge.net get themselves affiliated to a project proves that the conversion from interested public to dedicated developers is happening at a very slow rate. The long term success of the FOSS movement will depend on how effectively this conversion rate is improved. 
+
+The ability to attract like minded people and involve them in the development is another popular belief in FOSS world.  Eric Raymond said that ``Every good work of software starts by scratching a developer's personal itch''. Though a developer starts the project alone, it was assumed that over a period of time, developers will start contributing to the project. But the results from this work shows that this is not exactly correct. Nearly one third of the projects in Sourceforge.net have only one developer. The failure of projects to attract more developers may prove to be the single important reason for the death of FOSS projects.
+
+The size of project groups has been an issue in Software Engineering discussions. The data from Top Ranked projects from Sourceforge.net shows that they have a large number of developers. It also shows that nearly one third of the developers in the projects are dedicated to that project. Accordingly, we can conclude that successful FOSS projects display a singular feature of large number of dedicated developers.
+
+One of the important contribution of this work is to analyse the nature of developer migration patters. It was important to know whether few developers, who by the virtue of their presence, make a project successful. The present work shows that a successful project contains the right mix of experienced and new developers. Surprisingly, it was found that the number of new developers is slightly higher than experienced developers thereby proving again that FOSS ecology is still open to all.
+
+The decrease in number of tasks that are alloted to developers in Top Ranked project is a clear sign of project maturity. This trend is in line with the popular notion that the product reaches a state of equilibrium after few months of use. The reduction in the number of days required to close an issue further testifies the same fact. 
+
+Summarising, with limited scope, the present work contributes to the growing pool of knowledge regarding the development practices followed in FOSS. The results show that even though the FOSS world appears to be working in a chaotic `bazaar model' on the surface, there is a definite process followed by the developer community. Since the practices followed by FOSS community is different from the traditional software development, there may be some difficulty in understanding them. The world is relying more on software today than anytime before. In such times, these studies will definitely help us to improve our knowledge regarding developing software and enable us to meet our professional obligation of delivering good quality software in right time and price while meeting the user's requirements. 
+%%% ----------------------------------------------------------------------
+
+% ------------------------------------------------------------------------
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../thesis"
+%%% End: 

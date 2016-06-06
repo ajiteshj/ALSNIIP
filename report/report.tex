@@ -1,0 +1,75 @@
+%input macros (i.e. write your own macros file called MacroFile1.tex)
+%\include{Macros/MacroFile1}
+
+\documentclass[oneside,12pt]{Classes/CUEDthesisPSnPDF}
+
+\title{ANALYSIS OF LARGE SOCIAL NETWORKS TO INVESTIGATE INTRIGUING PATTERNS}
+
+\author{by \\ \vspace{2mm}AJITESH JAYANTH ( USN- 1MS12IS011 ) \\ AKSHAY RAO AK ( USN- 1MS12IS013 ) \\ ANKITH MOHAN ( USN- 1MS12IS014 ) \\ G AKASH ROHIT ( USN- 1MS12IS037 ) \vspace{2mm}  }
+\collegeordept{DEPARTMENT OF INFORMATION SCIENCE AND ENGINEERING}
+\university{M S RAMAIAH INSTITUTE OF TECHNOLOGY}
+\renewcommand{\submittedtext}{A report submitted to \\M S RAMAIAH INSTITUTE OF TECHNOLOGY \\ Bengaluru  \vspace{0.1in} \\IS811 SENIOR PROJECT   \\as partial fulfilment of the requirement for \\  }
+\degree{Bachelor of Engineering (B.E) in Information Science and Engineering}
+\degreedate{May 2016}
+\guide{under the guidance of \\ KRISHNARAJ P M}
+
+\hbadness=10000
+\hfuzz=50pt
+
+%\usepackage[square,sort,comma,numbers]{natbib}
+\usepackage{watermark}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage[numbers]{natbib}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot{}
+\renewcommand{\footrulewidth}{0.4pt}
+\lfoot{Information Science Engineering, MSRIT, Bengaluru}
+\rfoot{\thepage}
+%\fancyfoot[R]{\thepage}
+\begin{document}
+
+\renewcommand\baselinestretch{1.2}
+\baselineskip=18pt plus1pt
+
+\maketitle
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\begin{romanpages}
+\include{Certificate/certificate}
+\include{Declaration/declaration}
+
+\include{Acknowledgement/acknowledgement}
+\normalsize{
+%\include{Licence/licence}
+\include{Abstract/abstract}
+\printnomenclature  
+\tableofcontents
+\listoffigures
+\listoftables
+}
+\end{romanpages}
+                                      
+\include{Introduction/introduction}
+%\include{LitReview/litreview}
+%% Chapter1 has Literature Review
+\include{Chapter1/chapter1}
+%% Chapter2 has System Analysis and Design
+\include{Chapter2/chapter2}
+%% Chapter3 has Results and Graphs
+%\include{Chapter3/chapter3}
+%\include{Chapter4/chapter4}
+\include{Methods/methods}
+
+\include{Conclusions/conclusions}
+
+
+
+\bibliographystyle{plain}
+\bibliography{References/references}
+\addcontentsline{toc}{chapter}{References}
+
+\end{document}

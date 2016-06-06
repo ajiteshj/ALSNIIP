@@ -1,0 +1,1507 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>thesis</TITLE>
+<META NAME="description" CONTENT="thesis">
+<META NAME="keywords" CONTENT="thesis">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="thesis.css">
+
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1"
+  HREF="node1.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up_g.png"> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev_g.png">   
+<BR>
+<B> Next:</B> <A NAME="tex2html2"
+  HREF="node1.html">About this document ...</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+documentclass[oneside,12pt]Classes/CUEDthesisPSnPDF
+par
+titleANALYSIS OF NEW PARADIGMS FOR THE DEVELOPMENT AND APPLICATION IN FREE AND OPEN SOURCE SOFTWARE ENGINEERING
+par
+authorby 
+<BR>
+vspace2mmKRISHNA RAJ P M vspace5mm
+collegeordeptDEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING
+universityM S RAMAIAH INSTITUTE OF TECHNOLOGY
+renewedcommandsubmittedtextA Thesis submitted to 
+<BR>
+VISVESVARAYA TECHNOLOGICAL UNIVERSITY 
+<BR>
+Belgaum 
+<BR>
+for award of degree of 
+degreeMaster of Science (Engineering) in Electrical Engineering Sciences
+degreedateNov 2009
+guideunder the guidence of 
+<BR>
+Dr. K G SRINIVASA hspace*15Dr. T V SURESH KUMAR 
+par
+hbadness=10000
+hfuzz=50pt
+par
+usepackageStyleFiles/watermark
+usepackagemultirow
+par
+begindocument
+par
+renewedcommandbaselinestretch1.2
+baselineskip=18pt plus1pt
+par
+maketitle
+par
+setcountersecnumdepth3
+setcountertocdepth3
+par
+beginromanpages
+begincenter
+bfseries
+largeDepartment of Computer Science and Engineering 
+<BR>
+M S Ramaiah Institute of Technology 
+<BR>
+Bangalore - 54 
+<BR>
+vspace*2mmincludegraphics [scale =0.5]logo par
+
+LARGECERTIFICATE 
+<BR>
+endcenter
+vspace0.1in
+large
+This is to certify that Mr. Krishna Raj P. M. (USN- 1MS07MEN02) who was working for his M. Sc. (Engg) by Research under my guidance, has completed the work as per my satisfaction with the topic textbfAnalysis of new paradigms for the development and applications in Free and Open Source Software Engineering. To the best of my understanding the work to be submitted in dissertation does not contain any work, which has been previously carried out by others and submitted by the candidate for himself for the award of any degree anywhere.
+ 
+<BR>
+vspace0.5in
+small
+beginflushleft
+begintabularlll
+(Guide) &amp; (Co-Guide) &amp; (Head of the Institute)
+<BR>
+Dr. K G Srinivasa &amp; Dr. T V Suresh Kumar &amp; Dr. K Rajani Kanth
+<BR>
+Asst. Professor, Dept of CSE &amp; Prof.&amp; Head, Dept of MCA &amp; Principal
+endtabular
+endflushleft
+vspace0.1in
+beginflushleft
+begintabularllllll
+ &amp; (Examiner 1) &amp; &amp; &amp; &amp;(Examiner 2)  
+<BR>
+Name &amp;  &amp; &amp; &amp; &amp;
+<BR>
+<BR>
+Signature &amp; &amp; &amp; &amp; &amp;
+endtabular
+endflushleft
+begincenter
+bfseries
+largeDepartment of Computer Science and Engineering 
+<BR>
+M S Ramaiah Institute of Technology 
+<BR>
+Bangalore - 54 
+<BR>
+vspace*2mmincludegraphics [scale =0.5]logo par
+
+LARGEDECLARATION 
+<BR>
+endcenter
+vspace0.5in
+large
+I hereby declare that the entire work embodied in this M.Sc (Engg) by Research thesis has been carried out by me at M S Ramaiah Institute of Technology under the supervision of Dr.K G Srinivasa and Dr. T V Suresh Kumar. This thesis has not been submitted in part or full for the award of any diploma or degree of this or any other University. 
+<BR>
+vspace0.5in
+beginflushleft
+smallKrishna Raj P M 
+<BR>
+USN - 1MS07MEN02 
+endflushleft
+par
+par
+begindedication par
+This work is dedicated to 
+<BR>
+Free &amp; Open Source Software Community
+par
+enddedication
+par
+par
+beginacknowledgements      par
+begincenter
+KGS &amp; TVS for everything
+par
+Dr. Ramanatha for advice
+par
+Dr. Rajani Kanth for support
+par
+Dr. Aswatha Kumar for encouragement
+par
+Dr. Gregory R. Madey &amp; team for research data
+par
+Harish Bhanderi for latex templateendcenter
+par
+endacknowledgements
+par
+par
+begincenter
+textbfThis work is licenced under 
+<BR>
+Creative Commons Attribution-Noncommercial 2.5 India Licenceendcenter
+par
+You are free 
+beginitemize
+ item to Share: to copy, distribute and transmit the work
+  itemto Remix: to adapt the work
+enditemize
+par
+vspace0.25in
+par
+Under the following conditions:
+par
+beginitemize
+ item  Attribution: You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work)
+  itemNoncommercial: You may not use this work for commercial purposes
+enditemize
+par
+vspace0.25in
+With the understanding that:
+beginitemize
+ item Waiver: Any of the above conditions can be waived if you get permission from the copyright holder
+  itemOther Rights: In no way are any of the following rights affected by the license
+  subitem * Your fair dealing or fair use rights;
+  subitem * The author's moral rights;
+  subitem * Rights other persons may have either in the work itself or in how the work is used, such as publicity or privacy rights.
+enditemize
+par
+Notice: For any reuse or distribution, you must make clear to others the license terms of this work. 
+par
+par
+beginabstracts        par
+This is where you write your abstract ...
+par
+endabstracts
+par
+tableofcontents
+listoffigures
+listoftables
+endromanpages
+par
+chapterIntroduction
+ifpdf
+    graphicspathIntroduction/IntroductionFigs/PNG/Introduction/IntroductionFigs/PDF/Introduction/IntroductionFigs/
+else
+    graphicspathIntroduction/IntroductionFigs/EPS/Introduction/IntroductionFigs/
+fi
+par
+The topic of this research is the study, from a Software Engineering perspective, of the processes and practices followed in the development and application of Free and Open Source Software Engineering (FOSSE).
+The development practices in FOSSE are giving rise to a new view of how complex software systems can be constructed, deployed and evolved. Software informalisms followed in FOSSE and their corresponding software applications/tools are neither part of, nor integrated with, the traditional Engineers' tool-set. 
+par
+From the Software Engineering perspective, FOSSE development models have a set of characteristics that makes them an interesting matter of study: they have an open development model comprising of occasional contributors; they offer external contributors the possibility to get integrated into the development team; there are large amounts of contributions made by volunteers; they are developed in a distributed (global) software development environment; they foster frequent interactions with end-users; they make heavy use of telematic tools and they offer flexible and dynamic processes and management models. 
+par
+nomeclature 
+par
+chapterBackground Study
+ifpdf
+    graphicspathChapter1/Chapter1Figs/PNG/Chapter1/Chapter1Figs/PDF/Chapter1/Chapter1Figs/
+else
+    graphicspathChapter1/Chapter1Figs/EPS/Chapter1/Chapter1Figs/
+fi
+par
+sectionSoftware Development Methodologies
+Software Development Methodologies have a troubled history. In the 1960's while people were successful in developing small scale programs, they failed miserably trying to scale up the development efforts. As a result, the phenomenon, which was later named as `Software Crisis' emerged. The characteristic features of this crisis were -projects running over-budget, projects running over-time, software was very inefficient, software was of low quality, software often did not meet requirements, projects were unmanageable and code difficult to maintain and software was never delivered.
+par
+The 1968 NATO Software Engineering Conference was a milestone because it was here that the term `Software Engineering' was first used and subsequently efforts were made to transcend the efforts in the field from programming to organised development methodologies. The thinkers through the 70's set the precedence by illustrating various approaches to software development which have been adapted into specific methodologies. 
+par
+The Waterfall model attributed to Dr. Royce cite39 has the following basic principles cite40
+par
+beginitemize
+ item Project is divided into sequential phases, with some overlap and splash back acceptable between phases.
+  itemEmphasis is on planning, time schedules, target dates, budgets and implementation of an entire system at one time.
+  itemTight control is maintained over the life of the project through the use of extensive written documentation, as well as through formal reviews and approval/sign-off by the user and information technology management occurring at the end of most phases before
+beginning the next phase.
+enditemize
+par
+The Spiral Model by Boehm cite41 works on the following principles cite40
+par
+beginitemize
+item Focus is on risk assessment and on minimizing project risk by breaking a project into smaller segments and providing more ease-of-change during the development process, as well as providing the opportunity to evaluate risks and weigh consideration of project continuation throughout the life cycle.
+itemEach cycle involves a progression through the same sequence of steps, for each portion of the product and for each of its levels of elaboration, from an overall concept-of-operation document down to the coding of each individual program.
+itemEach trip around the spiral traverses four basic quadrants: (1) determine objectives, alternatives, and constraints of the iteration; (2) evaluate alternatives; identify and resolve risks; (3) develop and verify deliverables from the iteration; and (4) plan the next iteration.
+itemBegin each cycle with an identification of stakeholders and their win conditions, and end each cycle with review and commitment.
+enditemize
+par
+The Prototyping Development Methodology is based on the basic concept of engaging the end users in all the phases of development and delivering the product in parts so that the user can comment on the validity of the process. The basic principles of this method are cite40
+par
+beginitemize
+itemNot a standalone, complete development methodology, but rather an approach to handling selected portions of a larger, more traditional development methodology (i.e. Incremental, Spiral, or Rapid Application Development (RAD)).
+itemAttempts to reduce inherent project risk by breaking a project into smaller segments and providing more ease-of-change during the development process.
+itemUser is involved throughout the process, which increases the likelihood of user acceptance of the final implementation.
+itemSmall-scale mock-ups of the system are developed following an iterative modification process until the prototype evolves to meet the users’ requirements.
+itemWhile most prototypes are developed with the expectation that they will be discarded, it is possible in some cases to evolve from prototype to working system.
+itemA basic understanding of the fundamental business problem is necessary to avoid solving the wrong problem.
+enditemize
+par
+The Incremental Development Methodology is based on the premise that the risk involved in the development is reduced by delivering small pieces of the software to the user and thereby improving the software based on their feedback. Unlike in Prototyping model, each increment here delivers a complete, working system. The basic activities of this model are cite40
+par
+beginitemize
+item A series of mini-Waterfalls are performed, where all phases of the Waterfall development model are completed for a small part of the systems, before proceeding to the next incremental, or
+itemOverall requirements are defined before proceeding to evolutionary, mini-Waterfall development of individual increments of the system, or
+itemThe initial software concept, requirements analysis, and design of architecture and system core are defined using the Waterfall approach, followed by iterative Prototyping, which culminates in installation of the final prototype (i.e., working system).
+enditemize
+par
+Rapid Application Development cite42 prescribes the heavy use of models and prototypes to understand and formalise user requirements. Used over a set of iterations, models and prototypes generate a valid set of verifiable functional requirements of the system and the basic design of the proposed system. The method initially proposed by Martin is now used in a more generic development methodology which favours the use of Fourth Generation Languages and Development Tools to quickly build the system.
+par
+These general approaches towards development of software have been further developed into specific methodologies which have gained prominence in recent years. Here is a partial list of such development methodologies in a chronological order.
+par
+beginitemize
+item Structured programming
+item Structured Systems Analysis and Design Methodology
+item Object Oriented Analysis and Design
+item Scrum Development Methodology
+item Personal Software Process and Team Software Process
+item Extreme Programming
+item Rational Unified Process
+item Agile Methodology
+item Adaptive Software Development
+item Crystal Clear Methodologies
+item Extreme Programming
+item Feature Driven Development
+item ICONIX Process
+enditemize
+par
+Among the various software development methodologies that have emerged in these years, the notable ones are the Capability Maturity Model (CMM). The process was initially defined by Watts Humphrey cite43. Though it was supposed to cover the software development methods, it has today become a general model for improving the business process of an organisation covering diverse areas of project management to IT resource acquisition. The success of this process can be attributed to the practice of certifying the maturity of an organisation. A young field like IT required such a certification mechanism in the absence of any other quality assessment methods. Today CMM has further improved into a model known as Capability Maturity Model Integration (CMMI). CMMI is a trademarked process improvement methodology focussing on product and service development, service establishment, management, and delivery  and product and service acquisition. 
+par
+The international standard for describing the method of selecting, implementing and monitoring the life cycle for software is ISO 12207. The standard has the main objective of supplying a common structure so that the all the stakeholders involved with the software development. The standard is based on two basic principles, modularity and responsibility. Modularity ensures diving the complex software engineering tasks into small, manageable tasks and responsibility ensures assigning these tasks to individual members in the team so that they become legally accountable for the work delivered by them.
+par
+Almost all the models discussed in this section focus exclusively on the process. This complete attention on the process neglects the other critical component in the project cycle - people. There is a common complaint among a section of practitioners of software development that what was essentially an art is now converted into a full blown business. In the process, the lonely superstars who could build a complete set of system tools in days have moved out of the system. In trying to define a industrial like process for software development, the human component has become unfortunate casualty. 
+par
+The exception to this general trend of neglect towards people is the People Capability Maturity Model (P-CMM). P-CMMM keeps people at the central focus of the software development activities and describes an evolutionary improvement path from ad hoc, inconsistently performed practices, to a mature, disciplined, and continuously improving development of the knowledge, skills, and motivation of the workforce that enhances strategic business performance of an organisation. The PCMM helps organisations characterise the maturity of their workforce practices, establish a program of continuous workforce development, set priorities for improvement actions, integrate workforce development with process improvement, and establish a culture of excellence.
+par
+There has been criticism on the way formal methods are employed in Software Engineering. At the early stages of the industry, a great researcher like David L. Parnas along with Paul C. Clements made some strong remarks ``Programmers start without a clear statement of desired behavior and implementation constraints. They make a long sequence of design decisions with no clear statement of why they do things the way they do. Their rationale is rarely explained. Many of us are not satisfied with such a design process.'' cite46
+par
+It was not surprising that Brooks argued that ``there is no single development, in either technology or management technique, which by itself promises even one order of magnitude [tenfold] improvement within a decade in productivity, in reliability, in simplicity.'' He also stated that ``we cannot expect ever to see two-fold gains every two years'' in software development, like there is in hardware development. cite47 This statement has been evoked every time the promised methodology or technology does not live up to its promise. And every time there is a new process round the corner, people ask whether it is the `silver bullet?'. Alas, we are still to find one in software engineering.
+par
+Despite developing an array of methodologies, the success rate in software development is not encouraging. Reports from a survey in 2001 said that 51% of the clients viewed their ERP implementation as unsuccessful. Another survey reported in the same year that 40% of the projects failed to achieve their business case within one year of going live. A few years before it was reported that over 61% of the projects that were analysed were deemed to have failed cite44. 
+par
+Given the alarming rate of failures it is not surprising that a commentator says ``Like electricity, water, transportation, and other critical parts of our infrastructure, IT is fast becoming intrinsic to our daily existence. In a few decades, a large-scale IT failure will become more than just an expensive inconvenience: it will put our way of life at risk. In the absence of the kind of industry wide changes that will mitigate software failures, how much of our future are we willing to gamble on these enormously costly and complex systems?'' cite45 
+par
+Summarising, there are various approaches towards software development like waterfall and spiral which have been adapted into specific methodologies like SSAD and OOAD to facilitate the development of software in an industrial environment. All the models discussed here emphasis the role of layered project management, organised development teams with specific roles, well-defined set of activities and structured leadership. But given the fact that there are many drawbacks in extracting success by applying these methods to software development, there is an urgent need to search for alternate models for software development. 
+par
+sectionFree and Open Source Software
+Though Free and Open Source Software (FOSS) is used together throughout the discussion of this work, it is necessary to understand that there are certain differences between what is called as `Free Software' and what can be called as `Open Source Software'. The differences, though minor in appearance have deep philosophical implications on the way software is discussed. Therefore, it is necessary to understand the essentials of both camps independently.
+par
+Free Software owes its origin to the genius of Richard Stallman. Often called as `last great hacker' he is the product of hacker culture which fuelled the growth of computing in its initial period. The hardware was always considered the main component of a Computer with software doing the support job. So, most companies were giving away software free (no fees) along with hardware. When things began to change in the late 70's Stallman began the GNU project in 1982. GNU (recursive acronym for GNU is not Unix) intended to develop a complete operating system based on the idea of `freedom' as defined by Stallman. He wrote some of the important tools for the project namely emacs (editor), GCC (GNU C Compiler now GNU Complier Collection) and GDB (GNU Debugger).
+par
+The importance of Stallman in the Free Software community is not reserved for his technical expertise. He also defined the concept of `Copyleft' as opposed to `Copyright'. Copyleft is a general method for making a program or other work free, and requiring all modified and extended versions of the program to be free as well. Through the organization which he started the `Free Software Foundation' he maintains the original definition of the term `Free Software'. 
+par
+To make a software free, it is important to release it under appropriate licence. GNU GPL (GNU General Public Licence) is the most preferred licence for making a software `free software'. The following section taken liberally from Free Software Foundation's website explains the philosophy of free software.
+par
+``Free software'' is a matter of liberty, not price. To understand the concept, you should think of `free' as in `free speech,' not as in `free beer.'
+par
+Free software is a matter of the users freedom to run, copy, distribute, study, change and improve the software. More precisely, it means that the program's users have the four essential freedoms:
+par
+beginitemize
+itemThe freedom to run the program, for any purpose (freedom 0).
+itemThe freedom to study how the program works, and change it to make it do what you wish (freedom 1). Access to the source code is a precondition for this.
+itemThe freedom to redistribute copies so you can help your neighbor (freedom 2).
+itemThe freedom to improve the program, and release your improvements (and modified versions in general) to the public, so that the whole community benefits (freedom 3).Access to the source code is a precondition for this. 
+enditemize
+par
+A program is free software if users have all of these freedoms. Thus, you should be free to redistribute copies, either with or without modifications, either gratis or charging a fee for distribution, to anyone anywhere. Being free to do these things means (among other things) that you do not have to ask or pay for permission. You should also have the freedom to make modifications and use them privately in your own work or play, without even mentioning that they exist. If you do publish your changes, you should not be required to notify anyone in particular, or in any particular way.
+par
+The freedom to run the program means the freedom for any kind of person or organization to use it on any kind of computer system, for any kind of overall job and purpose, without being required to communicate about it with the developer or any other specific entity. In this freedom, it is the user's purpose that matters, not the developer's purpose; you as a user are free to run a program for your purposes, and if you distribute it to someone else, she is then free to run it for her purposes, but you are not entitled to impose your purposes on her.
+par
+The freedom to redistribute copies must include binary or executable forms of the program, as well as source code, for both modified and unmodified versions. (Distributing programs in runnable form is necessary for conveniently installable free operating systems.) It is ok if there is no way to produce a binary or executable form for a certain program (since some languages don't support that feature), but you must have the freedom to redistribute such forms should you find or develop a way to make them.
+par
+In order for the freedoms to make changes, and to publish improved versions, to be meaningful, you must have access to the source code of the program. Therefore, accessibility of source code is a necessary condition for free software.
+par
+Freedom 1 includes the freedom to use your changed version in place of the original. If the program is delivered in a product designed to run someone else's modified versions but refuse to run yours — a practice known as `tivoization' or (through blacklisting) as `secure boot' — freedom 1 becomes a theoretical fiction rather than a practical freedom. This is not sufficient.
+par
+One important way to modify a program is by merging in available free subroutines and modules. If the program's license says that you cannot merge in a suitably-licensed existing module, such as if it requires you to be the copyright holder of any code you add, then the license is too restrictive to qualify as free.
+par
+In order for these freedoms to be real, they must be permanent and irrevocable as long as you do nothing wrong; if the developer of the software has the power to revoke the license, or retroactively change its terms, without your doing anything wrong to give cause, the software is not free.
+par
+However, certain kinds of rules about the manner of distributing free software are acceptable, when they don't conflict with the central freedoms. For example, copyleft (very simply stated) is the rule that when redistributing the program, you cannot add restrictions to deny other people the central freedoms. This rule does not conflict with the central freedoms; rather it protects them.
+par
+`Free software' does not mean `non-commercial.' A free program must be available for commercial use, commercial development, and commercial distribution. Commercial development of free software is no longer unusual; such free commercial software is very important. You may have paid money to get copies of free software, or you may have obtained copies at no charge. But regardless of how you got your copies, you always have the freedom to copy and change the software, even to sell copies.
+par
+Whether a change constitutes an improvement is a subjective matter. If your modifications are limited, in substance, to changes that someone else considers an improvement, that is not freedom.
+par
+In the GNU project, `copyleft' is used to protect these freedoms legally for everyone. But non-copylefted free software also exists. We believe there are important reasons why it is better to use copyleft, but if your program is non-copylefted free software, it is still basically ethical.
+par
+Sometimes government export control regulations and trade sanctions can constrain your freedom to distribute copies of programs internationally. Software developers do not have the power to eliminate or override these restrictions, but what they can and must do is refuse to impose them as conditions of use of the program. In this way, the restrictions will not affect activities and people outside the jurisdictions of these governments. Thus, free software licenses must not require obedience to any export regulations as a condition of any of the essential freedoms.
+par
+Most free software licenses are based on copyright, and there are limits on what kinds of requirements can be imposed through copyright. If a copyright-based license respects freedom in the ways described above, it is unlikely to have some other sort of problem that we never anticipated (though this does happen occasionally). However, some free software licenses are based on contracts, and contracts can impose a much larger range of possible restrictions. That means there are many possible ways such a license could be unacceptably restrictive and non-free.
+par
+When talking about free software, it is best to avoid using terms like `give away' or `for free,' because those terms imply that the issue is about price, not freedom. Some common terms such as `piracy' embody opinions we hope you won't endorse. 
+par
+Finally, note that criteria such as those stated in this free software definition require careful thought for their interpretation. To decide whether a specific software license qualifies as a free software license, it is judged based on these criteria to determine whether it fits their spirit as well as the precise words. If a license includes unconscionable restrictions, it is rejected, even if issues in these criteria were not anticipated. Sometimes a license requirement raises an issue that calls for extensive thought, including discussions with a lawyer, before it is decided if the requirement is acceptable. When the conclusion is reached about a new issue, these criteria are updated to make it easier to see why certain licenses do or don't qualify. 
+par
+The GNU project got a major fillip from the Linux kernel, started by Linus Torvalds, when it was released as freely modifiable source code in 1991. The kernel was the last piece required to make the GNU project complete. Together, the GNU/Linux has today become one the most important and widely used free software. The success of various other free software tools like Apache, BIND, mysql, Mozilla etc. have provided further fuel to the growth of free software market.
+par
+In 1998, a group of individuals advocated that the term free software should be replaced by open source software (OSS) as an expression which is less ambiguous and more comfortable for the corporate world. The open source label came out of a strategy session held in Palo Alto in reaction to Netscape's January 1998 announcement of a source code release for Navigator (as Mozilla). The Open Source Initiative (OSI) was formed in February 1998 by Eric S. Raymond and Bruce Perens.
+par
+The definition of `Open Source Software' as maintained by OSI is as follows.
+par
+Open source doesn't just mean access to the source code. The distribution terms of open-source software must comply with the following criteria:
+par
+beginenumerate
+itemFree Redistribution: The license shall not restrict any party from selling or giving away the software as a component of an aggregate software distribution containing programs from several different sources. The license shall not require a royalty or other fee for such sale.
+itemSource Code : The program must include source code, and must allow distribution in source code as well as compiled form. Where some form of a product is not distributed with source code, there must be a well-publicized means of obtaining the source code for no more than a reasonable reproduction cost preferably, downloading via the Internet without charge. The source code must be the preferred form in which a programmer would modify the program. Deliberately obfuscated source code is not allowed. Intermediate forms such as the output of a preprocessor or translator are not allowed.
+itemDerived Works : The license must allow modifications and derived works, and must allow them to be distributed under the same terms as the license of the original software.
+itemIntegrity of The Author's Source Code : The license may restrict source-code from being distributed in modified form only if the license allows the distribution of "patch files" with the source code for the purpose of modifying the program at build time. The license must explicitly permit distribution of software built from modified source code. The license may require derived works to carry a different name or version number from the original software.
+itemNo Discrimination Against Persons or Groups : The license must not discriminate against any person or group of persons.
+itemNo Discrimination Against Fields of Endeavor : The license must not restrict anyone from making use of the program in a specific field of endeavor. For example, it may not restrict the program from being used in a business, or from being used for genetic research.
+itemDistribution of License : The rights attached to the program must apply to all to whom the program is redistributed without the need for execution of an additional license by those parties.
+itemLicense Must Not Be Specific to a Product : The rights attached to the program must not depend on the program's being part of a particular software distribution. If the program is extracted from that distribution and used or distributed within the terms of the program's license, all parties to whom the program is redistributed should have the same rights as those that are granted in conjunction with the original software distribution.
+itemLicense Must Not Restrict Other Software : The license must not place restrictions on other software that is distributed along with the licensed software. For example, the license must not insist that all other programs distributed on the same medium must be open-source software.
+itemLicense Must Be Technology-Neutral : No provision of the license may be predicated on any individual technology or style of interface. 
+endenumerate
+par
+The essential difference between free software and open source software is in the way they treat the software licences. While most free software licences are viral i.e the derived works also must be released using the same licence as the source work, the open source licences do not impose these restrictions. Apart from this, there is a general complaint against open source camp that they do not emphasise on the essential quality of freedom, which is the central theme of free software. But the open source proponents claim that the use of free makes the whole issue look unattractive for commercial players and hence they use the term open software.
+par
+The important feature of free and open source software has been the invitation to interested programmers to join the development work. In his `The GNU Manifesto' Richard Stallman mentioned his intentions clearly when he said ``I am asking individuals for donations of programs and work.'' From the begining volunteers have contributed immensely to the success of this movement. Continuing this trend, Linus Trovalds appealed to the computer users to give him suggestions regarding his implementation in 1991. He said ``I would like to know what features most people would want. Any suggestions are welcome, but I won't promise I will implement them''.
+par
+The success of FOSS is often attributed to this phenomenon of involving volunteers in the development process. The virtual absence of any restriction to join any project is in direct contrast to the established practices of development in the proprietary software. The global nature of development model is helped by the expanding Internet and the improvements in the communication and project management technologies. By their open nature of development FOSS have left many open questions some of which this work intends to answer.
+par
+sectionRelated Research
+The body of research regarding developmental methodologies in FOSSE have traditionally confined to two areas. Firstly to investigate why talented programmers contribute to Free and Open Source Software (FOSS) and secondly to build models which can explain the development process in FOSSE. Recent research have said that Free and Open software development does not adhere to the traditional engineering rationality found in the legacy of software engineering life-cycle models or prescriptive standards cite1. Others have demonstrated that FOSS development models offers three interrelated advantages when compared to conventional models: a credible commitment to prevent underinvestment in complementary assets within the value chain, priming the positive-returns network effects cycle, and various efficiency and scale economiescite2. 
+par
+The factors motivating the atop-notch programmers to contribute to FOSS is subjected to intense research. Everyone from Economists to Sociologists is interested in understanding this strange phenomenon. Some studies have stated that the motives stem from a mosaic of economic, social and political realmscite3. The ideological tilt of the developers towards FOSS and the urge to satisfy their creative instincts are also recognized as prime motivators cite4cite5. Few studies have indicated that altruism is also an important factor that motivates the developers to participate in FOSS projects cite6. For many developers project code is intellectually stimulating to write. For them, their participation in the FOSS project was their most creative experience or was equally as creative as their most creative experience cite7. Some indicate that leaders' transformational leadership is positively related to developers' intrinsic motivation and leaders' active management by exception, a form of transactional leadership, is positively related to developers' extrinsic motivation cite8.  
+par
+The first theory regarding development of FOSS was proposed by Eric S Raymond cite9. In his now famous "Cathedral and the Bazaar" metaphor, he provided the simplistic theory explaining the working of FOSS projects. There have been few attempts to develop new models based on this metaphor cite10. The model of a sustainable community called "Onion Model" is also proposed cite11. Models, which resemble the classic waterfall approach, have also been developed cite12. The current research in FOSS developmental models have been limited to studying specific FOSS products. Most of these studies have been limited to successful FOSS projects such as Apache, Perl, Sendmail, Mozilla cite13 cite14. 
+par
+Not many recognise that the basic principles adopted by the FOSS community were initially proposed by Gerald M. Weinberg cite48. In his theory of Egoless programming, a technical peer group uses frequent and often peer reviews to find defects in software under development. The objective is for everyone to find defects, including the author, not to prove the work product has no defects. People exchange work products to review, with the expectation that as authors, they will produce errors, and as reviewers, they will find errors. This principle has been put to telling effect by FOSS developers.
+par
+There are various studies done on the use of FOSS in critical scientific and business applications. It is said that FOSS is not for hobbyists any more. Instead, it is a business strategy with broad applicability cite15. In the domain of launch range operations for space vehicle launch, Open-source software offered exciting possibilities for radically shorter development times at substantially lower cost when compared to traditional methods of custom system development cite16. The domain of ERP Systems, which maintain the data for a company's main business process have been greatly changed after the introduction of FOSS, based development techniques cite17. 
+par
+Academics have been showing keen interest in using FOSS in teaching various Computer Science related courses cite18 cite19 cite20. There has even been an attempt to teach FOSSE as a part of graduate course cite21. Few colleges have reported how they have used FOSS in developing software to meet their academic requirements cite22 cite23. 
+par
+Several studies have been undertaken to understand the extent of usage and impact of FOSS in several countries or continents. In the study, which spanned entire Europe, it was found that Europe is the leading region in terms of globally collaborating FOSS developers, and leads in terms of global project leaders cite24. The interest in the FOSS activities in South-East Finland is also quantified cite25. In an interesting study done on the nature of Open Source adoption in ASEAN member countries cite26, it was found that Indonesia has highest rate of FOSS adoption, though the Government there is neutral about this issue. This contrasts the case of Vietnam where FOSS adoption is still low despite the Government there making the use of FOSS mandatory. In September 2003, the Asian trio of China, Japan, and South Korea (CJK) announced an initiative to promote open source software and platforms that favor non-Microsoft products such as Linux cite27. 
+par
+Similar to the research regarding the factors motivating the individuals to contribute to FOSSE, there has been research into the factors motivating the forms to contribute to FOSSE. The companies that join Open Source collaborations are seeking to use the software in a non-differentiating, cost-center role cite28. It is found that firms emphasize economic and technological reasons for entering and contributing to Open Source and do not subscribe to many socially-based motivations that are, by contrast, typical of individual programmers. Some companies get into FOSS activities because the user community, which comprises of a very large group of beta testers, allows them to perform a bug fixing better cite29. Some factors like organizational size, top management support, and availability of resources like limited financial resources, or a pool of FOSS-literate IT personnel also enhances the chances of an organization to get into FOSS cite30. A large-scale survey on 146 Italian Open Source firms concluded that intrinsic community based motivations couple with extrinsic, profit-based incentives cite31. 
+par
+Some organizations have tried to use FOSS as basic building blocks for creating mature technologies like operating systems, middleware, databases, protocol stacks and development environments cite32. Some companies have tried to test, certify and integrate FOSS components so that they work together cite33. Few have tried to combine FOSS components in their own offerings cite34. It is argued that large system integrators, or solution providers, stand to gain the most from open source software because they increase profits through direct cost savings and the ability to reach more customers through improved pricing flexibility. cite35 
+par
+Several industry leaders are active in FOSS ecology. IBM and Novell have announced or strengthened their open source offerings from the data server to the desktop, sometimes offering and supporting certified versions of open source applications, sometimes using open source code in new server-based configurations that let customers choose specific functionalities per user cite36. IBM, Sun and Apple have experimented with hybrid strategies, which attempted to combine the advantages of open source software while retaining control and differentiation cite37. 
+par
+There is also some criticism on the commercialization of FOSS projects. There is an argument that this process of commercialization will present some genuine risks to the movement itself. Critics question how these projects which rely on altruism, ego and pride as the central rewarding mechanisms can continue when these noble efforts are turned into cold, hard cash by enterprising entrepreneur cite38. 
+par
+sectionDatasets
+SourceForge.net is the world's largest Open Source software development web site, with the largest repository of Open Source code and applications available on the Internet. Owned and operated by OSTG, Inc. (OSTG), SourceForge.net provides free services to Open Source developers. The SourceForge.net web site is database driven and the supporting database includes historic and status statistics on over 200,000 projects and over 2 million registered users' activities at the project management web site. OSTG has shared certain SourceForge.net data with the University of Notre Dame for the sole purpose of supporting academic and scholarly research on the Free/Open Source Software phenomenon. OSTG has given Notre Dame permission to in turn share this data with other academic researchers studying the Free/Open Source Software phenomenon.
+par
+To advance the understanding of, and research on, the Free/Open Source Software phenomenon, portions of the data that may support such research, is made available to academic or scholarly researchers. All requests for data must be submitted in writing to the Notre Dame PI, Greg Madey. Only academic and scholarly researchers are eligible to receive the data. To receive the data, a short questionnaire and agreement must be completed, signed and returned. A wiki for users of the research data is available.
+par
+SourceForge.net uses relational databases to store project managment activity and statistics. There are over 100 relations (tables) in the data dumps provided to Notre Dame. Some of the data have been removed for security and privacy reasons. SourceForge.net cleanses the data of personal information and strips out all OSTG specific and site functionality specific information. On a monthly basis, a complete dump of the databases (minus the data dropped for privacy and security reasons) is shared with Notre Dame. The Notre Dame researchers  have built a data warehouse comprised of these monthly dumps, with each stored in a separate schema. Thus, each monthly dump is a shapshot of the status of all the SourceForge.net projects at that point in time.As of Aug 2009, the data warehouse was almost 1500 GBytes in size, and is growing at about 25 GBytes per month. Much of the data is duplicated among the monthly dumps, but trends or changes in project activity and structure can be discovered by comparing data from the monthly dumps. Queries across the monthly schema may be used to discover when changes took place, to estimate trends in project activity and participation, or even that no activity, events or changes have taken place.
+par
+The data dump of each month is identified as sfmmyy. Therefore the dump of Oct 1009 is referred as sf1009. The tables in each dump are referred by the dump identifier and table name. So the table `artifact' for the month Oct 2009 should be referred as `sf0909.artifact'. To facilitate the access of data, University of Notre Dame has provided a web access for the researchers to run sql queries on the data and download the result files in many formats.
+par
+For the purpose of present study the data from Feb 2005 to Aug 2009 (sf0205 - sf00809) is considered. Therefore total of 54 datasets each containing around 100 tables is analysed for the macro studies. In some cases, the datasets for July 2007 (sf0707) and August 2007 (sf0807)were not considered because the data for these months were not in line with the historical trend. Repeated attempts to extract data from the data warehouse of University of Notre Dame gave the same erroneous results. Therefore, it was concluded that these data are corrupted and should not be considered for present research.
+par
+sectionScripting Tools
+beginflushleft
+textbfShell Scripting
+endflushleft
+par
+The shell is a command programming language that provides an interface to the UNIX like operating system. Its features include control-flow primitives, parameter passing, variables and string substitution. Constructs such as while, if then else, case and for are available. Two-way communication is possible between the shell and commands. String-valued parameters, typically file names or flags, may be passed to a command. A return code is set by commands that may be used to determine control-flow, and the standard output from a command may be used as shell input.
+par
+The shell can modify the environment in which commands run. Input and output can be redirected to files, and processes that communicate through `pipes' can be invoked. Commands are found by searching directories in the file system in a sequence that can be defined by the user. Commands can be read either from the terminal or from a file, which allows command procedures to be stored for later use. 
+par
+beginflushleft
+textbfAwk
+endflushleft
+par
+The Awk text-processing language is useful for such tasks as - Tallying information from text files and creating reports from the results, adding additional functions to text editors like `vi', translating files from one format to another, creating small databases and performing mathematical operations on files of numeric data. 
+par
+Awk can be used in two ways. It cab be used as an utility for performing simple text-processing tasks, and it is a programming language for performing complex text-processing tasks.Awk statements comprise a programming language. In fact, Awk is useful for simple computational programming. There are, however, things that Awk is not. It is not really well suited for extremely large, complicated tasks. It is also an interpreted language, that is, an Awk program cannot run on its own, it must be executed by the Awk utility itself. That means that it is relatively slow, though it is efficient as interpretive languages go, and that the program can only be used on systems that have Awk. There are translators available that can convert Awk programs into C code for compilation as stand-alone programs, but such translators have to be purchased separately.
+par
+Awk actually stands for the names of its authors: "Aho, Weinberger, and Kernighan". Kernighan later noted, ``Naming a language after its authors shows a certain poverty of imagination.'' The name is reminiscent of that of an oceanic bird known as an `auk', and so the picture of an auk often shows up on the cover of books on Awk. 
+par
+beginflushleft
+textbfsed
+endflushleft
+`sed' stands for Stream EDitor. Sed is a non-interactive editor, written by the late Lee E. McMahon in 1973 or 1974. 
+par
+Instead of altering a file interactively by moving the cursor on the screen (as with a word processor), the user sends a script of editing instructions to sed, plus the name of the file to edit (or the text to be edited may come as output from a pipe). In this sense, sed works like a filter; deleting, inserting and changing characters, words, and lines of text. Its range of activity goes from small, simple changes to very complex ones.
+par
+Sed reads its input from stdin (Unix shorthand for `standard input,' i.e., the console) or from files (or both), and sends the results to stdout (`standard output,' normally the console or screen). Sed is used for its substitution features. It is also used as a find-and-replace tool. It can also be used to delete words from a file. 
+par
+sectionDatabase
+MySQL's history goes back to 1979 when TcX, the company that developed MySQL, started working with database programs. This first version was a screen builder/reporting tool written in BASIC. At that time, state-of-the-art computers had 4MHz Z80 processors and 16KB of RAM. This tool was moved to UNIX and further developed during the following years. In the mid-1990s, the problem began with customers who liked the results the tool produced but wanted something they had heard about before . So efforts began to make an SQL front end to existing low-level libraries. It was called mSQL, but it did not work for the required purposes. So work started on to write an SQL engine from scratch. However, since the mSQL API was useful, it was used it as the basis for the developer's own API. This made it easy to port some applications was needed that were available for the mSQL API.
+par
+Since this tool would be usable by others, it was decided to release it according to the business model pioneered by Peter Deutsch at Aladdin Enterprises with Ghostscript. This copyright is much more free than the mSQL copyright and allows commercial use as long as you don't distribute the MySQL server commercially. 
+par
+It is not perfectly clear where the name MySQL came from. The prefix `my' was used for libraries and path names since the mid-1980s. The main MySQL developer's daughter is named My, a fairly common name among Swedish-speaking Finns. So naming the database MySQL was very natural.
+par
+The MySQL Server is installed on a Server and can be accessed directly via various client interfaces, which send SQL statements to the server and then display the results to a user. Some of these are:
+par
+beginitemize
+itemLocal Client
+itemScripting Language
+itemRemote Client 
+itemRemote Login
+itemWeb Browser
+enditemize
+par
+MySQL uses Structured Query Langauge (SQL) to maipulate data stored in it. SQL is cross between a math-like language and an English-like language that allows us to ask a database questions or tell it do do things. There is a structure to this language: it uses English phrases to define an action, but uses math-like symbols to make comparisons. 
+par
+sectionData Analysis and Visualization Tools
+textbfgnuR
+par
+R is a language and environment for statistical computing and graphics. It is a GNU project which is similar to the S language and environment which was developed at Bell Laboratories (formerly AT&amp;T, now Lucent Technologies) by John Chambers and colleagues. R can be considered as a different implementation of S. There are some important differences, but much code written for S runs unaltered under R.
+par
+R provides a wide variety of statistical (linear and nonlinear modelling, classical statistical tests, time-series analysis, classification, clustering) and graphical techniques, and is highly extensible. The S language is often the vehicle of choice for research in statistical methodology, and R provides an Open Source route to participation in that activity.
+par
+One of R's strengths is the ease with which well-designed publication-quality plots can be produced, including mathematical symbols and formulae where needed. Great care has been taken over the defaults for the minor design choices in graphics, but the user retains full control.
+par
+R is available as Free Software under the terms of the Free Software Foundation's GNU General Public License in source code form. It compiles and runs on a wide variety of UNIX platforms and similar systems (including FreeBSD and Linux), Windows and MacOS.
+par
+R is an integrated suite of software facilities for data manipulation, calculation and graphical display. It includes
+beginitemize
+ iteman effective data handling and storage facility,
+itema suite of operators for calculations on arrays, in particular matrices,
+itema large, coherent, integrated collection of intermediate tools for data analysis,
+itemgraphical facilities for data analysis and display either on-screen or on hardcopy, and
+itema well-developed, simple and effective programming language which includes conditionals, loops, user-defined recursive functions and input and output facilities. 
+enditemize
+par
+The term `environment' is intended to characterize it as a fully planned and coherent system, rather than an incremental accretion of very specific and inflexible tools, as is frequently the case with other data analysis software.
+par
+R, like S, is designed around a true computer language, and it allows users to add additional functionality by defining new functions. Much of the system is itself written in the R dialect of S, which makes it easy for users to follow the algorithmic choices made. For computationally-intensive tasks, C, C++ and Fortran code can be linked and called at run time. Advanced users can write C code to manipulate R objects directly.
+par
+beginflushleft
+textbfgretl
+endflushleft
+par
+Gnu Regression, Econometrics and Time-series Library (gretl) is a cross-platform software package for econometric analysis, written in the C programming language. It is is free, open-source software. The features of this package are
+par
+beginitemize
+itemEasy intuitive interface (now in French, Italian, Spanish, Polish, German, Basque, Portuguese, Russian, Turkish and Czech as well as English)
+itemA wide variety of estimators: least squares, maximum likelihood, GMM; single-equation and system methods
+itemTime series methods: ARMA, GARCH, VARs and VECMs, unit-root and cointegration tests, etc.
+itemOutput models as LaTeX files, in tabular or equation format
+itemIntegrated scripting language: enter commands either via the gui or via script
+itemCommand loop structure for Monte Carlo simulations and iterative estimation procedures
+itemGUI controller for fine-tuning Gnuplot graphs
+itemLink to GNU R for further data analysis
+enditemize
+par
+Supported data formats include: own XML data files; Comma Separated Values; Excel, Gnumeric and Open Document worksheets; Stata .dta files; SPSS .sav files; Eviews workfiles; JMulTi data files; own format binary databases (allowing mixed data frequencies and series lengths), RATS 4 databases and PC-Give databases. Includes a sample US macro database
+par
+beginflushleft
+textbfCytoscape
+endflushleft
+par
+Cytoscape is an open source bioinformatics software platform for  visualizing molecular interaction networks and biological pathways and integrating these networks with annotations, gene expression profiles and other state data. Although Cytoscape was originally designed for biological research, now it is a general platform for complex network analysis and visualization. Cytoscape core distribution provides a basic set of features for data integration and visualization. Additional features are available as plugins. Plugins are available for network and molecular profiling analyses, new layouts, additional file format support, scripting, and connection with databases. Plugins may be developed by anyone using the Cytoscape open API based on Java technology and plugin community development is encouraged. Most of the plugins are freely available. 
+par
+Cytoscape supports a lot of standard network and annotation file formats including: SIF (Simple Interaction Format), GML, XGMML, BioPAX, PSI-MI, SBML, OBO, and Gene Association. Delimited text files and MS Excel Workbook are also supported and you can import data files, such as expression profiles or GO annotations, generated by other applications or spreadsheet programs. Using this feature, you can load and save arbitrary attributes on nodes, edges, and networks. For example, input a set of custom annotation terms for your proteins, create a set of confidence values for your protein-protein interactions. 
+par
+Cytoscape layouts networks in two dimensions.  A variety of layout algorithms are available, including cyclic, tree, force-directed, edge-weight, and yFiles Organic layouts. You can also use Manual Layout tools similar to other graphics application user interface. Zoom in/out and pan can be used for browsing the network. Use the network manager to easily organize multiple networks. And this structure can be saved in a session file. Use the bird's eye view to easily navigate large networks. Easily navigate large networks (100,000+ nodes and edges) by efficient rendering engine.
+par
+Filter the network to select subsets of nodes and/or interactions based on the current data.  For instance, users may select nodes involved in a threshold number of interactions, nodes that share a particular GO annotation, or nodes whose gene expression levels change significantly in one or more conditions according to p-values loaded with the gene expression data. New networks can be created from the filtering result. Search target nodes and edges by Quick Find or Enhanced Search.  Lucene Syntax is supported by Enhanced Search Plugin (ESP) for arbitrary complex queries. Find active subnetworks/pathway modules. The network is screened against gene expression data to identify connected sets of interactions, i.e. interaction subnetworks, whose genes show particularly high levels of differential expression.  The interactions contained in each subnetwork provide hypotheses for the regulatory and signaling interactions in control of the observed expression changes. Find clusters (highly interconnected regions) in any network loaded into Cytoscape. 
+par
+chapterMacro Studies of FOSS Ecology
+ifpdf
+    graphicspathChapter2/Chapter2Figs/PNG/Chapter2/Chapter2Figs/PDF/Chapter2/Chapter2Figs/
+else
+    graphicspathChapter2/Chapter2Figs/EPS/Chapter2/Chapter2Figs/
+fi
+par
+sectionIntroduction
+Traditional Software development has been characterised by the strict organisation of developer teams. Almost all formal methodologies insist on layered structure of developers with responsibilities clearly delineated. The decision making powers are vested with the few who control huge army of developers. There are established rules on when people can be added or dropped from a project. Informal observations like the one done by Fredrick Brooks "adding manpower to a late software project makes it late" have been accepted as law. In other words, the priestly order followed in software development makes the whole system impenetrable by outsiders. 
+par
+On the contrary, the FOSS development methods seldom follow a closed door policy towards developers. The system here thrives on the contribution of volunteers. Unsolicited cooperation between developers scattered across the globe, communicating with each other using digital media is the characteristic feature of FOSS development. 
+par
+There are questions on the extent to which people are using this opportunity to be a part of software development. Contributing to software development requires certain technical competence. To expect technically trained developers to contribute to projects which are not part of their work and which does not benefit them monetarily is difficult. 
+par
+Recent research has shown that (refer related research page) people do contribute to FOSS for a variety of reasons. But the exact number of people involved in the development of FOSS is not clear. The difficulty arises from the fact that though there are number of websites like sourceforge.net which hosts thousands of FOSS projects there are equal number of projects hosted in their own dedicated sites. To collect the data from all these diverse sources is extremely difficult. 
+par
+sectionProcedure
+As mentioned earlier (refer to datasets page) the sourceforge.net maintains the data in a relational database. To extract the developer count from this dataset the relation USER_GROUP is selected. The structure of the relation is given in Table refDevformat.
+par
+The attribute USER_ID is used to count the number of developers for each month and GROUP_ID is used for counting the projects. The process for counting developers and projects for all months is given below 
+<BR>
+par
+<!-- MATH
+ $mathbb{S}leftarrow \{S_{1}, S_{2}...S_{52} \} qquad textrm{original datasets}\\
+A_{i} leftarrow phi(X), \:forall X in mathbb{S} qquad  textrm{select unique developers}\\
+A leftarrow \{A_{1}, A_{2}...A_{52} \} \\
+B_{i} leftarrow psi(X), \:forall X in mathbb{S} qquad  textrm{select unique projects}\\
+B leftarrow \{B_{1}, B_{2}...B_{52} \} \\
+x_{i} leftarrow left|{C}right|, \:forall C in A  qquad  textrm{count the developers}\\
+y_{i} leftarrow left|{C}right|, \:forall C in B  qquad  textrm{count the projects}\\
+mathbb{D} leftarrow \{x_{1}, x_{2}, ..., x_{52} \} qquad  textrm{list of developer count}\\
+mathbb{P} leftarrow \{y_{1}, y_{2}, ..., y_{52} \} qquad  textrm{list of project count}\\$
+ -->
+<SPAN CLASS="MATH"></SPAN>
+par
+Using the relation USER_GROUP we can also extract the number of developers subsribing to each project. The procedure for doing this activity is mentioned below
+par
+<!-- MATH
+ $mathbb{S}leftarrow \{S_{1}, S_{2}...S_{52} \} qquad textrm{original datasets}\\
+A leftarrow phi(X), \: X in mathbb{S} qquad  textrm{select unique developers}\\
+B leftarrow psi(X), \: X in mathbb{S} qquad  textrm{select unique projects}\\
+C leftarrow \{x, left| x in A, y in B, x rightarrow y\}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="3755" HEIGHT="16" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$
+mathbb{S}leftarrow \{S_{1}, S_{2}...S_{52} \} qquad textrm{original datasets}\...
+...nique projects}\\
+C leftarrow \{x, left\vert x in A, y in B, x rightarrow y\}
+$"></SPAN>
+par
+sectionResults and Discussion
+The growth pattern of developers and projects in Sourceforge.net is summarized in Figure refMainfig.
+The number of developers and projects are significant metrics since it can used to gauage the interest among the general public to participate in FOSS development. The number of developers (Developer count) for all 54 datasets is given in  Figure refDevfig. The number of projects (Project count) in these timeperiod is in Figure refProjfig
+par
+The statistical summary of the Developer count is given in Table refDevsummary. The statistical summary of the Project count is given in Table refProjsummary
+par
+Sourceforge.net in its website (as on Sep 2009) claims that it has 2 million registered users. But the result from this work shows that the maximum number of developers for any month is 246119. Therefore it clear that only 10% of the registered users in sourceforge.net actually subscribe themselves to projects.
+par
+The number of developers in a given project is a important indicator of the popularity of a project. This measure can also be used to study the pattern of team organization in FOSS projects. By applying the method defined in the previous section, the number of developers subscribing to project for the dataset of Aug09 is calculated.
+The result obtained is given in Table refFreqdistfull. This shows an important trend that more than 99% of the projects have less than 14 developers. 
+par
+This data is further analyzed to find the extent of distribution of developers in projects. The result is summarized in Table refFreqdisttopten which clearly shows that nearly 70% of the projects have only one developer.
+par
+This process is carried out for all 54 datasets. The result obtained is given in Figure refSingledevfig. This clearly shows that on an average in every month 71% of the projects have only one developer.
+par
+The number of projects subscribed by a developer is also an interesting metric. It shows the involvement of a development in FOSS development. If the developer has subscribed to a single project, it can be assumed that he is completly committed to that project.
+par
+The process of finding out the number of developers who subscribe to single project is carried out for all 54 datasets. The result obtained is given in Figure refSingleprjfig. This clearly shows that nearly 76% of developers subscribe to single project.
+par
+begintable
+begincenter
+captionStructure of Table USER_GROUP
+begintabular|l|l|l|hline 
+Column &amp; Type &amp; Modifiers
+<BR>
+hline
+user_group_id &amp;integer &amp;not null 
+<BR>
+hline
+user_id &amp;integer &amp;not null default 0
+<BR>
+hline
+group_id &amp;integer &amp;not null default 0
+<BR>
+hline
+admin_flags &amp;character(16) &amp;not null default ''::bpchar
+<BR>
+hline
+forum_flags &amp;integer &amp;not null default 0
+<BR>
+hline
+project_flags &amp;integer &amp;not null default 2
+<BR>
+hline
+doc_flags &amp;integer &amp;not null default 0
+<BR>
+hline
+member_role &amp;integer &amp;not null default 100
+<BR>
+hline
+release_flags &amp;integer &amp;not null default 0
+<BR>
+hline
+artifact_flags &amp;integer&amp; not null default 0
+<BR>
+hline
+added_by &amp;integer &amp;not null default 100
+<BR>
+hline
+grantcvs &amp;integer &amp;not null default 1
+<BR>
+hline
+grantshell &amp;integer &amp;not null default 1
+<BR>
+hline
+row_modtime &amp;integer&amp;not null
+<BR>
+hline
+news_flags &amp;integer &amp;not null default 0
+<BR>
+hline
+screenshot_flags &amp;integer &amp;not null default 0
+<BR>
+hline
+grantsvn &amp;integer &amp;not null default 1 
+<BR>
+hline
+endtabular
+labelDevformat
+endcenter
+endtable
+par
+begintable
+begincenter
+captionSummary Statistics of Developer Count
+begintabularrrrrhline
+ multicolumn1cMean&amp; multicolumn1cMedian&amp; multicolumn1cMinimum&amp; multicolumn1cMaximum 
+<BR>
+hline
+<SPAN CLASS="MATH"><IMG
+ WIDTH="1721" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$194492.$"></SPAN> &amp; <SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$200406.$"></SPAN> &amp; <SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$83120.0$"></SPAN> &amp; <SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.png"
+ ALT="$246119.$"></SPAN>
+<BR>
+<BR>
+par
+multicolumn1cStd. Dev.&amp; multicolumn1cC.V.&amp; multicolumn1cSkewness&amp; multicolumn1cEx. kurtosis 
+<BR>
+hline
+<SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$33139.3$"></SPAN> &amp; <SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.png"
+ ALT="$0.170389$"></SPAN> &amp; <SPAN CLASS="MATH"><IMG
+ WIDTH="62" HEIGHT="14" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$-0.922382$"></SPAN> &amp; <SPAN CLASS="MATH"><IMG
+ WIDTH="74" HEIGHT="26" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$1.01698$"></SPAN>
+<BR>
+endtabular
+labelDevsummary
+endcenter
+endtable
+par
+begintable
+begincenter
+captionSummary Statistics of Project Count
+begintabularrrrrhline
+ multicolumn1cMean&amp; multicolumn1cMedian&amp; multicolumn1cMinimum&amp; multicolumn1cMaximum 
+<BR>
+hline
+<SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.png"
+ ALT="$149647.$"></SPAN> &amp; <SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img12.png"
+ ALT="$152972.$"></SPAN> &amp; <SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$65082.0$"></SPAN> &amp; <SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.png"
+ ALT="$187512.$"></SPAN>
+<BR>
+<BR>
+par
+multicolumn1cStd. Dev.&amp; multicolumn1cC.V.&amp; multicolumn1cSkewness&amp; multicolumn1cEx. kurtosis 
+<BR>
+hline
+<SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$26278.5$"></SPAN> &amp; <SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$0.175603$"></SPAN> &amp; <SPAN CLASS="MATH"><IMG
+ WIDTH="62" HEIGHT="14" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$-1.0541$"></SPAN> &amp; <SPAN CLASS="MATH"><IMG
+ WIDTH="58" HEIGHT="26" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$1.14948$"></SPAN>
+<BR>
+endtabular
+labelProjsummary
+endcenter
+endtable
+par
+begintable
+begincenter
+captionFrequency Distribution of Developers in Aug09 (complete)
+begintabular|l|l|l|hline 
+Interval &amp; Frequency &amp; Relative % 
+<BR>
+hline
+eqslantless 14 &amp;159043 &amp;99.10% 
+<BR>
+hline
+14 - 28 &amp; 1107 &amp; 0.69% 
+<BR>
+hline
+28 - 42 &amp; 188 &amp;  0.12% 
+<BR>
+hline
+42 - 56 &amp;  68 &amp; 0.04% 
+<BR>
+hline
+56 - 70 &amp;  33 &amp; 0.02% 
+<BR>
+hline
+70 - 84 &amp;  18 &amp; 0.01% 
+<BR>
+hline 
+endtabular
+labelFreqdistfull
+endcenter
+endtable
+par
+begintable
+begincenter
+captionFrequency Distribution of Developers in Aug09 (upto 10 Developers/project)
+begintabular|l|l|l|hline 
+Number of Developers &amp; Frequency &amp; Relative % 
+<BR>
+hline
+1  &amp;  111625   &amp;  69.56% 
+<BR>
+hline
+2&amp;23332&amp;     14.54% 
+<BR>
+hline
+3 &amp; 9650  &amp;    6.01% 
+<BR>
+hline
+4 &amp; 5214   &amp;   3.25% 
+<BR>
+hline
+5 &amp; 3131   &amp;   1.95% 
+<BR>
+hline
+6 &amp; 1954   &amp;   1.22% 
+<BR>
+hline
+7 &amp; 1242   &amp;   0.77% 
+<BR>
+hline
+8 &amp; 902    &amp;  0.56% 
+<BR>
+hline
+9 &amp; 639    &amp;  0.40% 
+<BR>
+hline
+10 &amp; 470   &amp;   0.29% 
+<BR>
+hline
+endtabular
+labelFreqdisttopten
+endcenter
+endtable
+par
+beginfigure
+centering
+captionDevelopers and Projects in Sourceforge.net
+includegraphicsmain.eps
+labelMainfig
+endfigure
+par
+beginfigure
+centering
+captionDeveloper Count in Sourceforge.net
+includegraphicsdevelopers.eps
+labelDevfig
+endfigure
+par
+beginfigure
+centering
+captionProject Count in Sourceforge.net
+includegraphicsprojects.eps
+labelProjfig
+endfigure
+par
+beginfigure
+centering
+captionDevelopers with single Project
+includegraphicssingleprjdev.eps
+labelSingleprjfig
+endfigure
+par
+beginfigure
+centering
+captionProjects with single Developer
+includegraphicssingledevprj.eps
+labelSingledevfig
+endfigure
+par
+chapterMicro Studies of FOSS Ecology
+ifpdf
+    graphicspathChapter3/Chapter3Figs/PNG/Chapter3/Chapter3Figs/PDF/Chapter3/Chapter3Figs/
+else
+    graphicspathChapter3/Chapter3Figs/EPS/Chapter3/Chapter3Figs/
+fi
+par
+sectionIntroduction
+The Macro studies did help to understand the essential characteristics of the FOSS ecology. The study gave an idea of the size and nature of the projects and developers involved in FOSS development in a large project eco-system like Sourceforge.net. But the studies were limited in their scope. The important metrics like number of developers working on each projects, their movement in the ecology, number of tasks which come up in projects and how effectively they are completed etc. cannot be done for all 150,000 projects. Therefore it becomes necessary to study the important features of FOSS development by selecting few projects and subjecting them to rigorous analysis.
+par
+sectionSelection of Projects for Micro Analysis
+To select few projects from a large pool of projects currently active in Sourceforge.net, the following options were available
+par
+beginitemize
+ item Randomly choose few sample projects
+  itemSelect one project from each year
+  itemSelect projects which meets certain criteria
+enditemize
+par
+Random selection was rejected because the intention of the current study is to rigorously analyse the projects to detect common pattern among them. Choosing a project from year year would be beneficial if the focus of studies is time-series analysis of the evolution of FOSS. Therefore, the appropriate method is to select those projects which meets certain identified criteria.
+par
+The requirement for such a study would be to select those projects who have been proved successful. In traditional software world, quantifying success is easy because there are metrics such as number of sales. But in FOSS ecology such a metric loses its significance. Therefore, it was decided to use a metric identified by the Sourceforge.net as the measure of success.
+par
+Sourceforge.net has the practice of ranking all the projects hosted in its site based on a fixed formula write more
+par
+This data is captured in the table STATS_GROUP_RANK_BYMONTH. The structure of this table is given in TablerefTabrank
+par
+The projects which have remained in top position (Rank 1) for more than two consecutive months were selected as candidates for further analysis. The list of selected projects is given in Table refTopprojs
+par
+begintable
+begincenter
+captionStructure of Table STATS_GROUP_RANK_BYMONTH
+begintabular|l|l|l|hline 
+Column &amp; Type &amp; Modifiers
+<BR>
+hline
+group_id &amp;integer &amp;not null default 0
+<BR>
+hline
+rankdate &amp;integer &amp;not null default 0
+<BR>
+hline
+ranking &amp;integer &amp;not null default 0
+<BR>
+hline
+percentile &amp;double precision &amp;default 0.0
+<BR>
+hline
+score &amp;bigint &amp;not null default (0)::bigint
+<BR>
+hline
+endtabular
+labelTabrank
+endcenter
+endtable
+par
+begintable
+begincenter
+captionTop Ranked Projects in Sourceforge.net
+begintabular|l|l|hline 
+Project-Id &amp; Name 
+<BR>
+hline
+1&amp;SourceForge.net
+<BR>
+hline
+235&amp;Pidgin
+<BR>
+hline
+84122&amp;Azureus
+<BR>
+hline
+162271&amp;Openbravo ERP
+<BR>
+hline
+176962&amp;ADempiere ERP Business Suite
+<BR>
+hline
+196195&amp;PostBooks ERP
+<BR>
+hline
+endtabular
+labelTopprojs
+endcenter
+endtable
+par
+sectionGrowth Pattern of Developers 
+labels:dvlprs
+The surest sign of the success of a FOSS project is the increase in the number of developers working on that project. The attractiveness of FOSS projects is that anyone who is interested can become a stakeholder in the development of the software. The member is open to all and there are no restrictions imposed on a developer once he joins a particular project. Given the perception about the success of the FOSS projects it is natural to assume that the number of developers for top projects keep increasing over time.
+par
+The procedure followed for finding the number of developers for a given project over the time period is given below
+par
+begintex2html_preform
+Let P be the Project under study
+Let (x,y) be an entry in Project_Develop[i]
+            if y subscribes to project x for the month i
+Let D[i] be the number of Developers subscribed to P in the month i
+
+FOR i in (1 to 52)
+DO
+  x:=P	
+  D[i]:=COUNT(PROJECT_DEVELOP[x][y]) 
+DONE
+endtex2html_preform 
+par
+The result obtained by appying the above procedure to find the number of developers for the top projects from Feb 2005 to Aug 2008 is given in Figure reffigdev.
+par
+It can be observed that there is a steady increase in the number of developers subscribing to the top projects indicating the growing interest in those projects.
+par
+beginfigure
+ begincenter
+ subfloat[1]labeld1includegraphics[scale=0.5]d1.eps 
+  subfloat[235]labeld235includegraphics[scale=0.5]d235.eps
+<BR>
+subfloat[84122]labeld84122includegraphics[scale=0.5]d84122.eps
+   subfloat[162271]labeld162271includegraphics[scale=0.5]d162271.eps
+<BR>
+subfloat[176962]labeld176962includegraphics[scale=0.5]d176962.eps
+      subfloat[196195]labeld196195includegraphics[scale=0.5]d196195.eps
+captionDeveloper Growth
+  labelfigdev
+endcenter
+endfigure
+par
+sectionDeveloper Dedication
+par
+The previous discussion (Section refs:dvlprs) proved that there is a growing interest among developers to join top projects demonstrated through the increasing number of subscribers. But the question of how serious the developers are remains unanswered. Therefore, it is necessary to find the dedication of the developers towards the project they have subscribed.
+par
+Dedication for the purpose of this discussion is defined as the amount of attention a developer reserves for a project. It is assumed that if a developer subscribes to many projects he may distribute his attention equally among all the subscribed projects. Therefore, lesser project subscription will imply more dedication. Further, if a developer subscribes to a single project, it is assumed that he is completely dedicated to that project.
+par
+Therefore to understand the dedication of the developers to the projects they subscribe to, there is a need to analyse the following issues
+beginitemize
+item How many projects does each developer subscribe to?
+ itemAmong the developers working on a project how many work only on that project?
+enditemize
+par
+The procedure given below finds both the number of projects subscribed by the developers and percentage of dedicated developers for a given project P. 
+par
+begintex2html_preform
+FOR i IN (1 to 54)
+DO
+	Dev_List[i]:= list of unique developers working in P for the month i
+	Tot_Dev[i]:=Count of unique developers working in P for the month i
+DONE
+
+FOR i IN (1 to 54)
+DO
+  FOR j in Dev_List[i]
+  DO
+   Proj_Count[j]:=count of projects subscribed by each developer
+  DONE
+  x:= COUNT(Proj_Count)
+  
+  FOR k IN ( 1 to x)
+  DO
+    IF (Proj_Count[k] = 1)
+      Ded_Dvlp_Count[i]++
+  DONE
+
+  Dedicated_Developers:= (Ded_Dvlp_Count[i] / Tot_Dev[i]) * 100
+	
+DONE
+endtex2html_preform
+par
+The number of projects subscribed by each unique developer in every top project is given in Figure reffigproj. It is clearly seen that majority of them subscribe to fewer projects. The reason may be that there is strict protocol exists within each project to admit new developer into the group. Though anyone can theoretically subscribe to any project, the rights to committ and make important changes is limited to few. 
+par
+The results of finding dedicated developers in top projects is listed in Table refDeddevls. It is observed that on an average 70% of the developers in these projects are dedicated developers. This means the success of these projects may be attributed to the dedication of large number of developers. 
+par
+beginfigure
+ begincenter
+ subfloat[1]labelp1includegraphics[scale=0.6]p1.eps 
+  subfloat[235]labelp235includegraphics[scale=0.6]p235.eps
+<BR>
+subfloat[84122]labelp84122includegraphics[scale=0.6]p84122.eps
+   subfloat[162271]labelp162271includegraphics[scale=0.6]p162271.eps
+<BR>
+subfloat[176962]labelp176962includegraphics[scale=0.6]p176962.eps
+      subfloat[196195]labelp196195includegraphics[scale=0.6]p196195.eps
+captionProjects subscribed by Developers
+  labelfigproj
+endcenter
+endfigure
+par
+begintable
+begincenter
+captionDedicated Developers in Top Projects
+begintabular|l|l|hline 
+Project-Id &amp; Dedicated Developers (percent) 
+<BR>
+hline
+1&amp;29
+<BR>
+hline
+235&amp;51
+<BR>
+hline
+84122&amp;83
+<BR>
+hline
+162271&amp;92
+<BR>
+hline
+176962&amp;76
+<BR>
+hline
+196195&amp;89
+<BR>
+hline
+Average&amp;70
+<BR>
+hline
+endtabular
+labelDeddevls
+endcenter
+endtable
+par
+sectionDeveloper Join and Drop Patterns
+labels:join
+The previous discussion (Section refs:dvlprs) answered the question of how developers subscribe to top projects. But the discussion does not consider the actual movement of developers from and to the project under discussion. The use of summary data misses the actual data that needs to be studied. The scenario is clearly defined in the following example
+par
+begintex2html_preform
+let D[i] be the list of unique developers in project P for month i
+let D[j] be the list of unique developers in project P for month i+1
+
+assume,
+
+D[i]:= {a, b, c, d, e} 
+D[j]:= {a, d, e, f, g, h}
+endtex2html_preform
+par
+The procedure defined in Section refs:dvlprs would have identified the difference in number of developers as 1. Though this is true, there is a drastic change in the composition of the developers in consecutive datasets. Since the changing patterns of developer subscription holds important clues for the behaviour in FOSS ecology, the study of such movements is undertaken here.
+par
+Continuing the example mentioned above,
+begintex2html_preform
+if,
+
+A = D[i] - D[j] 
+B = D[j] - D[i]
+
+then, 
+
+A = {b, c}
+B = {f, g, h}
+endtex2html_preform
+par
+In the above example, A represents the developers who have dropped from the project and B represents the developers who have joined the project. As observed from the above example, this data is more meaningful than calculating the summary count of number of developers subscribing to a project.
+par
+The procedure for finding the number of developers who join and drop from a project P is given below
+par
+begintex2html_preform
+FOR i IN (1 to 54)
+DO
+	Dev_List[i]:= list of unique developers working in P for the month i
+DONE
+
+FOR i IN (1 to 53)
+DO
+  A:= Dev_List[i]
+  B:= Dev_List[i+1]
+	
+  JOIN[i] = B - A
+  DROP[i] = A - B
+DONE
+endtex2html_preform
+par
+The result obtained by applying the above procedure to the top projects in listed in Figure reffigjoin . It is clearly observed that the number of developers who drop from a project are compensated mostly by new comers thereby maintaining the balance of the group. Along with the growing subscription count, this process of replacing the developers who exit may also be the reason for the success of these projects.
+par
+beginfigure
+ begincenter
+ subfloat[1]labelj1includegraphics[scale=0.5]j1.eps 
+  subfloat[235]labelj235includegraphics[scale=0.5]j235.eps
+<BR>
+subfloat[84122]labelj84122includegraphics[scale=0.5]j84122.eps
+   subfloat[162271]labelj162271includegraphics[scale=0.5]j162271.eps
+<BR>
+subfloat[176962]labelj176962includegraphics[scale=0.5]j176962.eps
+      subfloat[196195]labelj196195includegraphics[scale=0.5]j196195.eps
+captionDeveloper Join and Drop Patterns
+  labelfigjoin
+endcenter
+endfigure
+par
+sectionMigrants and Debutants
+par
+In Section refs:join, the issue of how many developers join and drop from a given project was discussed. It was argued that since the developers who exit are replaced by newcomers, the projects remain at top position. In this section, the nature of this join and drop process is analysed further to discover the patterns of developer movement.
+par
+One of the promises of FOSS development model is the open access for all interested people to join as developers. The success of the FOSS projects is often attributed to such massive participation of people. Eric Raymond has called this phenomenon as `Linus Law' which says ``Given enough eyeballs, all bugs are shallow". Formally it is written as ``Given a large enough beta-tester and co-developer base, almost every problem will be characterised quickly and the fix will be obvious to someone." cite9
+par
+Therefore, it is clear that the celebrated factor of FOSS culture is open invitation to people to participate in projects. The previous section did try to answer this question. But the nature of developers who join the project remains unexplored. In this section, we undertake this activity by calculating the number of developers who migrate to a project from other projects and who start their journey in FOSS through one project.
+par
+For the rest of this section, the following definitions apply while referring to a project P in the month i
+par
+MIGRANT - a developer who has already subscribed to at-least one project other than P in months 1 to i-1
+par
+DEBUTANT - a developer who has subscribed to only P in i and has not subscribed to any project in months 1 to i-1
+par
+The extent of migrants and debutants present in a project will clearly demonstrate the extent of applicability of important statements like Linus Law in FOSS ecology.
+par
+The procedure for finding the migrants and debutants in project P is given below
+par
+begintex2html_preform
+JOIN[i] is the list of developers who joined P in month i
+
+Dev_List[i] is the list of unique developers of P in month i
+
+FOR i IN (1 to 53)
+DO
+  FOR j IN JOIN[i]
+  DO
+    FOR k in ( 1 to i-1)
+       DO
+          IF (j IN Dev_List[k])
+           DO
+             Migrant[i]++
+             NEXT j
+           DONE
+       DONE
+       Debutant[i]++
+  DONE
+DONE
+endtex2html_preform
+par
+The result of applying this procedure to top projects is listed in Table refDebmigrnts. It is clearly seen that there is a equal measure of debutants and migrants in these projects. It clearly demonstrates that FOSS projects live up to their slogan of openness regarding membership to their projects. The average of 42% debutants proves this beyond doubt.
+par
+begintable
+begincenter
+captionMigrants and Debutants in Top Projects
+begintabular|l|l|l|l|hline 
+Project-Id &amp; Total Developers &amp; Migrants &amp; Debutants 
+<BR>
+hline
+1&amp;68&amp;37&amp;31
+<BR>
+hline
+235&amp;35&amp;17&amp;18
+<BR>
+hline
+84122&amp;37&amp;18&amp;19
+<BR>
+hline
+162271&amp;114&amp;32&amp;82
+<BR>
+hline
+176962&amp;143&amp;68&amp;75
+<BR>
+hline
+196195&amp;61&amp;29&amp;32
+<BR>
+hline
+Average&amp;76&amp;34&amp;42
+<BR>
+hline
+endtabular
+labelDebmigrnts
+endcenter
+endtable
+par
+sectionTask Allocation and Time taken for Completion
+par
+beginfigure
+ begincenter
+ subfloat[task-1]labelta1includegraphics[scale=0.6]task-1.eps 
+  subfloat[time-1]labeltm1includegraphics[scale=0.6]time-1.eps
+<BR>
+subfloat[task-84122]labelta84122includegraphics[scale=0.6]task-84122.eps
+     subfloat[time-84122]labelti84122includegraphics[scale=0.6]time-84122.eps
+<BR>
+subfloat[task-176962]labelta176962includegraphics[scale=0.6]task-176962.eps
+      subfloat[time-176962]labelti176962includegraphics[scale=0.6]time-176962.eps
+captionNumber of Tasks and Time taken to complete the Tasks
+  labelfigtasktime
+endcenter
+endfigure
+par
+
+chapterConcusion
+ifpdf
+    graphicspathConclusions/ConclusionsFigs/PNG/Conclusions/ConclusionsFigs/PDF/Conclusions/ConclusionsFigs/
+else
+    graphicspathConclusions/ConclusionsFigs/EPS/Conclusions/ConclusionsFigs/
+fi
+par
+The analysis of the datasets from Feb 2005 to Aug 2009 yields following results
+beginitemize
+ item Only 10% of the Registered users in Sourceforge.net subscribe themselves to a Project
+  itemThe average number of Developers is 200000
+  itemThe average number of Projects is 150000
+  item99% of Projects have less than 14 Developers
+  item71% of the Projects have single Developers
+  item76% of the Developers subscribe to only one Project
+enditemize
+par
+beginflushleft
+The analysis of Six Top Ranked Projects from Feb 2005 to Aug 2009 yields following results  
+endflushleft
+par
+beginitemize
+  itemThe average number of Developers is 76
+  item70% of the Developers are dedicated Developers
+  item34% of the Developers who join Top Projects migrate from other Projects (Migrants)
+  item42% of the Developers who join Top Projects are Newbie's (Debutants)
+par
+enditemize
+par
+
+chapterScope for Future Work
+
+par
+The possible ways to continue the work in future are
+par
+par
+appendix
+chapterER Diagrams of Research Data
+ifpdf
+    graphicspathAppendix1/Appendix1Figs/PNG/Appendix1/Appendix1Figs/PDF/Appendix1/Appendix1Figs/
+else
+    graphicspathAppendix1/Appendix1Figs/EPS/Appendix1/Appendix1Figs/
+fi
+par
+beginfigure
+centering
+captionER Diagram of Artifact
+includegraphics[scale=0.7]1.eps
+endfigure
+par
+beginfigure
+centering
+captionER Diagram of Task
+includegraphics[scale=0.7]2.eps
+endfigure
+par
+beginfigure
+centering
+captionER Diagram of Job
+includegraphics[scale=0.7]3.eps
+endfigure
+par
+beginfigure
+centering
+captionER Diagram of frs
+includegraphics[scale=0.7]4.eps
+endfigure
+par
+beginfigure
+centering
+captionER Diagram of Forum
+includegraphics[scale=0.7]5.eps
+endfigure
+par
+beginfigure
+centering
+captionER Diagram of Doc
+includegraphics[scale=0.7]6.eps
+endfigure
+par
+beginfigure
+centering
+captionER Diagram of research Data - 1
+includegraphics[scale=0.7]1-0.eps
+endfigure
+par
+beginfigure
+centering
+captionER Diagram of research Data - 2
+includegraphics[scale=0.7]1-1.eps
+endfigure
+par
+beginfigure
+centering
+captionER Diagram of research Data - 3
+includegraphics[scale=0.7]1-2.eps
+endfigure
+par
+beginfigure
+centering
+captionER Diagram of research Data - 4
+includegraphics[scale=0.7]1-3.eps
+endfigure
+par
+beginfigure
+centering
+captionER Diagram of research Data - 5
+includegraphics[scale=0.7]1-4.eps
+endfigure
+par
+beginfigure
+centering
+captionER Diagram of research Data - 6
+includegraphics[scale=0.7]1-5.eps
+endfigure
+par
+beginfigure
+centering
+captionER Diagram of research Data - 7
+includegraphics[scale=0.7]1-6.eps
+endfigure
+par
+beginfigure
+centering
+captionER Diagram of research Data - 8
+includegraphics[scale=0.7]1-7.eps
+endfigure
+par
+beginfigure
+centering
+captionER Diagram of research Data - 89
+includegraphics[scale=0.7]1-8.eps
+endfigure
+par
+chapterLegal Code of License
+par
+THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS CREATIVE COMMONS PUBLIC LICENSE (``CPL'' OR ``LICENSE''). THE WORK IS PROTECTED BY COPYRIGHT AND/OR OTHER APPLICABLE LAW. ANY USE OF THE WORK OTHER THAN AS AUTHORIZED UNDER THIS LICENSE AND/OR COPYRIGHT LAW IS PROHIBITED.
+par
+BY EXERCISING ANY RIGHTS TO THE WORK PROVIDED HEREIN, YOU ACCEPT AND AGREE TO BE BOUND BY THE TERMS OF THIS LICENSE. THE LICENSOR GRANTS YOU THE RIGHTS CONTAINED HERE IN CONSIDERATION OF YOUR ACCEPTANCE OF SUCH TERMS AND CONDITIONS.
+par
+beginenumerate
+ item Definitions
+    beginenumerate
+       item ``Collective Work'' means a work, such as a periodical issue, anthology or encyclopedia, in which the Work in its entirety in unmodified form, along with a number of other contributions, constituting separate and independent works in themselves, are assembled into a collective whole. A work that constitutes a Collective Work will not be considered an Adaptation (as defined below) for the purposes of this License.
+        item  ``Adaptation'' means a work based upon the Work or upon the Work and other preexisting works, such as a translation, musical arrangement, dramatization, fictionalization, motion picture version, sound recording, art reproduction, abridgment, condensation, or any other form in which the Work may be recast, transformed, or adapted, and includes:
+	  beginenumerate
+	  item in relation to a dramatic Work, the conversion of the work into a non-dramatic work;
+	  item in relation to a literary Work or an artistic Work, the conversion of the Work into a Work by way of performance in public or otherwise;
+	  item in relation to a literary or dramatic Work, any abridgement of the Work or any version of the Work in which the story or action is conveyed wholly or mainly by means of pictures in a form suitable for reproduction in a book, or in a newspaper, magazine or similar periodical;
+	  itemin relation to a musical Work, any arrangement or transcription of the Work; and
+	  itemin relation to any Work, any use of such work involving its re-arrangement or alteration.
+	  endenumerate
+      item ``Licensor'' means the individual/s and/or entities who own/s all rights, title and interests, including copyright in a Work and offers the Work under the terms of this License.
+      item ``Author'' means:
+par
+beginenumerate
+	  item in relation to a literary or dramatic work, the author of the work;
+	  itemin relation to musical work, the composer;
+	  itemin relation to an artistic work other than a photograph, the artist;
+	  itemin relation to a photograph, the person taking the photograph;
+	  itemin relation to a cinematograph film or sound recording, the producer; and
+	  itemin relation to any literary, dramatic, musical or artistic work which is computer-generated, the person who causes the work to be created.
+	  endenumerate
+par
+item``Work'' means any work as defined under the Copyright Act, 1957, which is offered under the terms of this License.
+      item``You'' means an individual/s and/or entity exercising rights under this License who has not previously violated the terms of this License with respect to the Work, or who has received express permission from the Licensor to exercise rights under this License despite a previous violation.
+      item``Licence Elements'' means the following high-level license attributes as selected by the Licensor and indicated in the title of this License: Attribution-NonCommercial 2.5
+      item``Phonorecords'' means any technology that enables musical works and sound recordings to be played, recorded and stored in digital format for use on computers or other devices.
+    endenumerate
+par
+itemFair Dealing Rights. Nothing in this license is intended to reduce, limit, or restrict any rights arising from any fair dealing, statutory right, first sale or other limitations on the exclusive rights of the copyright owner under copyright law or other applicable laws.
+par
+itemLicence Grant. Subject to the terms and conditions of this License, Licensor hereby grants You, in consideration of You exercising the rights, a worldwide, royalty-free, non-exclusive, perpetual (for the duration of the applicable copyright) license to exercise the rights in the Work as stated below:
+par
+beginenumerate
+       item to reproduce the Work, to incorporate the Work into one or more Collective Works, and to reproduce the Work as incorporated in the Collective Works;
+	item to create and reproduce Adaptations of the Work;
+	item to distribute copies or, display or perform publicly including by means of a digital audio transmission, the Work, including as incorporated in Collective Works;
+	item to distribute copies of, display, communicate to the public or perform publicly, including by means of a digital audio transmission the Adaptations of the Work;
+	item The above rights may be exercised in all media and formats whether now known or hereafter devised. The above rights include the right to make such modifications as are technically necessary to exercise the rights in other media and formats. All rights not expressly granted by Licensor are hereby reserved, including but not limited to the rights set forth in Section 4, below.
+      endenumerate
+par
+itemRestrictions. The license granted in Section 3, above, is expressly made subject to and limited by the following restrictions:
+par
+beginenumerate
+       item You may reproduce, distribute, publicly display, publicly perform, communicate the Work, publicly digitally perform the Work or create an adaptation of the Work only under the terms of this License and You must include a copy of this License, or the Uniform Resource Identifier for this License with every copy or phonorecord of the Work You distribute, publicly display, publicly perform, or publicly digitally perform. You may not offer or impose any terms on the Work that alter or restrict the terms of this License or the recipients' exercise of the rights granted hereunder. You may not sublicense the Work. You must keep intact all notices that refer to this License and to the disclaimer of warranties. You may not distribute, publicly display, publicly perform, or publicly digitally perform the Work with any technological measures that control access or use of the Work in a manner inconsistent with the terms of this License Agreement. The above applies to the Work as incorporated in a Collective Work, but this does not require the Collective Work apart from the Work itself to be made subject to the terms of this License. If You create a Collective Work, upon notice from the Licensor, You must, to the extent practicable, remove from the Collective Work any credit as required by Clause 4(c), as requested. If You create an Adaptation, upon notice from the Licensor, You must, to the extent practicable, remove from the Adaptation any credit as required by Clause 4(c) as requested.
+	item You may not exercise any of the rights granted to You in Section 3 above in any manner that is primarily intended for or directed toward commercial advantage or private monetary compensation. The exchange of the Work for other copyrighted works by means of digital file-sharing or otherwise shall not be considered to be intended for or directed toward commercial advantage or private monetary compensation, provided there is no payment of any monetary compensation in connection with such an exchange of copyrighted works.
+	item If you distribute, publicly display, publicly perform, or publicly digitally perform the Work or any Adaptation or Collective Works, You must keep intact all copyright notices for the Work and provide, reasonable to the medium or means You are utilizing, the following:
+	    beginenumerate
+	     itemthe name of the Author (or pseudonym, if applicable) if supplied, and/or;
+	      itemif the Author and/or Licensor designates another party or parties (e.g. a sponsor institute, publishing entity or journal) for attribution in the Licensor's copyright notice, terms of service or by other reasonable means, the name of such party or parties;
+	      itemthe title of the Work if supplied;
+	      itemto the extent reasonably practicable, the Uniform Resource Identifier, if any, that Licensor specifies to be associated with the Work, unless such Uniform Resource Identifier does not refer to the copyright notice or licensing information for the Work;and
+	      itemin the case of an Adaptation, a credit identifying the use of the Work in the Adaptation (e.g., ``Hindi translation of the Work by Author,'' or ``Screenplay based on original Work by Author``). Such credit may be implemented in any reasonable manner. It is provided, however, that in the case of an Adaptation or Collective Work, at a minimum, such credit must appear where any other comparable authorship credit appears and in a manner at least as prominent as such other comparable authorship credit.
+	    endenumerate
+      endenumerate
+par
+itemRepresentations, Warranties and Disclaimer.
+	beginenumerate
+	  item UNLESS OTHERWISE MUTUALLY AGREED TO BY THE PARTIES IN WRITING, THE LICENSOR OFFERS THE WORK AS-IS AND MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND CONCERNING THE WORK, EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING, WITHOUT LIMITATION, WARRANTIES OF TITLE, MERCHANTIBILITY, FITNESS FOR A PARTICULAR PURPOSE, NONINFRINGEMENT, OR THE ABSENCE OF LATENT OR OTHER DEFECTS, ACCURACY, OR THE PRESENCE OF ABSENCE OF ERRORS, WHETHER OR NOT DISCOVERABLE. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES, SO SUCH EXCLUSION MAY NOT APPLY TO YOU.
+	  itemYOU WARRANT THAT YOU ARE THE COPYRIGHT HOLDER OF THE CONTRIBUTIONS WHEN YOU SUBMIT THEM TO CREATIVE COMMONS.
+	endenumerate
+par
+itemLimitation on Liability.
+par
+EXCEPT TO THE EXTENT REQUIRED BY APPLICABLE LAW, IN NO EVENT WILL THE LICENSOR BE LIABLE TO YOU ON ANY LEGAL THEORY FOR ANY SPECIAL, INCIDENTAL, CONSEQUENTIAL, PUNITIVE OR EXEMPLARY DAMAGES ARISING OUT OF THIS LICENSE OR THE USE OF THE WORK, EVEN IF THE LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+par
+itemTermination.
+      beginenumerate
+       item This License and the rights granted hereunder will terminate automatically upon any breach by You of the terms of this License. Individuals or entities who have received Adaptations or Collective Works from You under this License however, will not have their licenses terminated provided such individuals or entities remain in full compliance with their licenses. Sections 1, 2, 5, 6, 7, and 8 will survive any termination of this License.
+	itemSubject to the above terms and conditions, the license granted here is perpetual (for the duration of the applicable copyright in the Work). Notwithstanding the above, the Licensor reserves the right to release the Work under different license terms or to stop distributing the Work at any time; provided, however that any such release under different license terms or cessation of distribution of the Work will not serve to withdraw this License (or any other license that has been, or is required to be, granted under the terms of this License), and this License will continue in full force and effect unless terminated as stated above.
+      endenumerate
+par
+itemMiscellaneous.
+	beginenumerate
+	item Each time You distribute or publicly digitally perform the Work or a Collective Work, the Licensor offers to the recipient a license to the Work on the same terms and conditions as the license granted to You under this License.
+	item Each time You distribute or publicly digitally perform a Adaptation, Licensor offers to the recipient a license to the original Work on the same terms and conditions as the license granted to You under this License.
+	item If any provision of this License is invalid or unenforceable under applicable law, it shall not affect the validity or enforceability of the remainder of the terms of this License, and without further action by the parties to this agreement, such provision shall be reformed to the minimum extent necessary to make such provision valid and enforceable.
+	item No term or provision of this License shall be deemed waived and no breach consented to unless such waiver or consent shall be in writing and signed by the party to be charged with such waiver or consent.
+	item This Licence constitutes the entire agreement between the parties with respect to the Work licensed here. To the full extent permitted by applicable law, there are no understandings, agreements or representations with respect to the Work not specified here. Licensor shall not be bound by any additional provisions that may appear in any communication from You. This Licence may not be modified without the mutual written agreement of the Licensor and You.
+	item Words and Phrases not defined herein shall to be extent possible have the same meaning as given to them in the Copyright Act, 1957.
+	item This agreement shall be deemed to be a contract made in India and shall be construed and applied in all respects in accordance with Indian law and the parties hereto submit and agree to the jurisdiction of the Indian courts.
+	endenumerate
+par
+endenumerate
+par
+beginflushleft
+ textbfDisclaimer
+<BR>
+endflushleft
+par
+CREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE LEGAL SERVICES. DISTRIBUTION OF THIS LICENSE DOES NOT CREATE A LAWYER-CLIENT RELATIONSHIP. CREATIVE COMMONS PROVIDES THIS INFORMATION ON AN "AS-IS" BASIS. CREATIVE COMMONS MAKES NO WARRANTIES REGARDING THE INFORMATION PROVIDED, AND DISCLAIMS LIABILITY FOR DAMAGES RESULTING FROM ITS USE. 
+par
+Creative Commons is not a party to this License, and makes no warranty whatsoever in connection with the Work. Creative Commons will not be liable to You or any party on any legal theory for any damages whatsoever, including without limitation any general, special, incidental or consequential damages arising in connection to this license. Notwithstanding the foregoing two (2) sentences, if Creative Commons has expressly identified itself as the Licensor hereunder, it shall have all the rights and obligations of a Licensor.
+par
+Except for the limited purpose of indicating to the public that the Work is licensed under the CCPL, neither party will use the trademark "Creative Commons" or any related trademark or logo of Creative Commons without the prior written consent of Creative Commons. Any permitted use will be in compliance with Creative Commons' then current trademark usage guidelines, as may be published on its website or otherwise made available upon request from time to time.
+par
+Creative Commons may be contacted at http://creativecommons.org/.
+par
+par
+bibliographystyleplain
+bibliographyReferences/references
+addcontentslinetocchapterReferences
+par
+enddocument
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html3"
+  HREF="node1.html">About this document ...</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1"
+  HREF="node1.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up_g.png"> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev_g.png">   
+<BR>
+<B> Next:</B> <A NAME="tex2html2"
+  HREF="node1.html">About this document ...</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Krishnaraj
+2009-10-14
+</ADDRESS>
+</BODY>
+</HTML>

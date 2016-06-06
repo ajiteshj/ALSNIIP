@@ -1,0 +1,21 @@
+% Thesis Acknowledgements ------------------------------------------------
+
+
+%\begin{acknowledgementslong} %uncommenting this line, gives a different acknowledgements heading
+\begin{acknowledgements}      %this creates the heading for the acknowlegments
+
+
+%\begin{center}
+We wish to express our sincere appreciation and gratitude to the Department of Information Science and Engineering for their extended long-term support and giving us the opportunity to analyse the interactions and structure within a social network. We would like to extend our hearty gratitude to our Principal, Dr.~N V R Naidu, our HOD Dr.~Vijay Kumar B P and especially to our guide, Assistant Professor Krishna Raj P M for his vast reserve of patience, knowledge, constant feedback and guidance. This project would never have been completed without the unending encouragement and devotion of our family and friends.
+%\end{center}
+
+
+\end{acknowledgements}
+%\end{acknowledgmentslong}
+
+% ------------------------------------------------------------------------
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../thesis"
+%%% End: 
